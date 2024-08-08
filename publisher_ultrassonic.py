@@ -2,7 +2,9 @@ import serial
 import paho.mqtt.client as mqtt
 import time 
 import socket
-import datetime 
+import datetime
+import json
+
 
 def set_serial():
 	ser = serial.Serial('/dev/ttyAMA0', 9600)
@@ -30,7 +32,8 @@ def get_line(ser = None):
 	return line
 
 def send_line(line = None, mqttc = None, unacked_publish = None):
-	msg_info = mqttc.publish("paho/test/topic", line, qos=0)
+	json_data = json.dumps(line)
+	msg_info = mqttc.publish("paho/test/topic", json_data, qos=0)
 	unacked_publish.add(msg_info.mid)
 	if len(unacked_publish):
 		time.sleep(0.1)
@@ -42,8 +45,13 @@ def main():
 	while True:
 		time.sleep(1)
 		ser.reset_input_buffer()
-		line = get_line(ser)
-		message = f"{datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')},{socket.gethostname()},{line}"
+		distance = get_line(ser)
+		message = {
+            "timestamp": datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S'),
+            "hostname": socket.gethostname(),
+            "distance": distance,
+			"epoch": int(time.time())
+        }
 		send_line(line = message, mqttc = mqttc, unacked_publish = unacked_publish)
 		
 
