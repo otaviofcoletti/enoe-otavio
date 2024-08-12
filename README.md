@@ -13,6 +13,22 @@ To run this follow the commands:
 
 Clone the repository
 
-"git clone git@github.com:otaviofcoletti/enoe-otavio.git"
+```git clone git@github.com:otaviofcoletti/enoe-otavio.git```
 
+Run on raspberry
+
+```publisher_ultrassonic.py```
+
+On the pc acess the folder Database
+
+```cd Database```
+
+Run 
+
+```docker compose -d```
+```cd ..```
+
+Then run 
+
+```mqtt_db.py```
 
