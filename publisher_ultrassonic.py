@@ -5,6 +5,17 @@ import socket
 import datetime
 import json
 
+with open("config.json") as f:
+    config = json.load(f)
+
+mqtt_config = config["MQTT"]
+broker_endpoint = mqtt_config["broker_endpoint"]
+port = mqtt_config["port"]
+
+credentials_config = config["CREDENTIALS"]
+username = credentials_config["username"]
+password = credentials_config["password"]
+
 
 def set_serial():
 	ser = serial.Serial('/dev/ttyAMA0', 9600)

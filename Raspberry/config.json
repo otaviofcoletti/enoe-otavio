@@ -1,0 +1,10 @@
+{
+    "MQTT": {
+      "broker_endpoint": "enoe.icmc.usp.br",
+      "port": 1883
+    },
+    "CREDENTIALS": {
+      "username": "raspberry",
+      "password": "rasberry.publisher"
+    }
+}
