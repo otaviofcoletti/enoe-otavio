@@ -1,0 +1,6 @@
+# Use a imagem oficial do PostgreSQL como base
+FROM postgres:latest
+
+# Copie os arquivos SQL para o diretório de inicialização do container
+COPY ./CREATE.sql /docker-entrypoint-initdb.d/
+COPY ./INSERT.sql /docker-entrypoint-initdb.d/

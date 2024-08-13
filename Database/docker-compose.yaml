@@ -1,0 +1,12 @@
+version: '3'
+services:
+  postgres:
+    build:
+      dockerfile: ./Dockerfiledb
+    container_name: postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ultrassonic_sensor
+    ports:
+      - "5432:5432"

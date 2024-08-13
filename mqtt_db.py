@@ -1,7 +1,7 @@
 import paho.mqtt.client as mqtt
 import psycopg2
 import time
-
+import json
 class MQTTClientHandler:
     def __init__(self, broker_address, topic, db_config):
         self.client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
@@ -36,13 +36,19 @@ class MQTTClientHandler:
         print(f"Received message: {message.payload.decode('utf-8')}")
         userdata.append(message.payload.decode('utf-8'))
 
+        json_data = json.loads(message.payload.decode('utf-8'))
+
+        epoch = json_data["epoch"]
+        distance = json_data["distance"]
+
         # Inserir a mensagem no banco de dados
         try:
             self.cursor.execute(
-                "INSERT INTO ultrassonic (topic, payload, received_at) VALUES (%s, %s, %s)",
-                (message.topic, message.payload.decode('utf-8'), time.strftime('%Y-%m-%d %H:%M:%S'))
+                "INSERT INTO ultrassonic (epoch, distance) VALUES (%s, %s)",
+                (epoch, distance)
             )
             self.conn.commit()
+            print(f"Commit done {epoch}, {distance}")
         except Exception as e:
             print(f"Error inserting data into database: {e}")
             self.conn.rollback()
@@ -75,11 +81,11 @@ if __name__ == "__main__":
     
     # Configurações do banco de dados
     db_config = {
-        'dbname': 'your_database_name',
-        'user': 'your_username',
-        'password': 'your_password',
-        'host': 'your_host',
-        'port': 'your_port'
+        'dbname': 'ultrassonic_sensor',
+        'user': 'user',
+        'password': 'password',
+        'host': '172.19.0.2',
+        'port': '5432'
     }
 
     mqtt_handler = MQTTClientHandler(broker_address, topic, db_config)

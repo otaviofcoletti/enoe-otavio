@@ -1,5 +1,6 @@
 import paho.mqtt.client as mqtt
 import time
+import json
 
 class MQTTClientHandler:
     def __init__(self, broker_address, topic):
@@ -27,7 +28,11 @@ class MQTTClientHandler:
         client.disconnect()
 
     def on_message(self, client, userdata, message):
-        print(f"Received message: {message.payload.decode('utf-8')}")
+        # print(f"Received message: {message.payload.decode('utf-8')}")
+        json_data = json.loads(message.payload.decode('utf-8'))
+        print(json_data)
+        print(json_data["epoch"])
+        print(json_data["distance"])
         userdata.append(message.payload)
         # Uncomment the following lines if you want to unsubscribe after receiving 10 messages
         # if len(userdata) >= 10:
