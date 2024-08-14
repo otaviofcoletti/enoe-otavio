@@ -78,7 +78,7 @@ class MQTTClientHandler:
 if __name__ == "__main__":
     broker_address = "mqtt.eclipseprojects.io"
     topic = "paho/test/topic"
-    
+
     # Configurações do banco de dados
     db_config = {
         'dbname': 'ultrassonic_sensor',
