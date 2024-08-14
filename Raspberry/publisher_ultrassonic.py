@@ -21,13 +21,13 @@ def set_serial():
     ser = serial.Serial('/dev/ttyAMA0', 9600)
     return ser
 
-def on_publish(client, userdata, mid, reason_code, properties):
+def on_publish(client, userdata, mid, reason_code, properties=None):
     try:
         userdata.remove(mid)
     except KeyError:
         print("Could not publish")
 
-def on_connect(client, userdata, flags, rc):
+def on_connect(client, userdata, flags, rc, properties=None):
     if rc == 0:
         print("Connected to broker")
         client.connected_flag = True
