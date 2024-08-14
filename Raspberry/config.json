@@ -1,6 +1,6 @@
 {
     "MQTT": {
-      "broker_endpoint": "enoe.icmc.usp.br",
+      "broker_endpoint": "100.66.3.93",
       "port": 1883
     },
     "CREDENTIALS": {
