@@ -1,1 +1,2 @@
-raspberry:$7$101$hy+sW6HOElHnEgQM$11VnhEV//JiqhPvjSZSnmveNDAeAm6keQxd6skCyVtTEhWovo4+CGUT3HQy9Mm4v8crDC46la5Ib6AkyT3v2vA==
+server:$7$101$fYJSN8xVbUmWAne/$8kNGe96JIYavqC7F4qDhsGWh5PIJTOMic6hGS2c02Ydmy7VHuqetBTU8Ix52zX4yHLiWbZrkryPDe5noRVxycA==
+raspberry:$7$101$pP0Xembvj96sx1rd$dma3IFh9sLumUevMXnF/tk+rD/TiP9r8XNIhLqWVVaYvIvzhWT5RLb1dX2yO2UcT1lVfdk5PAz4T+AhxV2fcqQ==

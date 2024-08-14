@@ -25,13 +25,25 @@ On the pc acess the folder Database
 
 Run 
 
-```docker compose -d```
+```docker compose up -d```
 ```cd ..```
 
-Then run 
+Acess the folder Server, then run
 
-```mqtt_db.py```
+```
+mqtt_db_control.py
+```
 
 ## Week Two
 
 ### Create a local mqtt broker
+
+Acess the folder app and run
+
+```
+python3 app.py
+```
+
+
+
+
