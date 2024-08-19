@@ -3,7 +3,6 @@ import sys
 import subprocess
 import requests
 import time
-import RPi.GPIO as GPIO
 
 def check_connection(url):
     try:
@@ -24,7 +23,7 @@ def main():
     url = "https://www.google.com"
     while True:
         if not check_connection(url):
-            time.sleep(30)
+            time.sleep(240)
             if not check_connection(url):
                 print("Rebooting Wi-Fi")
                 restart_wifi()

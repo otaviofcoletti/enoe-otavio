@@ -7,7 +7,8 @@ while true; do
   
   sleep 20
 
-  git pull
+  git pull --rebase 
+  killall python3
   
   sleep 400
 done
