@@ -15,6 +15,16 @@ Clone the repository
 
 ```git clone git@github.com:otaviofcoletti/enoe-otavio.git```
 
+Acess the folder MQTT_Broker, run
+
+```
+mosquitto -c config-server.conf -v
+```
+
+Now the broker is initialized
+
+
+
 Run on raspberry
 
 ```publisher_ultrassonic.py```
