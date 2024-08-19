@@ -24,7 +24,7 @@ def main():
     url = "https://www.google.com"
     while True:
         if not check_connection(url):
-            time.sleep(240)
+            time.sleep(30)
             if not check_connection(url):
                 print("Rebooting Wi-Fi")
                 restart_wifi()
