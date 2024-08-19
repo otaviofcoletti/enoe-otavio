@@ -1,7 +1,6 @@
 #!/bin/bash
 
-
-cd /home/intermidia/enoe
+cd ..
 
 
 while true; do
