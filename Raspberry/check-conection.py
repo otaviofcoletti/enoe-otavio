@@ -3,6 +3,7 @@ import subprocess
 import requests
 import time
 import logging
+import sys
 
 # Configure logging
 logging.basicConfig(filename='connection_monitor.log', level=logging.INFO, 
