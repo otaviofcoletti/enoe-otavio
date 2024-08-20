@@ -4,6 +4,7 @@ import csv
 import datetime
 import socket
 import json
+import os
 
 # Carregar as configurações do arquivo config.json
 with open("config.json") as f:
@@ -24,11 +25,15 @@ def get_line(ser=None):
 def main():
     ser = set_serial()
     
+    # Criar a pasta "data" se não existir
+    if not os.path.exists("data"):
+        os.makedirs("data")
+    
     while True:
         # Nome do arquivo CSV baseado na data e hora atual
         timestamp = datetime.datetime.now()
         date_str = timestamp.strftime('%Y-%m-%d_%H-%M-%S')
-        filename = f"readings_{date_str}.csv"
+        filename = os.path.join("data", f"readings_{date_str}.csv")
         
         with open(filename, mode='a', newline='') as file:
             writer = csv.writer(file)
