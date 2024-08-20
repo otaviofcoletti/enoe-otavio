@@ -41,13 +41,14 @@ class MQTTClientHandler:
         print(f"Received message: {message.payload.decode('utf-8')}")
         userdata.append(message.payload.decode('utf-8'))
 
-        json_data = json.loads(message.payload.decode('utf-8'))
-
-        epoch = json_data["epoch"]
-        distance = json_data["distance"]
-
-        # Inserir a mensagem no banco de dados
         try:
+            # Assumindo que o payload é uma lista, convertendo para uma lista Python
+            json_data = json.loads(message.payload.decode('utf-8'))
+            
+            # Extraindo dados da lista
+            timestamp, hostname, distance, epoch = json_data
+
+            # Inserir a mensagem no banco de dados
             self.cursor.execute(
                 "INSERT INTO ultrassonic (epoch, distance) VALUES (%s, %s)",
                 (epoch, distance)
