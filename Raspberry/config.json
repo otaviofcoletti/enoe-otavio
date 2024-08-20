@@ -6,5 +6,8 @@
     "CREDENTIALS": {
       "username": "raspberry",
       "password": "raspberry.publisher"
+    },
+    "SYSTEM":{
+      "interval_system_seconds" :15
     }
 }
