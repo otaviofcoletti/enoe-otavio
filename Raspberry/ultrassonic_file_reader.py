@@ -43,8 +43,17 @@ def set_client(server, port, username, password):
     return mqttc, unacked_publish
 
 def publish_file(filename, mqttc, unacked_publish):
+    # Verificar se o arquivo está vazio
+    if os.path.getsize(filename) == 0:
+        print(f"File {filename} is empty, skipping...")
+        return
+    
     with open(filename, mode='r') as file:
         lines = file.readlines()
+        if len(lines) <= 1:
+            print(f"File {filename} has no data (just header), skipping...")
+            return
+        
         for line in lines[1:]:  # Skip header
             json_data = json.dumps(line.strip().split(','))
             msg_info = mqttc.publish("paho/test/topic", json_data, qos=0)
@@ -66,7 +75,8 @@ def main():
     
     while True:
         # Encontrar arquivos CSV para processar
-        for filename in glob.glob("readings_*.csv"):
+        for filename in glob.glob("data/readings_*.csv"):
+            print(f"Publishing {filename}")
             publish_file(filename, mqttc, unacked_publish)
         time.sleep(60)  # Esperar antes de verificar novos arquivos
 

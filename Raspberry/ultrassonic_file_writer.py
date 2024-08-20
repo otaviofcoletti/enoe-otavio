@@ -11,7 +11,7 @@ with open("config.json") as f:
     config = json.load(f)
 
 # Frequência de geração de arquivos em minutos (pode ser alterado conforme necessário)
-csv_interval_minutes = config.get("CSV_INTERVAL_MINUTES", 2)
+csv_interval_minutes = config.get("CSV_INTERVAL_MINUTES", 1)
 csv_interval_seconds = csv_interval_minutes * 60
 
 def set_serial():
