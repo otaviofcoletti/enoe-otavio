@@ -56,10 +56,10 @@ def publish_file(filename, mqttc, unacked_publish):
         
         for line in lines[1:]:  # Skip header
             json_data = json.dumps(line.strip().split(','))
-            msg_info = mqttc.publish("paho/test/topic", json_data, qos=0)
+            msg_info = mqttc.publish("paho/test/topic", json_data, qos=1)
             unacked_publish.add(msg_info.mid)
             if len(unacked_publish):
-                time.sleep(0.1)
+                time.sleep(0.2)
             msg_info.wait_for_publish()
 
     # Apagar o arquivo após envio
