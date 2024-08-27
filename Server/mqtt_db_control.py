@@ -20,9 +20,8 @@ class MQTTClientHandler:
         if username and password:
             self.client.username_pw_set(username, password)
 
-        # Conectar ao banco de dados
-        self.conn = psycopg2.connect(**self.db_config)
-        self.cursor = self.conn.cursor()
+        self.conn = None
+        self.cursor = None
 
     def on_subscribe(self, client, userdata, mid, reason_code_list, properties):
         if reason_code_list[0].is_failure:
@@ -59,15 +58,27 @@ class MQTTClientHandler:
             print(f"Error inserting data into database: {e}")
             self.conn.rollback()
 
-        # Uncomment the following lines if you want to unsubscribe after receiving 10 messages
-        # if len(userdata) >= 10:
-        #     client.unsubscribe(self.topic)
-
     def on_connect(self, client, userdata, flags, reason_code, properties):
         if reason_code.is_failure:
             print(f"Failed to connect: {reason_code}. loop_forever() will retry connection")
         else:
             client.subscribe(self.topic)
+
+    def connect_db(self, max_retries=5, retry_delay=5):
+        """Tentar conectar ao banco de dados com retries."""
+        attempt = 0
+        while attempt < max_retries:
+            try:
+                self.conn = psycopg2.connect(**self.db_config)
+                self.cursor = self.conn.cursor()
+                print("Connected to the database successfully.")
+                return True
+            except psycopg2.OperationalError as e:
+                print(f"Failed to connect to the database (attempt {attempt + 1}/{max_retries}): {e}")
+                attempt += 1
+                time.sleep(retry_delay)
+        print("Failed to connect to the database after multiple attempts. Exiting...")
+        return False
 
     def connect_and_listen(self):
         self.client.connect(self.broker_address)
@@ -78,8 +89,10 @@ class MQTTClientHandler:
 
     def close(self):
         # Fechar a conexão com o banco de dados
-        self.cursor.close()
-        self.conn.close()
+        if self.cursor:
+            self.cursor.close()
+        if self.conn:
+            self.conn.close()
 
 if __name__ == "__main__":
 
@@ -112,7 +125,11 @@ if __name__ == "__main__":
     mqtt_handler = MQTTClientHandler(broker_endpoint, topic, db_config, username, password)
     
     try:
-        mqtt_handler.connect_and_listen()
+        # Primeiro tenta conectar ao banco de dados
+        if mqtt_handler.connect_db():
+            mqtt_handler.connect_and_listen()
+        else:
+            print("Exiting due to database connection failure.")
     except KeyboardInterrupt:
         print("Interrupted by user.")
         mqtt_handler.client.disconnect()
