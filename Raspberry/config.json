@@ -1,6 +1,6 @@
 {
     "MQTT": {
-      "broker_endpoint": "100.66.3.93",
+      "broker_endpoint": "100.111.36.103",
       "port": 1883
     },
     "CREDENTIALS": {
