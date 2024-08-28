@@ -1,10 +1,17 @@
 {
-    "MQTT": {
-      "broker_endpoint": "localhost",
-      "port": 1883
-    },
-    "CREDENTIALS": {
-      "username": "server",
-      "password": "server.subscriber"
-    }
+  "MQTT": {
+    "broker_endpoint": "localhost",
+    "port": 1883
+  },
+  "CREDENTIALS": {
+    "username": "server",
+    "password": "server.publisher"
+  },
+  "DATABASE": {
+    "dbname": "ultrassonic_sensor",
+    "user": "user",
+    "password": "password",
+    "host": "172.18.0.2",
+    "port": "5432"
+  }
 }
