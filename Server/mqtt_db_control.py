@@ -114,7 +114,7 @@ if __name__ == "__main__":
         'dbname': 'ultrassonic_sensor',
         'user': 'user',
         'password': 'password',
-        'host': '172.19.0.2',
+        'host': '172.18.0.2',
         'port': '5432'
     }
 
