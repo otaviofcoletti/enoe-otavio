@@ -15,7 +15,7 @@ except (FileNotFoundError, json.JSONDecodeError) as e:
     exit(1)
 
 # Frequência de geração de arquivos em minutos (pode ser alterado conforme necessário)
-csv_interval_minutes = config.get("CSV_INTERVAL_MINUTES", 2)
+csv_interval_minutes = config.get("CSV_INTERVAL_MINUTES", 10)
 csv_interval_seconds = csv_interval_minutes * 60
 
 def set_serial():
@@ -54,7 +54,7 @@ def main():
                 
                 end_time = time.time() + csv_interval_seconds
                 while time.time() < end_time:
-                    time.sleep(1)
+                    time.sleep(10)
                     ser.reset_input_buffer()
                     distance = get_line(ser)
                     
