@@ -7,5 +7,8 @@
       "username": "raspberry",
       "password": "raspberry.publisher"
     },
-    "CSV_INTERVAL_MINUTES": 10
+    "CSV_INTERVALS": {
+      "file_creation_minutes": 10,
+      "data_interval_seconds": 10
+    }
 }

@@ -27,17 +27,21 @@ credentials_config = config["CREDENTIALS"]
 username = credentials_config["username"]
 password = credentials_config["password"]
 
-csv_interval_minutes = config.get("CSV_INTERVAL_MINUTES", 2)
-csv_interval_seconds = csv_interval_minutes * 60
+
+config_csv_interval = config["CSV_INTERVALS"]
+# Frequência de geração de arquivos em minutos (pode ser alterado conforme necessário)
+csv_file_creation_minutes = config_csv_interval["file_creation_minutes"]
+csv_file_creation_seconds = csv_file_creation_minutes * 60
+
 
 MAX_RETRIES = 5  # Número máximo de tentativas de reconexão
 RETRY_WAIT_TIME = 10  # Tempo de espera entre as tentativas (segundos)
 
-def on_publish(client, userdata, mid, reason_code, properties=None):
-    try:
-        userdata.remove(mid)
-    except KeyError:
-        print(f"Could not publish, MID not found: {mid}")
+# def on_publish(client, userdata, mid, reason_code, properties=None):
+#     try:
+#         userdata.remove(mid)
+#     except KeyError:
+#         print(f"Could not publish, MID not found: {mid}")
 
 def on_connect(client, userdata, flags, rc, properties=None):
     if rc == 0:
@@ -105,8 +109,9 @@ def publish_file(filename, mqttc, unacked_publish):
                     if len(unacked_publish):
                         time.sleep(0.2)
                     msg_info.wait_for_publish()
-                except Exception as e:
+                except Exception as e:                     # se não publicou o arquivo, deve voltar
                     print(f"Error publishing message: {e}")
+                    return
                     
         # Apagar o arquivo após envio
         try:
@@ -144,7 +149,7 @@ def main():
         # Encontrar arquivos CSV para processar
         try:
             for filename in glob.glob("data/readings_*.csv"):
-                if is_ready_for_processing(filename, csv_interval_seconds):
+                if is_ready_for_processing(filename, csv_file_creation_seconds):
                     print(f"Publishing {filename}")
                     publish_file(filename, mqttc, unacked_publish)
                 else:

@@ -22,9 +22,12 @@ except (FileNotFoundError, json.JSONDecodeError) as e:
     logging.error(f"Error loading config file: {e}")
     exit(1)
 
+config_csv_interval = config["CSV_INTERVALS"]
 # Frequência de geração de arquivos em minutos (pode ser alterado conforme necessário)
-csv_interval_minutes = config.get("CSV_INTERVAL_MINUTES", 10)
-csv_interval_seconds = csv_interval_minutes * 60
+csv_file_creation_minutes = config_csv_interval["file_creation_minutes"]
+csv_file_creation_seconds = csv_file_creation_minutes * 60
+
+csv_data_interval_seconds = config_csv_interval["data_interval_seconds"]
 
 def set_serial():
     try:
@@ -60,9 +63,9 @@ def main():
                 writer = csv.writer(file)
                 writer.writerow(["timestamp", "hostname", "distance", "epoch"])  # Header
                 
-                end_time = time.time() + csv_interval_seconds
+                end_time = time.time() + csv_file_creation_seconds
                 while time.time() < end_time:
-                    time.sleep(10)
+                    time.sleep(csv_data_interval_seconds)
                     ser.reset_input_buffer()
                     distance = get_line(ser)
                     
