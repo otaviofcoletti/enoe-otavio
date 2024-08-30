@@ -1,0 +1,15 @@
+[Unit]
+Description=Ultrassonic File Writer Service
+After=network.target
+
+[Service]
+WorkingDirectory=/home/otavio/Desktop/enoe-otavio/Raspberry
+ExecStart=/usr/bin/python3 /home/otavio/Desktop/enoe-otavio/Raspberry/ultrassonic_file_writer.py
+Restart=always
+RestartSec=10
+User=otavio
+KillMode=process
+TimeoutStartSec=infinity
+
+[Install]
+WantedBy=multi-user.target

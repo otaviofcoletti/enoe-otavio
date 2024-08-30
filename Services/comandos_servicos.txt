@@ -1,0 +1,11 @@
+sudo systemctl daemon-reload
+
+sudo systemctl enable ultrassonic_file_reader.service
+sudo systemctl enable ultrassonic_file_writer.service
+
+
+sudo systemctl start ultrassonic_file_writer.service
+sudo systemctl start ultrassonic_file_reader.service
+
+sudo cp ultrassonic_file_writer.service /etc/systemd/system/
+sudo cp ultrassonic_file_reader.service /etc/systemd/system/

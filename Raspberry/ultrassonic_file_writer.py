@@ -5,13 +5,21 @@ import datetime
 import socket
 import json
 import os
+import logging
+
+# Configuração do logging
+logging.basicConfig(
+    filename="writer.log",  # Nome do arquivo de log
+    level=logging.ERROR,   # Nível de logging para registrar erros
+    format="%(asctime)s - %(levelname)s - %(message)s"  # Formato do log
+)
 
 # Carregar as configurações do arquivo config.json
 try:
     with open("config.json") as f:
         config = json.load(f)
 except (FileNotFoundError, json.JSONDecodeError) as e:
-    print(f"Error loading config file: {e}")
+    logging.error(f"Error loading config file: {e}")
     exit(1)
 
 # Frequência de geração de arquivos em minutos (pode ser alterado conforme necessário)
@@ -23,15 +31,15 @@ def set_serial():
         ser = serial.Serial('/dev/ttyAMA0', 9600)
         return ser
     except serial.SerialException as e:
-        print(f"Error opening serial port: {e}")
+        logging.error(f"Error opening serial port: {e}")
         exit(1)
 
-def get_line(ser=None):
+def get_line(ser):
     try:
-        line = int(ser.read(6).decode().replace("R", "").replace("\r", ""))
-        return line
+        line = ser.read(6).decode().strip().replace("R", "")
+        return int(line)
     except Exception as e:
-        print(f"Error reading from serial port: {e}")
+        logging.error(f"Error reading from serial port: {e}")
         return None
 
 def main():
@@ -71,13 +79,13 @@ def main():
                         file.flush()
                         os.fsync(file.fileno())
                     else:
-                        print("Skipping write due to error reading distance.")
+                        logging.warning("Skipping write due to error reading distance.")
         except OSError as e:
-            print(f"File error: {e}")
+            logging.error(f"File error: {e}")
         except serial.SerialException as e:
-            print(f"Serial communication error: {e}")
+            logging.error(f"Serial communication error: {e}")
         except Exception as e:
-            print(f"Unexpected error: {e}")
+            logging.error(f"Unexpected error: {e}")
 
 if __name__ == "__main__":
     try:
@@ -85,4 +93,4 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("Program interrupted by user.")
     except Exception as e:
-        print(f"An unexpected error occurred: {e}")
+        logging.error(f"An unexpected error occurred: {e}")
