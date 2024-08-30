@@ -109,9 +109,8 @@ def publish_file(filename, mqttc, unacked_publish):
                     if len(unacked_publish):
                         time.sleep(0.2)
                     msg_info.wait_for_publish()
-                except Exception as e:                     # se não publicou o arquivo, deve voltar
+                except Exception as e:                    
                     print(f"Error publishing message: {e}")
-                    return
                     
         # Apagar o arquivo após envio
         try:

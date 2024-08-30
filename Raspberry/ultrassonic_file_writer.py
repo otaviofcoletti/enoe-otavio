@@ -65,9 +65,10 @@ def main():
                 
                 end_time = time.time() + csv_file_creation_seconds
                 while time.time() < end_time:
-                    time.sleep(csv_data_interval_seconds)
+                    time.sleep(1)
                     ser.reset_input_buffer()
                     distance = get_line(ser)
+                    print("OI")
                     
                     if distance is not None:
                         message = [
@@ -96,4 +97,5 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("Program interrupted by user.")
     except Exception as e:
+        Print("ACABOU AQUI")
         logging.error(f"An unexpected error occurred: {e}")
