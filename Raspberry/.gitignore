@@ -1,2 +1,3 @@
-data
-*.log
+data/
+reader.log
+writer.log

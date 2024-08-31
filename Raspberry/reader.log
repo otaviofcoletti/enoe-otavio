@@ -64,3 +64,9 @@
 2024-08-31 18:01:35,770 - INFO - Publishing data/readings_2024-08-31_17-59-01.csv
 2024-08-31 18:01:35,782 - INFO - File data/readings_2024-08-31_18-01-10.csv is not ready for processing yet.
 2024-08-31 18:02:35,843 - INFO - File data/readings_2024-08-31_18-01-10.csv is not ready for processing yet.
+2024-08-31 18:03:35,900 - INFO - File data/readings_2024-08-31_18-03-17.csv is not ready for processing yet.
+2024-08-31 18:03:35,900 - INFO - Publishing data/readings_2024-08-31_18-01-10.csv
+2024-08-31 18:04:35,920 - INFO - File data/readings_2024-08-31_18-03-17.csv is not ready for processing yet.
+2024-08-31 18:05:35,981 - INFO - File data/readings_2024-08-31_18-05-18.csv is not ready for processing yet.
+2024-08-31 18:05:35,982 - INFO - Publishing data/readings_2024-08-31_18-03-17.csv
+2024-08-31 18:06:36,040 - INFO - File data/readings_2024-08-31_18-05-18.csv is not ready for processing yet.
