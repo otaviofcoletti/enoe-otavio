@@ -10,8 +10,9 @@ import logging
 # Configuração do logging
 logging.basicConfig(
     filename="writer.log",  # Nome do arquivo de log
-    level=logging.ERROR,   # Nível de logging para registrar erros
-    format="%(asctime)s - %(levelname)s - %(message)s"  # Formato do log
+    level=logging.ERROR,     # Nível de logging para registrar erros
+    format="%(asctime)s - %(levelname)s - %(message)s",  # Formato do log
+    filemode='a'  # Modo append para evitar sobrescrita
 )
 
 # Carregar as configurações do arquivo config.json
@@ -32,6 +33,7 @@ csv_data_interval_seconds = config_csv_interval["data_interval_seconds"]
 def set_serial():
     try:
         ser = serial.Serial('/dev/ttyAMA0', 9600)
+        logging.info("Serial port opened successfully.")
         return ser
     except serial.SerialException as e:
         logging.error(f"Error opening serial port: {e}")
@@ -51,6 +53,7 @@ def main():
     # Criar a pasta "data" se não existir
     if not os.path.exists("data"):
         os.makedirs("data")
+        logging.info("Data directory created.")
     
     while True:
         try:
@@ -62,13 +65,13 @@ def main():
             with open(filename, mode='a', newline='') as file:
                 writer = csv.writer(file)
                 writer.writerow(["timestamp", "hostname", "distance", "epoch"])  # Header
+                logging.info(f"Started writing to file {filename}.")
                 
                 end_time = time.time() + csv_file_creation_seconds
                 while time.time() < end_time:
-                    time.sleep(1)
+                    time.sleep(csv_data_interval_seconds)
                     ser.reset_input_buffer()
                     distance = get_line(ser)
-                    print("OI")
                     
                     if distance is not None:
                         message = [
@@ -82,6 +85,7 @@ def main():
                         # Forçar a gravação no disco após cada linha
                         file.flush()
                         os.fsync(file.fileno())
+                        logging.info(f"Written data: {message}")
                     else:
                         logging.warning("Skipping write due to error reading distance.")
         except OSError as e:
@@ -95,7 +99,6 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print("Program interrupted by user.")
+        logging.info("Program interrupted by user.")
     except Exception as e:
-        Print("ACABOU AQUI")
         logging.error(f"An unexpected error occurred: {e}")
