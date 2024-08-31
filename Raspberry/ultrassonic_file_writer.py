@@ -9,7 +9,7 @@ import logging
 
 # Configuração do logging
 logging.basicConfig(
-    filename="writer.log",  # Nome do arquivo de log
+    filename="./logs/writer.log",  # Nome do arquivo de log
     level=logging.ERROR,     # Nível de logging para registrar erros
     format="%(asctime)s - %(levelname)s - %(message)s",  # Formato do log
     filemode='a'  # Modo append para evitar sobrescrita

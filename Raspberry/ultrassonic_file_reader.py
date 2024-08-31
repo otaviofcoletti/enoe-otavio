@@ -10,7 +10,7 @@ import MQTTHandlerPublisher as mqtt
 
 # Configuração de logging
 logging.basicConfig(
-    filename='reader.log',  # Nome do arquivo de log
+    filename='./logs/reader.log',  # Nome do arquivo de log
     filemode='a',  # Modo append
     level=logging.INFO,  # Nível de logging
     format='%(asctime)s - %(levelname)s - %(message)s'  # Formato das mensagens de log
