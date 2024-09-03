@@ -1,0 +1,891 @@
+2024-09-02 23:37:30,913 - MQTTHandlerSubscriber - INFO - Successfully connected to MQTT broker
+2024-09-02 23:37:30,916 - MQTTHandlerSubscriber - INFO - Connected to broker
+2024-09-02 23:37:30,931 - DatabaseHandler - INFO - Connected to the database successfully.
+2024-09-02 23:41:40,211 - MQTTHandlerSubscriber - INFO - Successfully connected to MQTT broker
+2024-09-02 23:41:40,211 - MQTTHandlerSubscriber - INFO - Subscribed to topic: paho/test/topic
+2024-09-02 23:41:40,211 - MQTTHandlerSubscriber - INFO - Connected to broker
+2024-09-02 23:41:40,220 - DatabaseHandler - INFO - Connected to the database successfully.
+2024-09-02 23:46:51,939 - MQTTHandlerSubscriber - INFO - Logging is set up.
+2024-09-02 23:46:51,941 - MQTTHandlerSubscriber - INFO - Successfully connected to MQTT broker
+2024-09-02 23:46:51,941 - MQTTHandlerSubscriber - INFO - Subscribed to topic: paho/test/topic
+2024-09-02 23:46:51,942 - MQTTHandlerSubscriber - INFO - Connected to broker
+2024-09-02 23:46:51,951 - DatabaseHandler - INFO - Connected to the database successfully.
+2024-09-02 23:49:10,706 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-08-31 18:43:35", "raspberrypi", "500", "1725140615"]
+2024-09-02 23:49:10,706 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-08-31 18:43:35", "raspberrypi", "500", "1725140615"]'}
+2024-09-02 23:49:10,709 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-08-31 18:43:45", "raspberrypi", "500", "1725140625"]
+2024-09-02 23:49:10,710 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-08-31 18:43:45", "raspberrypi", "500", "1725140625"]'}
+2024-09-02 23:49:10,710 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-08-31 18:43:55", "raspberrypi", "500", "1725140635"]
+2024-09-02 23:49:10,710 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-08-31 18:43:55", "raspberrypi", "500", "1725140635"]'}
+2024-09-02 23:49:10,711 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-08-31 18:44:05", "raspberrypi", "500", "1725140645"]
+2024-09-02 23:49:10,711 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-08-31 18:44:05", "raspberrypi", "500", "1725140645"]'}
+2024-09-02 23:49:10,711 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-08-31 18:44:15", "raspberrypi", "500", "1725140655"]
+2024-09-02 23:49:10,711 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-08-31 18:44:15", "raspberrypi", "500", "1725140655"]'}
+2024-09-02 23:49:10,711 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-08-31 18:44:25", "raspberrypi", "500", "1725140665"]
+2024-09-02 23:49:10,711 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-08-31 18:44:25", "raspberrypi", "500", "1725140665"]'}
+2024-09-02 23:49:10,712 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-08-31 18:44:35", "raspberrypi", "500", "1725140675"]
+2024-09-02 23:49:10,712 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-08-31 18:44:35", "raspberrypi", "500", "1725140675"]'}
+2024-09-02 23:49:10,712 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-08-31 18:44:45", "raspberrypi", "500", "1725140685"]
+2024-09-02 23:49:10,712 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-08-31 18:44:45", "raspberrypi", "500", "1725140685"]'}
+2024-09-02 23:55:00,728 - MQTTHandlerSubscriber - INFO - Logging is set up.
+2024-09-02 23:55:00,730 - MQTTHandlerSubscriber - INFO - Connected to broker
+2024-09-02 23:55:00,730 - MQTTHandlerSubscriber - INFO - Successfully connected to MQTT broker
+2024-09-02 23:55:00,731 - MQTTHandlerSubscriber - INFO - Subscribed to topic: paho/test/topic
+2024-09-02 23:55:00,740 - DatabaseHandler - INFO - Connected to the database successfully.
+2024-09-02 23:55:11,021 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:53:16", "raspberrypi", "500", "1725321196"]
+2024-09-02 23:55:11,024 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:53:16", "raspberrypi", "500", "1725321196"]'}
+2024-09-02 23:55:11,026 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:53:26", "raspberrypi", "500", "1725321206"]
+2024-09-02 23:55:11,026 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:53:26", "raspberrypi", "500", "1725321206"]'}
+2024-09-02 23:55:11,026 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:53:36", "raspberrypi", "500", "1725321216"]
+2024-09-02 23:55:11,026 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:53:36", "raspberrypi", "500", "1725321216"]'}
+2024-09-02 23:55:11,027 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:53:46", "raspberrypi", "500", "1725321226"]
+2024-09-02 23:55:11,027 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:53:46", "raspberrypi", "500", "1725321226"]'}
+2024-09-02 23:55:11,027 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:53:56", "raspberrypi", "500", "1725321236"]
+2024-09-02 23:55:11,027 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:53:56", "raspberrypi", "500", "1725321236"]'}
+2024-09-02 23:55:11,028 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:54:06", "raspberrypi", "500", "1725321246"]
+2024-09-02 23:55:11,028 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:54:06", "raspberrypi", "500", "1725321246"]'}
+2024-09-02 23:55:11,028 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:54:16", "raspberrypi", "500", "1725321256"]
+2024-09-02 23:55:11,028 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:54:16", "raspberrypi", "500", "1725321256"]'}
+2024-09-02 23:55:11,028 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:54:26", "raspberrypi", "500", "1725321266"]
+2024-09-02 23:55:11,028 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:54:26", "raspberrypi", "500", "1725321266"]'}
+2024-09-02 23:55:11,029 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:54:36", "raspberrypi", "500", "1725321276"]
+2024-09-02 23:55:11,029 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:54:36", "raspberrypi", "500", "1725321276"]'}
+2024-09-02 23:55:11,029 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:54:46", "raspberrypi", "500", "1725321286"]
+2024-09-02 23:55:11,029 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:54:46", "raspberrypi", "500", "1725321286"]'}
+2024-09-02 23:55:11,030 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:54:56", "raspberrypi", "500", "1725321296"]
+2024-09-02 23:55:11,030 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:54:56", "raspberrypi", "500", "1725321296"]'}
+2024-09-02 23:55:11,030 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:55:06", "raspberrypi", "500", "1725321306"]
+2024-09-02 23:55:11,030 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:55:06", "raspberrypi", "500", "1725321306"]'}
+2024-09-02 23:55:11,773 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321196, distance=500
+2024-09-02 23:55:12,804 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321206, distance=500
+2024-09-02 23:55:13,826 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321216, distance=500
+2024-09-02 23:55:14,857 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321226, distance=500
+2024-09-02 23:55:15,887 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321236, distance=500
+2024-09-02 23:55:16,914 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321246, distance=500
+2024-09-02 23:55:17,952 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321256, distance=500
+2024-09-02 23:55:18,979 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321266, distance=500
+2024-09-02 23:55:20,009 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321276, distance=500
+2024-09-02 23:55:21,040 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321286, distance=500
+2024-09-02 23:55:22,070 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321296, distance=500
+2024-09-02 23:55:23,084 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321306, distance=500
+2024-09-02 23:57:11,115 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:55:16", "raspberrypi", "500", "1725321316"]
+2024-09-02 23:57:11,115 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:55:16", "raspberrypi", "500", "1725321316"]'}
+2024-09-02 23:57:11,135 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:55:27", "raspberrypi", "500", "1725321327"]
+2024-09-02 23:57:11,136 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:55:27", "raspberrypi", "500", "1725321327"]'}
+2024-09-02 23:57:11,136 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:55:37", "raspberrypi", "500", "1725321337"]
+2024-09-02 23:57:11,136 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:55:37", "raspberrypi", "500", "1725321337"]'}
+2024-09-02 23:57:11,136 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:55:47", "raspberrypi", "500", "1725321347"]
+2024-09-02 23:57:11,136 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:55:47", "raspberrypi", "500", "1725321347"]'}
+2024-09-02 23:57:11,137 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:55:57", "raspberrypi", "500", "1725321357"]
+2024-09-02 23:57:11,137 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:55:57", "raspberrypi", "500", "1725321357"]'}
+2024-09-02 23:57:11,137 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:56:07", "raspberrypi", "500", "1725321367"]
+2024-09-02 23:57:11,137 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:56:07", "raspberrypi", "500", "1725321367"]'}
+2024-09-02 23:57:11,137 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:56:17", "raspberrypi", "500", "1725321377"]
+2024-09-02 23:57:11,137 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:56:17", "raspberrypi", "500", "1725321377"]'}
+2024-09-02 23:57:11,140 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:56:27", "raspberrypi", "500", "1725321387"]
+2024-09-02 23:57:11,140 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:56:27", "raspberrypi", "500", "1725321387"]'}
+2024-09-02 23:57:11,140 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:56:37", "raspberrypi", "500", "1725321397"]
+2024-09-02 23:57:11,140 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:56:37", "raspberrypi", "500", "1725321397"]'}
+2024-09-02 23:57:11,140 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:56:47", "raspberrypi", "500", "1725321407"]
+2024-09-02 23:57:11,141 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:56:47", "raspberrypi", "500", "1725321407"]'}
+2024-09-02 23:57:11,141 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:56:57", "raspberrypi", "500", "1725321417"]
+2024-09-02 23:57:11,141 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:56:57", "raspberrypi", "500", "1725321417"]'}
+2024-09-02 23:57:11,141 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:57:07", "raspberrypi", "500", "1725321427"]
+2024-09-02 23:57:11,141 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:57:07", "raspberrypi", "500", "1725321427"]'}
+2024-09-02 23:57:11,166 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321316, distance=500
+2024-09-02 23:57:12,196 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321327, distance=500
+2024-09-02 23:57:13,227 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321337, distance=500
+2024-09-02 23:57:14,257 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321347, distance=500
+2024-09-02 23:57:15,279 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321357, distance=500
+2024-09-02 23:57:16,310 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321367, distance=500
+2024-09-02 23:57:17,340 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321377, distance=500
+2024-09-02 23:57:18,371 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321387, distance=500
+2024-09-02 23:57:19,401 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321397, distance=500
+2024-09-02 23:57:20,432 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321407, distance=500
+2024-09-02 23:57:21,463 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321417, distance=500
+2024-09-02 23:57:22,493 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321427, distance=500
+2024-09-02 23:59:11,215 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:57:17", "raspberrypi", "500", "1725321437"]
+2024-09-02 23:59:11,216 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:57:17", "raspberrypi", "500", "1725321437"]'}
+2024-09-02 23:59:11,240 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:57:28", "raspberrypi", "500", "1725321448"]
+2024-09-02 23:59:11,240 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:57:28", "raspberrypi", "500", "1725321448"]'}
+2024-09-02 23:59:11,243 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:57:38", "raspberrypi", "500", "1725321458"]
+2024-09-02 23:59:11,243 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:57:38", "raspberrypi", "500", "1725321458"]'}
+2024-09-02 23:59:11,244 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:57:48", "raspberrypi", "500", "1725321468"]
+2024-09-02 23:59:11,244 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:57:48", "raspberrypi", "500", "1725321468"]'}
+2024-09-02 23:59:11,244 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:57:58", "raspberrypi", "500", "1725321478"]
+2024-09-02 23:59:11,244 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:57:58", "raspberrypi", "500", "1725321478"]'}
+2024-09-02 23:59:11,244 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:58:08", "raspberrypi", "500", "1725321488"]
+2024-09-02 23:59:11,244 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:58:08", "raspberrypi", "500", "1725321488"]'}
+2024-09-02 23:59:11,244 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:58:18", "raspberrypi", "500", "1725321498"]
+2024-09-02 23:59:11,244 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:58:18", "raspberrypi", "500", "1725321498"]'}
+2024-09-02 23:59:11,244 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:58:28", "raspberrypi", "500", "1725321508"]
+2024-09-02 23:59:11,244 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:58:28", "raspberrypi", "500", "1725321508"]'}
+2024-09-02 23:59:11,245 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:58:38", "raspberrypi", "500", "1725321518"]
+2024-09-02 23:59:11,245 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:58:38", "raspberrypi", "500", "1725321518"]'}
+2024-09-02 23:59:11,245 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:58:48", "raspberrypi", "500", "1725321528"]
+2024-09-02 23:59:11,245 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:58:48", "raspberrypi", "500", "1725321528"]'}
+2024-09-02 23:59:11,245 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:58:58", "raspberrypi", "500", "1725321538"]
+2024-09-02 23:59:11,245 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:58:58", "raspberrypi", "500", "1725321538"]'}
+2024-09-02 23:59:11,245 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:59:08", "raspberrypi", "500", "1725321548"]
+2024-09-02 23:59:11,245 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:59:08", "raspberrypi", "500", "1725321548"]'}
+2024-09-02 23:59:11,555 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321437, distance=500
+2024-09-02 23:59:12,586 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321448, distance=500
+2024-09-02 23:59:13,616 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321458, distance=500
+2024-09-02 23:59:14,647 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321468, distance=500
+2024-09-02 23:59:15,653 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321478, distance=500
+2024-09-02 23:59:16,683 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321488, distance=500
+2024-09-02 23:59:17,714 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321498, distance=500
+2024-09-02 23:59:18,744 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321508, distance=500
+2024-09-02 23:59:19,775 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321518, distance=500
+2024-09-02 23:59:20,788 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321528, distance=500
+2024-09-02 23:59:21,819 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321538, distance=500
+2024-09-02 23:59:22,850 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321548, distance=500
+2024-09-03 00:01:11,328 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:59:18", "raspberrypi", "500", "1725321558"]
+2024-09-03 00:01:11,329 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:59:18", "raspberrypi", "500", "1725321558"]'}
+2024-09-03 00:01:11,337 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:59:28", "raspberrypi", "500", "1725321568"]
+2024-09-03 00:01:11,337 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:59:28", "raspberrypi", "500", "1725321568"]'}
+2024-09-03 00:01:11,338 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:59:39", "raspberrypi", "500", "1725321579"]
+2024-09-03 00:01:11,338 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:59:39", "raspberrypi", "500", "1725321579"]'}
+2024-09-03 00:01:11,338 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:59:49", "raspberrypi", "500", "1725321589"]
+2024-09-03 00:01:11,338 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:59:49", "raspberrypi", "500", "1725321589"]'}
+2024-09-03 00:01:11,338 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 20:59:59", "raspberrypi", "500", "1725321599"]
+2024-09-03 00:01:11,338 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 20:59:59", "raspberrypi", "500", "1725321599"]'}
+2024-09-03 00:01:11,344 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:00:09", "raspberrypi", "500", "1725321609"]
+2024-09-03 00:01:11,345 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:00:09", "raspberrypi", "500", "1725321609"]'}
+2024-09-03 00:01:11,345 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:00:19", "raspberrypi", "500", "1725321619"]
+2024-09-03 00:01:11,345 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:00:19", "raspberrypi", "500", "1725321619"]'}
+2024-09-03 00:01:11,345 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:00:29", "raspberrypi", "500", "1725321629"]
+2024-09-03 00:01:11,345 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:00:29", "raspberrypi", "500", "1725321629"]'}
+2024-09-03 00:01:11,345 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:00:39", "raspberrypi", "500", "1725321639"]
+2024-09-03 00:01:11,345 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:00:39", "raspberrypi", "500", "1725321639"]'}
+2024-09-03 00:01:11,346 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:00:49", "raspberrypi", "500", "1725321649"]
+2024-09-03 00:01:11,346 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:00:49", "raspberrypi", "500", "1725321649"]'}
+2024-09-03 00:01:11,346 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:00:59", "raspberrypi", "500", "1725321659"]
+2024-09-03 00:01:11,346 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:00:59", "raspberrypi", "500", "1725321659"]'}
+2024-09-03 00:01:11,347 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:01:09", "raspberrypi", "500", "1725321669"]
+2024-09-03 00:01:11,347 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:01:09", "raspberrypi", "500", "1725321669"]'}
+2024-09-03 00:01:11,912 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321558, distance=500
+2024-09-03 00:01:12,942 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321568, distance=500
+2024-09-03 00:01:13,973 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321579, distance=500
+2024-09-03 00:01:15,003 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321589, distance=500
+2024-09-03 00:01:16,042 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321599, distance=500
+2024-09-03 00:01:17,073 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321609, distance=500
+2024-09-03 00:01:18,103 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321619, distance=500
+2024-09-03 00:01:19,134 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321629, distance=500
+2024-09-03 00:01:20,164 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321639, distance=500
+2024-09-03 00:01:21,203 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321649, distance=500
+2024-09-03 00:01:22,234 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321659, distance=500
+2024-09-03 00:01:23,264 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321669, distance=500
+2024-09-03 00:03:11,384 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:01:19", "raspberrypi", "500", "1725321679"]
+2024-09-03 00:03:11,384 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:01:19", "raspberrypi", "500", "1725321679"]'}
+2024-09-03 00:03:11,403 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:01:29", "raspberrypi", "500", "1725321689"]
+2024-09-03 00:03:11,403 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:01:29", "raspberrypi", "500", "1725321689"]'}
+2024-09-03 00:03:11,403 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:01:39", "raspberrypi", "500", "1725321699"]
+2024-09-03 00:03:11,403 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:01:39", "raspberrypi", "500", "1725321699"]'}
+2024-09-03 00:03:11,403 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:01:50", "raspberrypi", "500", "1725321710"]
+2024-09-03 00:03:11,403 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:01:50", "raspberrypi", "500", "1725321710"]'}
+2024-09-03 00:03:11,408 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:02:00", "raspberrypi", "500", "1725321720"]
+2024-09-03 00:03:11,408 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:02:00", "raspberrypi", "500", "1725321720"]'}
+2024-09-03 00:03:11,409 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:02:10", "raspberrypi", "500", "1725321730"]
+2024-09-03 00:03:11,409 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:02:10", "raspberrypi", "500", "1725321730"]'}
+2024-09-03 00:03:11,409 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:02:20", "raspberrypi", "500", "1725321740"]
+2024-09-03 00:03:11,409 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:02:20", "raspberrypi", "500", "1725321740"]'}
+2024-09-03 00:03:11,409 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:02:30", "raspberrypi", "500", "1725321750"]
+2024-09-03 00:03:11,409 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:02:30", "raspberrypi", "500", "1725321750"]'}
+2024-09-03 00:03:11,410 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:02:40", "raspberrypi", "500", "1725321760"]
+2024-09-03 00:03:11,410 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:02:40", "raspberrypi", "500", "1725321760"]'}
+2024-09-03 00:03:11,410 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:02:50", "raspberrypi", "500", "1725321770"]
+2024-09-03 00:03:11,410 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:02:50", "raspberrypi", "500", "1725321770"]'}
+2024-09-03 00:03:11,410 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:03:00", "raspberrypi", "500", "1725321780"]
+2024-09-03 00:03:11,410 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:03:00", "raspberrypi", "500", "1725321780"]'}
+2024-09-03 00:03:11,410 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:03:10", "raspberrypi", "500", "1725321790"]
+2024-09-03 00:03:11,410 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:03:10", "raspberrypi", "500", "1725321790"]'}
+2024-09-03 00:03:12,326 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321679, distance=500
+2024-09-03 00:03:13,357 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321689, distance=500
+2024-09-03 00:03:14,387 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321699, distance=500
+2024-09-03 00:03:15,418 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321710, distance=500
+2024-09-03 00:03:16,448 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321720, distance=500
+2024-09-03 00:03:17,479 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321730, distance=500
+2024-09-03 00:03:18,509 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321740, distance=500
+2024-09-03 00:03:19,544 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321750, distance=500
+2024-09-03 00:03:20,570 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321760, distance=500
+2024-09-03 00:03:21,601 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321770, distance=500
+2024-09-03 00:03:22,631 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321780, distance=500
+2024-09-03 00:03:23,662 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321790, distance=500
+2024-09-03 00:05:11,517 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:03:20", "raspberrypi", "500", "1725321800"]
+2024-09-03 00:05:11,517 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:03:20", "raspberrypi", "500", "1725321800"]'}
+2024-09-03 00:05:11,528 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:03:31", "raspberrypi", "500", "1725321811"]
+2024-09-03 00:05:11,528 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:03:31", "raspberrypi", "500", "1725321811"]'}
+2024-09-03 00:05:11,528 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:03:41", "raspberrypi", "500", "1725321821"]
+2024-09-03 00:05:11,528 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:03:41", "raspberrypi", "500", "1725321821"]'}
+2024-09-03 00:05:11,528 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:03:51", "raspberrypi", "500", "1725321831"]
+2024-09-03 00:05:11,528 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:03:51", "raspberrypi", "500", "1725321831"]'}
+2024-09-03 00:05:11,529 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:04:01", "raspberrypi", "500", "1725321841"]
+2024-09-03 00:05:11,529 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:04:01", "raspberrypi", "500", "1725321841"]'}
+2024-09-03 00:05:11,529 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:04:11", "raspberrypi", "500", "1725321851"]
+2024-09-03 00:05:11,529 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:04:11", "raspberrypi", "500", "1725321851"]'}
+2024-09-03 00:05:11,529 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:04:21", "raspberrypi", "500", "1725321861"]
+2024-09-03 00:05:11,529 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:04:21", "raspberrypi", "500", "1725321861"]'}
+2024-09-03 00:05:11,530 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:04:31", "raspberrypi", "500", "1725321871"]
+2024-09-03 00:05:11,530 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:04:31", "raspberrypi", "500", "1725321871"]'}
+2024-09-03 00:05:11,530 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:04:41", "raspberrypi", "500", "1725321881"]
+2024-09-03 00:05:11,530 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:04:41", "raspberrypi", "500", "1725321881"]'}
+2024-09-03 00:05:11,530 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:04:51", "raspberrypi", "500", "1725321891"]
+2024-09-03 00:05:11,530 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:04:51", "raspberrypi", "500", "1725321891"]'}
+2024-09-03 00:05:11,530 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:05:01", "raspberrypi", "500", "1725321901"]
+2024-09-03 00:05:11,530 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:05:01", "raspberrypi", "500", "1725321901"]'}
+2024-09-03 00:05:11,727 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321800, distance=500
+2024-09-03 00:05:12,757 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321811, distance=500
+2024-09-03 00:05:13,788 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321821, distance=500
+2024-09-03 00:05:14,818 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321831, distance=500
+2024-09-03 00:05:15,849 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321841, distance=500
+2024-09-03 00:05:16,879 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321851, distance=500
+2024-09-03 00:05:17,910 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321861, distance=500
+2024-09-03 00:05:18,940 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321871, distance=500
+2024-09-03 00:05:19,971 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321881, distance=500
+2024-09-03 00:05:21,001 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321891, distance=500
+2024-09-03 00:05:22,032 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321901, distance=500
+2024-09-03 00:07:11,573 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:05:21", "raspberrypi", "500", "1725321921"]
+2024-09-03 00:07:11,573 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:05:21", "raspberrypi", "500", "1725321921"]'}
+2024-09-03 00:07:11,597 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:05:31", "raspberrypi", "500", "1725321931"]
+2024-09-03 00:07:11,597 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:05:31", "raspberrypi", "500", "1725321931"]'}
+2024-09-03 00:07:11,598 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:05:42", "raspberrypi", "500", "1725321942"]
+2024-09-03 00:07:11,598 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:05:42", "raspberrypi", "500", "1725321942"]'}
+2024-09-03 00:07:11,598 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:05:52", "raspberrypi", "500", "1725321952"]
+2024-09-03 00:07:11,598 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:05:52", "raspberrypi", "500", "1725321952"]'}
+2024-09-03 00:07:11,602 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:06:02", "raspberrypi", "500", "1725321962"]
+2024-09-03 00:07:11,602 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:06:02", "raspberrypi", "500", "1725321962"]'}
+2024-09-03 00:07:11,602 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:06:12", "raspberrypi", "500", "1725321972"]
+2024-09-03 00:07:11,602 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:06:12", "raspberrypi", "500", "1725321972"]'}
+2024-09-03 00:07:11,603 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:06:22", "raspberrypi", "500", "1725321982"]
+2024-09-03 00:07:11,603 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:06:22", "raspberrypi", "500", "1725321982"]'}
+2024-09-03 00:07:11,603 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:06:32", "raspberrypi", "500", "1725321992"]
+2024-09-03 00:07:11,603 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:06:32", "raspberrypi", "500", "1725321992"]'}
+2024-09-03 00:07:11,603 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:06:42", "raspberrypi", "500", "1725322002"]
+2024-09-03 00:07:11,603 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:06:42", "raspberrypi", "500", "1725322002"]'}
+2024-09-03 00:07:11,603 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:06:52", "raspberrypi", "500", "1725322012"]
+2024-09-03 00:07:11,604 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:06:52", "raspberrypi", "500", "1725322012"]'}
+2024-09-03 00:07:11,604 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:07:02", "raspberrypi", "500", "1725322022"]
+2024-09-03 00:07:11,604 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:07:02", "raspberrypi", "500", "1725322022"]'}
+2024-09-03 00:07:12,075 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321921, distance=500
+2024-09-03 00:07:13,105 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321931, distance=500
+2024-09-03 00:07:14,136 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321942, distance=500
+2024-09-03 00:07:15,142 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321952, distance=500
+2024-09-03 00:07:16,172 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321962, distance=500
+2024-09-03 00:07:17,203 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321972, distance=500
+2024-09-03 00:07:18,233 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321982, distance=500
+2024-09-03 00:07:19,264 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725321992, distance=500
+2024-09-03 00:07:20,278 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322002, distance=500
+2024-09-03 00:07:21,309 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322012, distance=500
+2024-09-03 00:07:22,323 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322022, distance=500
+2024-09-03 00:10:11,723 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:07:22", "raspberrypi", "500", "1725322042"]
+2024-09-03 00:10:11,724 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:07:22", "raspberrypi", "500", "1725322042"]'}
+2024-09-03 00:10:11,728 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:07:32", "raspberrypi", "500", "1725322052"]
+2024-09-03 00:10:11,728 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:07:32", "raspberrypi", "500", "1725322052"]'}
+2024-09-03 00:10:11,729 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:07:43", "raspberrypi", "500", "1725322063"]
+2024-09-03 00:10:11,729 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:07:43", "raspberrypi", "500", "1725322063"]'}
+2024-09-03 00:10:11,729 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:07:53", "raspberrypi", "500", "1725322073"]
+2024-09-03 00:10:11,729 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:07:53", "raspberrypi", "500", "1725322073"]'}
+2024-09-03 00:10:11,729 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:08:03", "raspberrypi", "500", "1725322083"]
+2024-09-03 00:10:11,729 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:08:03", "raspberrypi", "500", "1725322083"]'}
+2024-09-03 00:10:11,732 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:08:13", "raspberrypi", "500", "1725322093"]
+2024-09-03 00:10:11,732 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:08:13", "raspberrypi", "500", "1725322093"]'}
+2024-09-03 00:10:11,732 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:08:23", "raspberrypi", "500", "1725322103"]
+2024-09-03 00:10:11,732 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:08:23", "raspberrypi", "500", "1725322103"]'}
+2024-09-03 00:10:11,732 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:08:33", "raspberrypi", "500", "1725322113"]
+2024-09-03 00:10:11,732 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:08:33", "raspberrypi", "500", "1725322113"]'}
+2024-09-03 00:10:11,739 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:08:43", "raspberrypi", "500", "1725322123"]
+2024-09-03 00:10:11,740 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:08:43", "raspberrypi", "500", "1725322123"]'}
+2024-09-03 00:10:11,740 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:08:53", "raspberrypi", "500", "1725322133"]
+2024-09-03 00:10:11,740 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:08:53", "raspberrypi", "500", "1725322133"]'}
+2024-09-03 00:10:11,740 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:09:03", "raspberrypi", "500", "1725322143"]
+2024-09-03 00:10:11,740 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:09:03", "raspberrypi", "500", "1725322143"]'}
+2024-09-03 00:10:11,741 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:09:14", "raspberrypi", "500", "1725322154"]
+2024-09-03 00:10:11,741 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:09:14", "raspberrypi", "500", "1725322154"]'}
+2024-09-03 00:10:12,392 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322042, distance=500
+2024-09-03 00:10:13,422 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322052, distance=500
+2024-09-03 00:10:14,453 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322063, distance=500
+2024-09-03 00:10:15,500 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322073, distance=500
+2024-09-03 00:10:16,530 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322083, distance=500
+2024-09-03 00:10:17,561 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322093, distance=500
+2024-09-03 00:10:18,575 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322103, distance=500
+2024-09-03 00:10:19,605 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322113, distance=500
+2024-09-03 00:10:20,636 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322123, distance=500
+2024-09-03 00:10:21,666 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322133, distance=500
+2024-09-03 00:10:22,697 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322143, distance=500
+2024-09-03 00:10:23,727 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322154, distance=500
+2024-09-03 00:12:11,865 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:09:24", "raspberrypi", "500", "1725322164"]
+2024-09-03 00:12:11,865 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:09:24", "raspberrypi", "500", "1725322164"]'}
+2024-09-03 00:12:11,872 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:09:34", "raspberrypi", "500", "1725322174"]
+2024-09-03 00:12:11,872 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:09:34", "raspberrypi", "500", "1725322174"]'}
+2024-09-03 00:12:11,872 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:09:44", "raspberrypi", "500", "1725322184"]
+2024-09-03 00:12:11,872 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:09:44", "raspberrypi", "500", "1725322184"]'}
+2024-09-03 00:12:11,872 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:09:54", "raspberrypi", "500", "1725322194"]
+2024-09-03 00:12:11,873 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:09:54", "raspberrypi", "500", "1725322194"]'}
+2024-09-03 00:12:11,873 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:10:04", "raspberrypi", "500", "1725322204"]
+2024-09-03 00:12:11,873 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:10:04", "raspberrypi", "500", "1725322204"]'}
+2024-09-03 00:12:11,873 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:10:14", "raspberrypi", "500", "1725322214"]
+2024-09-03 00:12:11,873 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:10:14", "raspberrypi", "500", "1725322214"]'}
+2024-09-03 00:12:11,873 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:10:24", "raspberrypi", "500", "1725322224"]
+2024-09-03 00:12:11,873 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:10:24", "raspberrypi", "500", "1725322224"]'}
+2024-09-03 00:12:11,874 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:10:34", "raspberrypi", "500", "1725322234"]
+2024-09-03 00:12:11,874 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:10:34", "raspberrypi", "500", "1725322234"]'}
+2024-09-03 00:12:11,875 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:10:44", "raspberrypi", "500", "1725322244"]
+2024-09-03 00:12:11,875 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:10:44", "raspberrypi", "500", "1725322244"]'}
+2024-09-03 00:12:11,875 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:10:54", "raspberrypi", "500", "1725322254"]
+2024-09-03 00:12:11,875 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:10:54", "raspberrypi", "500", "1725322254"]'}
+2024-09-03 00:12:11,875 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:11:04", "raspberrypi", "500", "1725322264"]
+2024-09-03 00:12:11,875 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:11:04", "raspberrypi", "500", "1725322264"]'}
+2024-09-03 00:12:11,875 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:11:15", "raspberrypi", "500", "1725322275"]
+2024-09-03 00:12:11,876 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:11:15", "raspberrypi", "500", "1725322275"]'}
+2024-09-03 00:12:12,790 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322164, distance=500
+2024-09-03 00:12:13,820 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322174, distance=500
+2024-09-03 00:12:14,834 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322184, distance=500
+2024-09-03 00:12:15,865 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322194, distance=500
+2024-09-03 00:12:16,895 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322204, distance=500
+2024-09-03 00:12:17,926 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322214, distance=500
+2024-09-03 00:12:18,948 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322224, distance=500
+2024-09-03 00:12:19,979 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322234, distance=500
+2024-09-03 00:12:21,009 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322244, distance=500
+2024-09-03 00:12:22,040 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322254, distance=500
+2024-09-03 00:12:23,070 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322264, distance=500
+2024-09-03 00:12:24,101 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322275, distance=500
+2024-09-03 00:14:11,905 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:11:25", "raspberrypi", "500", "1725322285"]
+2024-09-03 00:14:11,905 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:11:25", "raspberrypi", "500", "1725322285"]'}
+2024-09-03 00:14:11,911 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:11:35", "raspberrypi", "500", "1725322295"]
+2024-09-03 00:14:11,911 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:11:35", "raspberrypi", "500", "1725322295"]'}
+2024-09-03 00:14:11,911 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:11:45", "raspberrypi", "500", "1725322305"]
+2024-09-03 00:14:11,912 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:11:45", "raspberrypi", "500", "1725322305"]'}
+2024-09-03 00:14:11,912 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:11:55", "raspberrypi", "500", "1725322315"]
+2024-09-03 00:14:11,912 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:11:55", "raspberrypi", "500", "1725322315"]'}
+2024-09-03 00:14:11,912 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:12:05", "raspberrypi", "500", "1725322325"]
+2024-09-03 00:14:11,913 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:12:05", "raspberrypi", "500", "1725322325"]'}
+2024-09-03 00:14:11,913 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:12:15", "raspberrypi", "500", "1725322335"]
+2024-09-03 00:14:11,913 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:12:15", "raspberrypi", "500", "1725322335"]'}
+2024-09-03 00:14:11,913 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:12:25", "raspberrypi", "500", "1725322345"]
+2024-09-03 00:14:11,913 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:12:25", "raspberrypi", "500", "1725322345"]'}
+2024-09-03 00:14:11,913 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:12:35", "raspberrypi", "500", "1725322355"]
+2024-09-03 00:14:11,913 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:12:35", "raspberrypi", "500", "1725322355"]'}
+2024-09-03 00:14:11,913 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:12:45", "raspberrypi", "500", "1725322365"]
+2024-09-03 00:14:11,914 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:12:45", "raspberrypi", "500", "1725322365"]'}
+2024-09-03 00:14:11,914 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:12:55", "raspberrypi", "500", "1725322375"]
+2024-09-03 00:14:11,914 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:12:55", "raspberrypi", "500", "1725322375"]'}
+2024-09-03 00:14:11,914 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:13:05", "raspberrypi", "500", "1725322385"]
+2024-09-03 00:14:11,915 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:13:05", "raspberrypi", "500", "1725322385"]'}
+2024-09-03 00:14:11,915 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:13:16", "raspberrypi", "500", "1725322396"]
+2024-09-03 00:14:11,915 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:13:16", "raspberrypi", "500", "1725322396"]'}
+2024-09-03 00:14:12,157 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322285, distance=500
+2024-09-03 00:14:13,187 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322295, distance=500
+2024-09-03 00:14:14,218 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322305, distance=500
+2024-09-03 00:14:15,248 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322315, distance=500
+2024-09-03 00:14:16,279 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322325, distance=500
+2024-09-03 00:14:17,310 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322335, distance=500
+2024-09-03 00:14:18,340 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322345, distance=500
+2024-09-03 00:14:19,371 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322355, distance=500
+2024-09-03 00:14:20,401 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322365, distance=500
+2024-09-03 00:14:21,432 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322375, distance=500
+2024-09-03 00:14:22,462 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322385, distance=500
+2024-09-03 00:14:23,493 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322396, distance=500
+2024-09-03 00:16:12,037 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:13:26", "raspberrypi", "500", "1725322406"]
+2024-09-03 00:16:12,037 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:13:26", "raspberrypi", "500", "1725322406"]'}
+2024-09-03 00:16:12,042 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:13:36", "raspberrypi", "500", "1725322416"]
+2024-09-03 00:16:12,043 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:13:36", "raspberrypi", "500", "1725322416"]'}
+2024-09-03 00:16:12,043 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:13:46", "raspberrypi", "500", "1725322426"]
+2024-09-03 00:16:12,043 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:13:46", "raspberrypi", "500", "1725322426"]'}
+2024-09-03 00:16:12,043 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:13:56", "raspberrypi", "500", "1725322436"]
+2024-09-03 00:16:12,043 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:13:56", "raspberrypi", "500", "1725322436"]'}
+2024-09-03 00:16:12,044 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:14:06", "raspberrypi", "500", "1725322446"]
+2024-09-03 00:16:12,044 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:14:06", "raspberrypi", "500", "1725322446"]'}
+2024-09-03 00:16:12,044 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:14:17", "raspberrypi", "500", "1725322457"]
+2024-09-03 00:16:12,044 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:14:17", "raspberrypi", "500", "1725322457"]'}
+2024-09-03 00:16:12,044 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:14:27", "raspberrypi", "500", "1725322467"]
+2024-09-03 00:16:12,044 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:14:27", "raspberrypi", "500", "1725322467"]'}
+2024-09-03 00:16:12,044 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:14:37", "raspberrypi", "500", "1725322477"]
+2024-09-03 00:16:12,045 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:14:37", "raspberrypi", "500", "1725322477"]'}
+2024-09-03 00:16:12,045 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:14:47", "raspberrypi", "500", "1725322487"]
+2024-09-03 00:16:12,045 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:14:47", "raspberrypi", "500", "1725322487"]'}
+2024-09-03 00:16:12,046 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:14:57", "raspberrypi", "500", "1725322497"]
+2024-09-03 00:16:12,046 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:14:57", "raspberrypi", "500", "1725322497"]'}
+2024-09-03 00:16:12,046 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:15:07", "raspberrypi", "500", "1725322507"]
+2024-09-03 00:16:12,046 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:15:07", "raspberrypi", "500", "1725322507"]'}
+2024-09-03 00:16:12,046 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:15:17", "raspberrypi", "500", "1725322517"]
+2024-09-03 00:16:12,047 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:15:17", "raspberrypi", "500", "1725322517"]'}
+2024-09-03 00:16:12,555 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322406, distance=500
+2024-09-03 00:16:13,618 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322416, distance=500
+2024-09-03 00:16:14,649 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322426, distance=500
+2024-09-03 00:16:15,671 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322436, distance=500
+2024-09-03 00:16:16,702 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322446, distance=500
+2024-09-03 00:16:17,732 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322457, distance=500
+2024-09-03 00:16:18,763 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322467, distance=500
+2024-09-03 00:16:19,793 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322477, distance=500
+2024-09-03 00:16:20,824 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322487, distance=500
+2024-09-03 00:16:21,854 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322497, distance=500
+2024-09-03 00:16:22,885 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322507, distance=500
+2024-09-03 00:16:23,915 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322517, distance=500
+2024-09-03 00:18:12,175 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:15:27", "raspberrypi", "500", "1725322527"]
+2024-09-03 00:18:12,175 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:15:27", "raspberrypi", "500", "1725322527"]'}
+2024-09-03 00:18:12,179 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:15:38", "raspberrypi", "500", "1725322538"]
+2024-09-03 00:18:12,179 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:15:38", "raspberrypi", "500", "1725322538"]'}
+2024-09-03 00:18:12,179 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:15:48", "raspberrypi", "500", "1725322548"]
+2024-09-03 00:18:12,179 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:15:48", "raspberrypi", "500", "1725322548"]'}
+2024-09-03 00:18:12,179 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:15:58", "raspberrypi", "500", "1725322558"]
+2024-09-03 00:18:12,180 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:15:58", "raspberrypi", "500", "1725322558"]'}
+2024-09-03 00:18:12,180 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:16:08", "raspberrypi", "500", "1725322568"]
+2024-09-03 00:18:12,180 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:16:08", "raspberrypi", "500", "1725322568"]'}
+2024-09-03 00:18:12,180 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:16:18", "raspberrypi", "500", "1725322578"]
+2024-09-03 00:18:12,180 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:16:18", "raspberrypi", "500", "1725322578"]'}
+2024-09-03 00:18:12,186 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:16:28", "raspberrypi", "500", "1725322588"]
+2024-09-03 00:18:12,186 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:16:28", "raspberrypi", "500", "1725322588"]'}
+2024-09-03 00:18:12,187 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:16:38", "raspberrypi", "500", "1725322598"]
+2024-09-03 00:18:12,187 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:16:38", "raspberrypi", "500", "1725322598"]'}
+2024-09-03 00:18:12,187 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:16:48", "raspberrypi", "500", "1725322608"]
+2024-09-03 00:18:12,187 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:16:48", "raspberrypi", "500", "1725322608"]'}
+2024-09-03 00:18:12,187 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:16:58", "raspberrypi", "500", "1725322618"]
+2024-09-03 00:18:12,187 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:16:58", "raspberrypi", "500", "1725322618"]'}
+2024-09-03 00:18:12,188 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:17:08", "raspberrypi", "500", "1725322628"]
+2024-09-03 00:18:12,188 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:17:08", "raspberrypi", "500", "1725322628"]'}
+2024-09-03 00:18:12,188 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:17:18", "raspberrypi", "500", "1725322638"]
+2024-09-03 00:18:12,188 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:17:18", "raspberrypi", "500", "1725322638"]'}
+2024-09-03 00:18:12,978 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322527, distance=500
+2024-09-03 00:18:14,008 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322538, distance=500
+2024-09-03 00:18:15,039 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322548, distance=500
+2024-09-03 00:18:16,069 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322558, distance=500
+2024-09-03 00:18:17,083 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322568, distance=500
+2024-09-03 00:18:18,114 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322578, distance=500
+2024-09-03 00:18:19,144 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322588, distance=500
+2024-09-03 00:18:20,150 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322598, distance=500
+2024-09-03 00:18:21,180 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322608, distance=500
+2024-09-03 00:18:22,195 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322618, distance=500
+2024-09-03 00:18:23,225 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322628, distance=500
+2024-09-03 00:18:24,256 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322638, distance=500
+2024-09-03 00:20:12,305 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:17:28", "raspberrypi", "500", "1725322648"]
+2024-09-03 00:20:12,306 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:17:28", "raspberrypi", "500", "1725322648"]'}
+2024-09-03 00:20:12,309 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:17:38", "raspberrypi", "500", "1725322658"]
+2024-09-03 00:20:12,309 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:17:38", "raspberrypi", "500", "1725322658"]'}
+2024-09-03 00:20:12,310 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:17:49", "raspberrypi", "500", "1725322669"]
+2024-09-03 00:20:12,310 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:17:49", "raspberrypi", "500", "1725322669"]'}
+2024-09-03 00:20:12,310 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:17:59", "raspberrypi", "500", "1725322679"]
+2024-09-03 00:20:12,310 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:17:59", "raspberrypi", "500", "1725322679"]'}
+2024-09-03 00:20:12,310 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:18:09", "raspberrypi", "500", "1725322689"]
+2024-09-03 00:20:12,311 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:18:09", "raspberrypi", "500", "1725322689"]'}
+2024-09-03 00:20:12,311 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:18:19", "raspberrypi", "500", "1725322699"]
+2024-09-03 00:20:12,311 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:18:19", "raspberrypi", "500", "1725322699"]'}
+2024-09-03 00:20:12,320 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:18:29", "raspberrypi", "500", "1725322709"]
+2024-09-03 00:20:12,320 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:18:29", "raspberrypi", "500", "1725322709"]'}
+2024-09-03 00:20:12,321 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:18:39", "raspberrypi", "500", "1725322719"]
+2024-09-03 00:20:12,321 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:18:39", "raspberrypi", "500", "1725322719"]'}
+2024-09-03 00:20:12,321 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:18:50", "raspberrypi", "500", "1725322730"]
+2024-09-03 00:20:12,321 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:18:50", "raspberrypi", "500", "1725322730"]'}
+2024-09-03 00:20:12,321 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:19:00", "raspberrypi", "500", "1725322740"]
+2024-09-03 00:20:12,321 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:19:00", "raspberrypi", "500", "1725322740"]'}
+2024-09-03 00:20:12,321 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:19:10", "raspberrypi", "500", "1725322750"]
+2024-09-03 00:20:12,322 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:19:10", "raspberrypi", "500", "1725322750"]'}
+2024-09-03 00:20:12,322 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:19:20", "raspberrypi", "500", "1725322760"]
+2024-09-03 00:20:12,322 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:19:20", "raspberrypi", "500", "1725322760"]'}
+2024-09-03 00:20:13,318 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322648, distance=500
+2024-09-03 00:20:14,332 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322658, distance=500
+2024-09-03 00:20:15,371 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322669, distance=500
+2024-09-03 00:20:16,401 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322679, distance=500
+2024-09-03 00:20:17,432 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322689, distance=500
+2024-09-03 00:20:18,462 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322699, distance=500
+2024-09-03 00:20:19,484 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322709, distance=500
+2024-09-03 00:20:20,490 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322719, distance=500
+2024-09-03 00:20:21,521 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322730, distance=500
+2024-09-03 00:20:22,551 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322740, distance=500
+2024-09-03 00:20:23,582 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322750, distance=500
+2024-09-03 00:20:24,612 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322760, distance=500
+2024-09-03 00:22:12,446 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:19:30", "raspberrypi", "500", "1725322770"]
+2024-09-03 00:22:12,446 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:19:30", "raspberrypi", "500", "1725322770"]'}
+2024-09-03 00:22:12,450 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:19:40", "raspberrypi", "500", "1725322780"]
+2024-09-03 00:22:12,450 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:19:40", "raspberrypi", "500", "1725322780"]'}
+2024-09-03 00:22:12,450 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:19:50", "raspberrypi", "500", "1725322790"]
+2024-09-03 00:22:12,450 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:19:50", "raspberrypi", "500", "1725322790"]'}
+2024-09-03 00:22:12,450 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:20:00", "raspberrypi", "500", "1725322800"]
+2024-09-03 00:22:12,451 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:20:00", "raspberrypi", "500", "1725322800"]'}
+2024-09-03 00:22:12,455 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:20:10", "raspberrypi", "500", "1725322810"]
+2024-09-03 00:22:12,455 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:20:10", "raspberrypi", "500", "1725322810"]'}
+2024-09-03 00:22:12,455 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:20:20", "raspberrypi", "500", "1725322820"]
+2024-09-03 00:22:12,455 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:20:20", "raspberrypi", "500", "1725322820"]'}
+2024-09-03 00:22:12,456 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:20:30", "raspberrypi", "500", "1725322830"]
+2024-09-03 00:22:12,456 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:20:30", "raspberrypi", "500", "1725322830"]'}
+2024-09-03 00:22:12,456 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:20:40", "raspberrypi", "500", "1725322840"]
+2024-09-03 00:22:12,456 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:20:40", "raspberrypi", "500", "1725322840"]'}
+2024-09-03 00:22:12,459 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:20:51", "raspberrypi", "500", "1725322851"]
+2024-09-03 00:22:12,460 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:20:51", "raspberrypi", "500", "1725322851"]'}
+2024-09-03 00:22:12,460 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:21:01", "raspberrypi", "500", "1725322861"]
+2024-09-03 00:22:12,460 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:21:01", "raspberrypi", "500", "1725322861"]'}
+2024-09-03 00:22:12,460 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:21:11", "raspberrypi", "500", "1725322871"]
+2024-09-03 00:22:12,461 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:21:11", "raspberrypi", "500", "1725322871"]'}
+2024-09-03 00:22:12,461 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:21:21", "raspberrypi", "500", "1725322881"]
+2024-09-03 00:22:12,461 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:21:21", "raspberrypi", "500", "1725322881"]'}
+2024-09-03 00:22:12,693 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322770, distance=500
+2024-09-03 00:22:13,724 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322780, distance=500
+2024-09-03 00:22:14,729 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322790, distance=500
+2024-09-03 00:22:15,760 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322800, distance=500
+2024-09-03 00:22:16,791 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322810, distance=500
+2024-09-03 00:22:17,818 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322820, distance=500
+2024-09-03 00:22:18,843 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322830, distance=500
+2024-09-03 00:22:19,849 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322840, distance=500
+2024-09-03 00:22:20,880 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322851, distance=500
+2024-09-03 00:22:21,910 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322861, distance=500
+2024-09-03 00:22:22,954 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322871, distance=500
+2024-09-03 00:22:23,983 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322881, distance=500
+2024-09-03 00:24:12,587 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:21:31", "raspberrypi", "500", "1725322891"]
+2024-09-03 00:24:12,587 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:21:31", "raspberrypi", "500", "1725322891"]'}
+2024-09-03 00:24:12,590 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:21:41", "raspberrypi", "500", "1725322901"]
+2024-09-03 00:24:12,591 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:21:41", "raspberrypi", "500", "1725322901"]'}
+2024-09-03 00:24:12,591 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:21:51", "raspberrypi", "500", "1725322911"]
+2024-09-03 00:24:12,591 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:21:51", "raspberrypi", "500", "1725322911"]'}
+2024-09-03 00:24:12,591 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:22:01", "raspberrypi", "500", "1725322921"]
+2024-09-03 00:24:12,591 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:22:01", "raspberrypi", "500", "1725322921"]'}
+2024-09-03 00:24:12,592 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:22:11", "raspberrypi", "500", "1725322931"]
+2024-09-03 00:24:12,592 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:22:11", "raspberrypi", "500", "1725322931"]'}
+2024-09-03 00:24:12,592 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:22:21", "raspberrypi", "500", "1725322941"]
+2024-09-03 00:24:12,592 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:22:21", "raspberrypi", "500", "1725322941"]'}
+2024-09-03 00:24:12,592 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:22:31", "raspberrypi", "500", "1725322951"]
+2024-09-03 00:24:12,592 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:22:31", "raspberrypi", "500", "1725322951"]'}
+2024-09-03 00:24:12,593 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:22:41", "raspberrypi", "500", "1725322961"]
+2024-09-03 00:24:12,593 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:22:41", "raspberrypi", "500", "1725322961"]'}
+2024-09-03 00:24:12,593 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:22:51", "raspberrypi", "500", "1725322971"]
+2024-09-03 00:24:12,593 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:22:51", "raspberrypi", "500", "1725322971"]'}
+2024-09-03 00:24:12,597 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:23:02", "raspberrypi", "500", "1725322982"]
+2024-09-03 00:24:12,597 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:23:02", "raspberrypi", "500", "1725322982"]'}
+2024-09-03 00:24:12,597 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:23:12", "raspberrypi", "500", "1725322992"]
+2024-09-03 00:24:12,598 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:23:12", "raspberrypi", "500", "1725322992"]'}
+2024-09-03 00:24:12,598 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:23:22", "raspberrypi", "500", "1725323002"]
+2024-09-03 00:24:12,598 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:23:22", "raspberrypi", "500", "1725323002"]'}
+2024-09-03 00:24:13,050 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322891, distance=500
+2024-09-03 00:24:14,105 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322901, distance=500
+2024-09-03 00:24:15,136 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322911, distance=500
+2024-09-03 00:24:16,166 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322921, distance=500
+2024-09-03 00:24:17,197 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322931, distance=500
+2024-09-03 00:24:18,227 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322941, distance=500
+2024-09-03 00:24:19,258 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322951, distance=500
+2024-09-03 00:24:20,289 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322961, distance=500
+2024-09-03 00:24:21,319 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322971, distance=500
+2024-09-03 00:24:22,350 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322982, distance=500
+2024-09-03 00:24:23,380 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725322992, distance=500
+2024-09-03 00:24:24,411 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323002, distance=500
+2024-09-03 00:26:12,654 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:23:32", "raspberrypi", "500", "1725323012"]
+2024-09-03 00:26:12,654 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:23:32", "raspberrypi", "500", "1725323012"]'}
+2024-09-03 00:26:12,658 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:23:42", "raspberrypi", "500", "1725323022"]
+2024-09-03 00:26:12,658 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:23:42", "raspberrypi", "500", "1725323022"]'}
+2024-09-03 00:26:12,659 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:23:52", "raspberrypi", "500", "1725323032"]
+2024-09-03 00:26:12,659 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:23:52", "raspberrypi", "500", "1725323032"]'}
+2024-09-03 00:26:12,659 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:24:02", "raspberrypi", "500", "1725323042"]
+2024-09-03 00:26:12,659 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:24:02", "raspberrypi", "500", "1725323042"]'}
+2024-09-03 00:26:12,659 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:24:12", "raspberrypi", "500", "1725323052"]
+2024-09-03 00:26:12,659 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:24:12", "raspberrypi", "500", "1725323052"]'}
+2024-09-03 00:26:12,659 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:24:22", "raspberrypi", "500", "1725323062"]
+2024-09-03 00:26:12,660 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:24:22", "raspberrypi", "500", "1725323062"]'}
+2024-09-03 00:26:12,660 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:24:32", "raspberrypi", "500", "1725323072"]
+2024-09-03 00:26:12,660 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:24:32", "raspberrypi", "500", "1725323072"]'}
+2024-09-03 00:26:12,660 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:24:42", "raspberrypi", "500", "1725323082"]
+2024-09-03 00:26:12,660 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:24:42", "raspberrypi", "500", "1725323082"]'}
+2024-09-03 00:26:12,660 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:24:52", "raspberrypi", "500", "1725323092"]
+2024-09-03 00:26:12,660 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:24:52", "raspberrypi", "500", "1725323092"]'}
+2024-09-03 00:26:12,660 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:25:03", "raspberrypi", "500", "1725323103"]
+2024-09-03 00:26:12,661 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:25:03", "raspberrypi", "500", "1725323103"]'}
+2024-09-03 00:26:12,661 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:25:13", "raspberrypi", "500", "1725323113"]
+2024-09-03 00:26:12,661 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:25:13", "raspberrypi", "500", "1725323113"]'}
+2024-09-03 00:26:12,663 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:25:23", "raspberrypi", "500", "1725323123"]
+2024-09-03 00:26:12,663 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:25:23", "raspberrypi", "500", "1725323123"]'}
+2024-09-03 00:26:13,472 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323012, distance=500
+2024-09-03 00:26:14,503 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323022, distance=500
+2024-09-03 00:26:15,542 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323032, distance=500
+2024-09-03 00:26:16,573 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323042, distance=500
+2024-09-03 00:26:17,603 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323052, distance=500
+2024-09-03 00:26:18,633 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323062, distance=500
+2024-09-03 00:26:19,664 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323072, distance=500
+2024-09-03 00:26:20,695 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323082, distance=500
+2024-09-03 00:26:21,725 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323092, distance=500
+2024-09-03 00:26:22,756 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323103, distance=500
+2024-09-03 00:26:23,819 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323113, distance=500
+2024-09-03 00:26:24,861 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323123, distance=500
+2024-09-03 00:28:12,735 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:25:33", "raspberrypi", "500", "1725323133"]
+2024-09-03 00:28:12,736 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:25:33", "raspberrypi", "500", "1725323133"]'}
+2024-09-03 00:28:12,742 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:25:43", "raspberrypi", "500", "1725323143"]
+2024-09-03 00:28:12,743 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:25:43", "raspberrypi", "500", "1725323143"]'}
+2024-09-03 00:28:12,743 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:25:53", "raspberrypi", "500", "1725323153"]
+2024-09-03 00:28:12,744 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:25:53", "raspberrypi", "500", "1725323153"]'}
+2024-09-03 00:28:12,744 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:26:03", "raspberrypi", "500", "1725323163"]
+2024-09-03 00:28:12,744 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:26:03", "raspberrypi", "500", "1725323163"]'}
+2024-09-03 00:28:12,744 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:26:13", "raspberrypi", "500", "1725323173"]
+2024-09-03 00:28:12,745 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:26:13", "raspberrypi", "500", "1725323173"]'}
+2024-09-03 00:28:12,745 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:26:23", "raspberrypi", "500", "1725323183"]
+2024-09-03 00:28:12,745 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:26:23", "raspberrypi", "500", "1725323183"]'}
+2024-09-03 00:28:12,745 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:26:33", "raspberrypi", "500", "1725323193"]
+2024-09-03 00:28:12,745 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:26:33", "raspberrypi", "500", "1725323193"]'}
+2024-09-03 00:28:12,745 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:26:43", "raspberrypi", "500", "1725323203"]
+2024-09-03 00:28:12,746 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:26:43", "raspberrypi", "500", "1725323203"]'}
+2024-09-03 00:28:12,746 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:26:53", "raspberrypi", "500", "1725323213"]
+2024-09-03 00:28:12,746 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:26:53", "raspberrypi", "500", "1725323213"]'}
+2024-09-03 00:28:12,746 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:27:03", "raspberrypi", "500", "1725323223"]
+2024-09-03 00:28:12,746 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:27:03", "raspberrypi", "500", "1725323223"]'}
+2024-09-03 00:28:12,747 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:27:14", "raspberrypi", "500", "1725323234"]
+2024-09-03 00:28:12,747 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:27:14", "raspberrypi", "500", "1725323234"]'}
+2024-09-03 00:28:12,747 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:27:24", "raspberrypi", "500", "1725323244"]
+2024-09-03 00:28:12,747 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:27:24", "raspberrypi", "500", "1725323244"]'}
+2024-09-03 00:28:12,922 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323133, distance=500
+2024-09-03 00:28:13,953 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323143, distance=500
+2024-09-03 00:28:14,984 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323153, distance=500
+2024-09-03 00:28:16,014 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323163, distance=500
+2024-09-03 00:28:17,044 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323173, distance=500
+2024-09-03 00:28:18,075 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323183, distance=500
+2024-09-03 00:28:19,106 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323193, distance=500
+2024-09-03 00:28:20,136 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323203, distance=500
+2024-09-03 00:28:21,167 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323213, distance=500
+2024-09-03 00:28:22,197 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323223, distance=500
+2024-09-03 00:28:23,228 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323234, distance=500
+2024-09-03 00:28:24,258 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323244, distance=500
+2024-09-03 00:30:12,817 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:27:34", "raspberrypi", "500", "1725323254"]
+2024-09-03 00:30:12,817 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:27:34", "raspberrypi", "500", "1725323254"]'}
+2024-09-03 00:30:12,820 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:27:44", "raspberrypi", "500", "1725323264"]
+2024-09-03 00:30:12,820 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:27:44", "raspberrypi", "500", "1725323264"]'}
+2024-09-03 00:30:12,821 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:27:54", "raspberrypi", "500", "1725323274"]
+2024-09-03 00:30:12,821 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:27:54", "raspberrypi", "500", "1725323274"]'}
+2024-09-03 00:30:12,822 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:28:04", "raspberrypi", "500", "1725323284"]
+2024-09-03 00:30:12,822 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:28:04", "raspberrypi", "500", "1725323284"]'}
+2024-09-03 00:30:12,822 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:28:14", "raspberrypi", "500", "1725323294"]
+2024-09-03 00:30:12,822 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:28:14", "raspberrypi", "500", "1725323294"]'}
+2024-09-03 00:30:12,822 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:28:24", "raspberrypi", "500", "1725323304"]
+2024-09-03 00:30:12,822 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:28:24", "raspberrypi", "500", "1725323304"]'}
+2024-09-03 00:30:12,822 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:28:34", "raspberrypi", "500", "1725323314"]
+2024-09-03 00:30:12,823 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:28:34", "raspberrypi", "500", "1725323314"]'}
+2024-09-03 00:30:12,824 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:28:44", "raspberrypi", "500", "1725323324"]
+2024-09-03 00:30:12,824 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:28:44", "raspberrypi", "500", "1725323324"]'}
+2024-09-03 00:30:12,824 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:28:54", "raspberrypi", "500", "1725323334"]
+2024-09-03 00:30:12,824 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:28:54", "raspberrypi", "500", "1725323334"]'}
+2024-09-03 00:30:12,824 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:29:04", "raspberrypi", "500", "1725323344"]
+2024-09-03 00:30:12,824 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:29:04", "raspberrypi", "500", "1725323344"]'}
+2024-09-03 00:30:12,828 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:29:14", "raspberrypi", "500", "1725323354"]
+2024-09-03 00:30:12,829 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:29:14", "raspberrypi", "500", "1725323354"]'}
+2024-09-03 00:30:12,829 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:29:25", "raspberrypi", "500", "1725323365"]
+2024-09-03 00:30:12,829 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:29:25", "raspberrypi", "500", "1725323365"]'}
+2024-09-03 00:30:13,321 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323254, distance=500
+2024-09-03 00:30:14,351 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323264, distance=500
+2024-09-03 00:30:15,381 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323274, distance=500
+2024-09-03 00:30:16,412 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323284, distance=500
+2024-09-03 00:30:17,443 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323294, distance=500
+2024-09-03 00:30:18,473 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323304, distance=500
+2024-09-03 00:30:19,504 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323314, distance=500
+2024-09-03 00:30:20,534 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323324, distance=500
+2024-09-03 00:30:21,565 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323334, distance=500
+2024-09-03 00:30:22,595 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323344, distance=500
+2024-09-03 00:30:23,626 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323354, distance=500
+2024-09-03 00:30:24,656 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323365, distance=500
+2024-09-03 00:32:12,921 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:29:35", "raspberrypi", "500", "1725323375"]
+2024-09-03 00:32:12,922 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:29:35", "raspberrypi", "500", "1725323375"]'}
+2024-09-03 00:32:12,929 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:29:45", "raspberrypi", "500", "1725323385"]
+2024-09-03 00:32:12,929 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:29:45", "raspberrypi", "500", "1725323385"]'}
+2024-09-03 00:32:12,929 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:29:55", "raspberrypi", "500", "1725323395"]
+2024-09-03 00:32:12,929 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:29:55", "raspberrypi", "500", "1725323395"]'}
+2024-09-03 00:32:12,930 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:30:05", "raspberrypi", "500", "1725323405"]
+2024-09-03 00:32:12,930 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:30:05", "raspberrypi", "500", "1725323405"]'}
+2024-09-03 00:32:12,930 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:30:15", "raspberrypi", "500", "1725323415"]
+2024-09-03 00:32:12,930 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:30:15", "raspberrypi", "500", "1725323415"]'}
+2024-09-03 00:32:12,931 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:30:25", "raspberrypi", "500", "1725323425"]
+2024-09-03 00:32:12,931 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:30:25", "raspberrypi", "500", "1725323425"]'}
+2024-09-03 00:32:12,931 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:30:35", "raspberrypi", "500", "1725323435"]
+2024-09-03 00:32:12,931 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:30:35", "raspberrypi", "500", "1725323435"]'}
+2024-09-03 00:32:12,931 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:30:45", "raspberrypi", "500", "1725323445"]
+2024-09-03 00:32:12,931 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:30:45", "raspberrypi", "500", "1725323445"]'}
+2024-09-03 00:32:12,932 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:30:55", "raspberrypi", "500", "1725323455"]
+2024-09-03 00:32:12,932 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:30:55", "raspberrypi", "500", "1725323455"]'}
+2024-09-03 00:32:12,932 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:31:05", "raspberrypi", "500", "1725323465"]
+2024-09-03 00:32:12,932 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:31:05", "raspberrypi", "500", "1725323465"]'}
+2024-09-03 00:32:12,932 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:31:15", "raspberrypi", "500", "1725323475"]
+2024-09-03 00:32:12,932 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:31:15", "raspberrypi", "500", "1725323475"]'}
+2024-09-03 00:32:12,932 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:31:26", "raspberrypi", "500", "1725323486"]
+2024-09-03 00:32:12,932 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:31:26", "raspberrypi", "500", "1725323486"]'}
+2024-09-03 00:32:13,718 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323375, distance=500
+2024-09-03 00:32:14,749 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323385, distance=500
+2024-09-03 00:32:15,788 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323395, distance=500
+2024-09-03 00:32:16,818 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323405, distance=500
+2024-09-03 00:32:17,874 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323415, distance=500
+2024-09-03 00:32:18,916 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323425, distance=500
+2024-09-03 00:32:19,926 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323435, distance=500
+2024-09-03 00:32:20,952 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323445, distance=500
+2024-09-03 00:32:21,971 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323455, distance=500
+2024-09-03 00:32:23,001 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323465, distance=500
+2024-09-03 00:32:24,032 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323475, distance=500
+2024-09-03 00:32:25,062 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323486, distance=500
+2024-09-03 00:34:12,996 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:31:36", "raspberrypi", "500", "1725323496"]
+2024-09-03 00:34:12,996 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:31:36", "raspberrypi", "500", "1725323496"]'}
+2024-09-03 00:34:13,005 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:31:46", "raspberrypi", "500", "1725323506"]
+2024-09-03 00:34:13,005 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:31:46", "raspberrypi", "500", "1725323506"]'}
+2024-09-03 00:34:13,005 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:31:56", "raspberrypi", "500", "1725323516"]
+2024-09-03 00:34:13,006 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:31:56", "raspberrypi", "500", "1725323516"]'}
+2024-09-03 00:34:13,006 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:32:06", "raspberrypi", "500", "1725323526"]
+2024-09-03 00:34:13,006 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:32:06", "raspberrypi", "500", "1725323526"]'}
+2024-09-03 00:34:13,006 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:32:16", "raspberrypi", "500", "1725323536"]
+2024-09-03 00:34:13,006 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:32:16", "raspberrypi", "500", "1725323536"]'}
+2024-09-03 00:34:13,012 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:32:26", "raspberrypi", "500", "1725323546"]
+2024-09-03 00:34:13,013 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:32:26", "raspberrypi", "500", "1725323546"]'}
+2024-09-03 00:34:13,013 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:32:36", "raspberrypi", "500", "1725323556"]
+2024-09-03 00:34:13,013 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:32:36", "raspberrypi", "500", "1725323556"]'}
+2024-09-03 00:34:13,013 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:32:46", "raspberrypi", "500", "1725323566"]
+2024-09-03 00:34:13,013 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:32:46", "raspberrypi", "500", "1725323566"]'}
+2024-09-03 00:34:13,014 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:32:56", "raspberrypi", "500", "1725323576"]
+2024-09-03 00:34:13,014 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:32:56", "raspberrypi", "500", "1725323576"]'}
+2024-09-03 00:34:13,014 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:33:06", "raspberrypi", "500", "1725323586"]
+2024-09-03 00:34:13,014 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:33:06", "raspberrypi", "500", "1725323586"]'}
+2024-09-03 00:34:13,014 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:33:16", "raspberrypi", "500", "1725323596"]
+2024-09-03 00:34:13,014 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:33:16", "raspberrypi", "500", "1725323596"]'}
+2024-09-03 00:34:13,014 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:33:26", "raspberrypi", "500", "1725323606"]
+2024-09-03 00:34:13,015 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:33:26", "raspberrypi", "500", "1725323606"]'}
+2024-09-03 00:34:13,119 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323496, distance=500
+2024-09-03 00:34:14,149 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323506, distance=500
+2024-09-03 00:34:15,180 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323516, distance=500
+2024-09-03 00:34:16,210 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323526, distance=500
+2024-09-03 00:34:17,241 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323536, distance=500
+2024-09-03 00:34:18,279 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323546, distance=500
+2024-09-03 00:34:19,310 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323556, distance=500
+2024-09-03 00:34:20,324 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323566, distance=500
+2024-09-03 00:34:21,355 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323576, distance=500
+2024-09-03 00:34:22,385 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323586, distance=500
+2024-09-03 00:34:23,416 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323596, distance=500
+2024-09-03 00:34:24,446 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323606, distance=500
+2024-09-03 00:36:13,138 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:33:37", "raspberrypi", "500", "1725323617"]
+2024-09-03 00:36:13,139 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:33:37", "raspberrypi", "500", "1725323617"]'}
+2024-09-03 00:36:13,143 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:33:47", "raspberrypi", "500", "1725323627"]
+2024-09-03 00:36:13,143 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:33:47", "raspberrypi", "500", "1725323627"]'}
+2024-09-03 00:36:13,143 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:33:57", "raspberrypi", "500", "1725323637"]
+2024-09-03 00:36:13,143 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:33:57", "raspberrypi", "500", "1725323637"]'}
+2024-09-03 00:36:13,144 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:34:07", "raspberrypi", "500", "1725323647"]
+2024-09-03 00:36:13,144 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:34:07", "raspberrypi", "500", "1725323647"]'}
+2024-09-03 00:36:13,144 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:34:17", "raspberrypi", "500", "1725323657"]
+2024-09-03 00:36:13,144 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:34:17", "raspberrypi", "500", "1725323657"]'}
+2024-09-03 00:36:13,144 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:34:27", "raspberrypi", "500", "1725323667"]
+2024-09-03 00:36:13,144 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:34:27", "raspberrypi", "500", "1725323667"]'}
+2024-09-03 00:36:13,146 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:34:37", "raspberrypi", "500", "1725323677"]
+2024-09-03 00:36:13,146 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:34:37", "raspberrypi", "500", "1725323677"]'}
+2024-09-03 00:36:13,147 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:34:47", "raspberrypi", "500", "1725323687"]
+2024-09-03 00:36:13,147 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:34:47", "raspberrypi", "500", "1725323687"]'}
+2024-09-03 00:36:13,149 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:34:57", "raspberrypi", "500", "1725323697"]
+2024-09-03 00:36:13,149 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:34:57", "raspberrypi", "500", "1725323697"]'}
+2024-09-03 00:36:13,161 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:35:07", "raspberrypi", "500", "1725323707"]
+2024-09-03 00:36:13,162 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:35:07", "raspberrypi", "500", "1725323707"]'}
+2024-09-03 00:36:13,167 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:35:17", "raspberrypi", "500", "1725323717"]
+2024-09-03 00:36:13,167 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:35:17", "raspberrypi", "500", "1725323717"]'}
+2024-09-03 00:36:13,167 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:35:27", "raspberrypi", "500", "1725323727"]
+2024-09-03 00:36:13,168 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:35:27", "raspberrypi", "500", "1725323727"]'}
+2024-09-03 00:36:13,508 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323617, distance=500
+2024-09-03 00:36:14,539 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323627, distance=500
+2024-09-03 00:36:15,553 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323637, distance=500
+2024-09-03 00:36:16,583 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323647, distance=500
+2024-09-03 00:36:17,614 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323657, distance=500
+2024-09-03 00:36:18,645 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323667, distance=500
+2024-09-03 00:36:19,675 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323677, distance=500
+2024-09-03 00:36:20,697 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323687, distance=500
+2024-09-03 00:36:21,728 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323697, distance=500
+2024-09-03 00:36:22,758 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323707, distance=500
+2024-09-03 00:36:23,789 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323717, distance=500
+2024-09-03 00:36:24,819 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323727, distance=500
+2024-09-03 00:38:13,278 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:35:38", "raspberrypi", "500", "1725323738"]
+2024-09-03 00:38:13,279 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:35:38", "raspberrypi", "500", "1725323738"]'}
+2024-09-03 00:38:13,287 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:35:48", "raspberrypi", "500", "1725323748"]
+2024-09-03 00:38:13,287 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:35:48", "raspberrypi", "500", "1725323748"]'}
+2024-09-03 00:38:13,288 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:35:58", "raspberrypi", "500", "1725323758"]
+2024-09-03 00:38:13,288 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:35:58", "raspberrypi", "500", "1725323758"]'}
+2024-09-03 00:38:13,288 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:36:08", "raspberrypi", "500", "1725323768"]
+2024-09-03 00:38:13,289 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:36:08", "raspberrypi", "500", "1725323768"]'}
+2024-09-03 00:38:13,289 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:36:18", "raspberrypi", "500", "1725323778"]
+2024-09-03 00:38:13,289 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:36:18", "raspberrypi", "500", "1725323778"]'}
+2024-09-03 00:38:13,289 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:36:28", "raspberrypi", "500", "1725323788"]
+2024-09-03 00:38:13,289 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:36:28", "raspberrypi", "500", "1725323788"]'}
+2024-09-03 00:38:13,289 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:36:38", "raspberrypi", "500", "1725323798"]
+2024-09-03 00:38:13,289 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:36:38", "raspberrypi", "500", "1725323798"]'}
+2024-09-03 00:38:13,289 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:36:48", "raspberrypi", "500", "1725323808"]
+2024-09-03 00:38:13,290 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:36:48", "raspberrypi", "500", "1725323808"]'}
+2024-09-03 00:38:13,290 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:36:58", "raspberrypi", "500", "1725323818"]
+2024-09-03 00:38:13,290 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:36:58", "raspberrypi", "500", "1725323818"]'}
+2024-09-03 00:38:13,290 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:37:09", "raspberrypi", "500", "1725323829"]
+2024-09-03 00:38:13,290 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:37:09", "raspberrypi", "500", "1725323829"]'}
+2024-09-03 00:38:13,290 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:37:19", "raspberrypi", "500", "1725323839"]
+2024-09-03 00:38:13,290 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:37:19", "raspberrypi", "500", "1725323839"]'}
+2024-09-03 00:38:13,290 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:37:29", "raspberrypi", "500", "1725323849"]
+2024-09-03 00:38:13,290 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:37:29", "raspberrypi", "500", "1725323849"]'}
+2024-09-03 00:38:13,881 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323738, distance=500
+2024-09-03 00:38:14,912 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323748, distance=500
+2024-09-03 00:38:15,943 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323758, distance=500
+2024-09-03 00:38:16,973 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323768, distance=500
+2024-09-03 00:38:18,004 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323778, distance=500
+2024-09-03 00:38:19,034 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323788, distance=500
+2024-09-03 00:38:20,065 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323798, distance=500
+2024-09-03 00:38:21,095 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323808, distance=500
+2024-09-03 00:38:22,126 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323818, distance=500
+2024-09-03 00:38:23,156 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323829, distance=500
+2024-09-03 00:38:24,187 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323839, distance=500
+2024-09-03 00:38:25,217 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323849, distance=500
+2024-09-03 00:40:13,348 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:37:39", "raspberrypi", "500", "1725323859"]
+2024-09-03 00:40:13,348 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:37:39", "raspberrypi", "500", "1725323859"]'}
+2024-09-03 00:40:13,352 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:37:49", "raspberrypi", "500", "1725323869"]
+2024-09-03 00:40:13,352 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:37:49", "raspberrypi", "500", "1725323869"]'}
+2024-09-03 00:40:13,352 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:37:59", "raspberrypi", "500", "1725323879"]
+2024-09-03 00:40:13,352 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:37:59", "raspberrypi", "500", "1725323879"]'}
+2024-09-03 00:40:13,353 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:38:09", "raspberrypi", "500", "1725323889"]
+2024-09-03 00:40:13,353 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:38:09", "raspberrypi", "500", "1725323889"]'}
+2024-09-03 00:40:13,353 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:38:20", "raspberrypi", "500", "1725323900"]
+2024-09-03 00:40:13,353 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:38:20", "raspberrypi", "500", "1725323900"]'}
+2024-09-03 00:40:13,353 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:38:30", "raspberrypi", "500", "1725323910"]
+2024-09-03 00:40:13,354 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:38:30", "raspberrypi", "500", "1725323910"]'}
+2024-09-03 00:40:13,354 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:38:40", "raspberrypi", "500", "1725323920"]
+2024-09-03 00:40:13,354 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:38:40", "raspberrypi", "500", "1725323920"]'}
+2024-09-03 00:40:13,354 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:38:50", "raspberrypi", "500", "1725323930"]
+2024-09-03 00:40:13,354 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:38:50", "raspberrypi", "500", "1725323930"]'}
+2024-09-03 00:40:13,354 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:39:00", "raspberrypi", "500", "1725323940"]
+2024-09-03 00:40:13,355 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:39:00", "raspberrypi", "500", "1725323940"]'}
+2024-09-03 00:40:13,355 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:39:10", "raspberrypi", "500", "1725323950"]
+2024-09-03 00:40:13,355 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:39:10", "raspberrypi", "500", "1725323950"]'}
+2024-09-03 00:40:13,355 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:39:20", "raspberrypi", "500", "1725323960"]
+2024-09-03 00:40:13,355 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:39:20", "raspberrypi", "500", "1725323960"]'}
+2024-09-03 00:40:13,355 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:39:30", "raspberrypi", "500", "1725323970"]
+2024-09-03 00:40:13,355 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:39:30", "raspberrypi", "500", "1725323970"]'}
+2024-09-03 00:40:14,279 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323859, distance=500
+2024-09-03 00:40:15,301 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323869, distance=500
+2024-09-03 00:40:16,323 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323879, distance=500
+2024-09-03 00:40:17,354 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323889, distance=500
+2024-09-03 00:40:18,385 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323900, distance=500
+2024-09-03 00:40:19,415 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323910, distance=500
+2024-09-03 00:40:20,446 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323920, distance=500
+2024-09-03 00:40:21,476 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323930, distance=500
+2024-09-03 00:40:22,507 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323940, distance=500
+2024-09-03 00:40:23,537 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323950, distance=500
+2024-09-03 00:40:24,568 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323960, distance=500
+2024-09-03 00:40:25,598 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323970, distance=500
+2024-09-03 00:42:13,471 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:39:40", "raspberrypi", "500", "1725323980"]
+2024-09-03 00:42:13,471 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:39:40", "raspberrypi", "500", "1725323980"]'}
+2024-09-03 00:42:13,476 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:39:50", "raspberrypi", "500", "1725323990"]
+2024-09-03 00:42:13,476 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:39:50", "raspberrypi", "500", "1725323990"]'}
+2024-09-03 00:42:13,477 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:40:00", "raspberrypi", "500", "1725324000"]
+2024-09-03 00:42:13,477 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:40:00", "raspberrypi", "500", "1725324000"]'}
+2024-09-03 00:42:13,477 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:40:10", "raspberrypi", "500", "1725324010"]
+2024-09-03 00:42:13,477 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:40:10", "raspberrypi", "500", "1725324010"]'}
+2024-09-03 00:42:13,477 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:40:21", "raspberrypi", "500", "1725324021"]
+2024-09-03 00:42:13,477 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:40:21", "raspberrypi", "500", "1725324021"]'}
+2024-09-03 00:42:13,491 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:40:31", "raspberrypi", "500", "1725324031"]
+2024-09-03 00:42:13,492 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:40:31", "raspberrypi", "500", "1725324031"]'}
+2024-09-03 00:42:13,495 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:40:41", "raspberrypi", "500", "1725324041"]
+2024-09-03 00:42:13,496 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:40:41", "raspberrypi", "500", "1725324041"]'}
+2024-09-03 00:42:13,496 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:40:51", "raspberrypi", "500", "1725324051"]
+2024-09-03 00:42:13,496 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:40:51", "raspberrypi", "500", "1725324051"]'}
+2024-09-03 00:42:13,496 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:41:01", "raspberrypi", "500", "1725324061"]
+2024-09-03 00:42:13,496 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:41:01", "raspberrypi", "500", "1725324061"]'}
+2024-09-03 00:42:13,496 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:41:11", "raspberrypi", "500", "1725324071"]
+2024-09-03 00:42:13,497 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:41:11", "raspberrypi", "500", "1725324071"]'}
+2024-09-03 00:42:13,497 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:41:21", "raspberrypi", "500", "1725324081"]
+2024-09-03 00:42:13,497 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:41:21", "raspberrypi", "500", "1725324081"]'}
+2024-09-03 00:42:13,497 - MQTTHandlerSubscriber - INFO - Received message on topic paho/test/topic: ["2024-09-02 21:41:31", "raspberrypi", "500", "1725324091"]
+2024-09-03 00:42:13,497 - MQTTHandlerSubscriber - DEBUG - Message added to queue: {'topic': 'paho/test/topic', 'message': '["2024-09-02 21:41:31", "raspberrypi", "500", "1725324091"]'}
+2024-09-03 00:42:13,663 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323980, distance=500
+2024-09-03 00:42:14,693 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725323990, distance=500
+2024-09-03 00:42:15,724 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725324000, distance=500
+2024-09-03 00:42:16,754 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725324010, distance=500
+2024-09-03 00:42:17,785 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725324021, distance=500
+2024-09-03 00:42:18,818 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725324031, distance=500
+2024-09-03 00:42:19,846 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725324041, distance=500
+2024-09-03 00:42:20,876 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725324051, distance=500
+2024-09-03 00:42:21,907 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725324061, distance=500
+2024-09-03 00:42:22,937 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725324071, distance=500
+2024-09-03 00:42:23,968 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725324081, distance=500
+2024-09-03 00:42:24,982 - DatabaseHandler - INFO - Data inserted successfully: epoch=1725324091, distance=500
