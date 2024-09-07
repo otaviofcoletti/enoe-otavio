@@ -39,7 +39,7 @@ csv_file_creation_seconds = csv_file_creation_minutes * 60
 def is_ready_for_processing(filename, interval_seconds):
     try:
         timestamp_str = filename.split("readings_")[1].replace(".csv", "")
-        file_time = datetime.datetime.strptime(timestamp_str, "%Y-%m-%d_%H-%M-%S")
+        file_time = datetime.datetime.strptime(timestamp_str, '%d-%m-%Y_%H:%M:%S')
         current_time = datetime.datetime.now()
         elapsed_time = (current_time - file_time).total_seconds()
         return elapsed_time >= interval_seconds

@@ -64,7 +64,7 @@ def main():
         try:
             # Nome do arquivo CSV baseado na data e hora atual
             timestamp = datetime.datetime.now()
-            date_str = timestamp.strftime('%Y-%m-%d_%H-%M-%S')
+            date_str = timestamp.strftime('%d-%m-%Y_%H:%M:%S')
             filename = os.path.join("data", f"readings_{date_str}.csv")
             
             with open(filename, mode='a', newline='') as file:
@@ -80,7 +80,7 @@ def main():
                     
                     if distance is not None:
                         message = [
-                            datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S'),
+                            datetime.datetime.fromtimestamp(time.time()).strftime('%d-%m-%Y_%H:%M:%S'),
                             socket.gethostname(),
                             distance,
                             int(time.time())
