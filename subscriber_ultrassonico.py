@@ -34,7 +34,7 @@ def on_connect(client, userdata, flags, reason_code, properties):
         # our subscribed is persisted across reconnections.
         client.subscribe("paho/test/topic")
 
-mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+mqttc = mqtt.Client()
 mqttc.on_connect = on_connect
 mqttc.on_message = on_message
 mqttc.on_subscribe = on_subscribe

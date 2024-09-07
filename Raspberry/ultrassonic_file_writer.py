@@ -7,6 +7,11 @@ import json
 import os
 import logging
 
+# Criar a pasta "data" se não existir
+if not os.path.exists("logs"):
+    os.makedirs("logs")
+    print("logs directory created.")
+
 # Configuração do logging
 logging.basicConfig(
     filename="./logs/writer.log",  # Nome do arquivo de log
