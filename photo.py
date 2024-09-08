@@ -9,7 +9,7 @@ password = 'admin'
 ip_camera = '10.1.1.11'
 
 # Diretório para salvar as imagens
-save_directory = "captured_images"
+save_directory = "data/images"
 if not os.path.exists(save_directory):
     os.makedirs(save_directory)
 
