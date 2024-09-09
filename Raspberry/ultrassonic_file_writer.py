@@ -6,6 +6,8 @@ import socket
 import json
 import os
 import logging
+import UltrassonicClass
+
 
 # Criar a pasta "data" se não existir
 if not os.path.exists("logs"):
@@ -14,8 +16,8 @@ if not os.path.exists("logs"):
 
 # Configuração do logging
 logging.basicConfig(
-    filename="./logs/writer.log",  # Nome do arquivo de log
-    level=logging.ERROR,     # Nível de logging para registrar erros
+    filename="./logs/writer_csv.log",  # Nome do arquivo de log
+    level=logging.DEBUG,     # Nível de logging para registrar erros
     format="%(asctime)s - %(levelname)s - %(message)s",  # Formato do log
     filemode='a'  # Modo append para evitar sobrescrita
 )
@@ -29,31 +31,16 @@ except (FileNotFoundError, json.JSONDecodeError) as e:
     exit(1)
 
 config_csv_interval = config["CSV_INTERVALS"]
+
 # Frequência de geração de arquivos em minutos (pode ser alterado conforme necessário)
 csv_file_creation_minutes = config_csv_interval["file_creation_minutes"]
 csv_file_creation_seconds = csv_file_creation_minutes * 60
-
 csv_data_interval_seconds = config_csv_interval["data_interval_seconds"]
 
-def set_serial():
-    try:
-        ser = serial.Serial('/dev/ttyAMA0', 9600)
-        logging.info("Serial port opened successfully.")
-        return ser
-    except serial.SerialException as e:
-        logging.error(f"Error opening serial port: {e}")
-        exit(1)
-
-def get_line(ser):
-    try:
-        line = ser.read(6).decode().strip().replace("R", "")
-        return int(line)
-    except Exception as e:
-        logging.error(f"Error reading from serial port: {e}")
-        return None
-
 def main():
-    ser = set_serial()
+
+    ultrassonic_sensor = UltrassonicClass.UltrassonicClass(serialportname = '/dev/ttyS0', baudrate = 9600)
+    ultrassonic_sensor.set_serial()
     
     # Criar a pasta "data" se não existir
     if not os.path.exists("data"):
@@ -75,8 +62,9 @@ def main():
                 end_time = time.time() + csv_file_creation_seconds
                 while time.time() < end_time:
                     time.sleep(csv_data_interval_seconds)
-                    ser.reset_input_buffer()
-                    distance = get_line(ser)
+                    
+
+                    distance = ultrassonic_sensor.get_line()
                     
                     if distance is not None:
                         message = [
@@ -95,8 +83,6 @@ def main():
                         logging.warning("Skipping write due to error reading distance.")
         except OSError as e:
             logging.error(f"File error: {e}")
-        except serial.SerialException as e:
-            logging.error(f"Serial communication error: {e}")
         except Exception as e:
             logging.error(f"Unexpected error: {e}")
 
