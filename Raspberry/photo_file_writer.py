@@ -13,7 +13,7 @@ if not os.path.exists("logs"):
 # Configuração do logging
 logging.basicConfig(
     filename="./logs/photo.log",  # Nome do arquivo de log
-    level=logging.ERROR,  # Nível de logging para registrar erros
+    level=logging.INFO,  # Nível de logging para registrar erros
     format="%(asctime)s - %(levelname)s - %(message)s",  # Formato do log
     filemode='a'  # Modo append para evitar sobrescrita
 )
@@ -35,7 +35,7 @@ config_capture_interval = config["CAPTURE_INTERVALS"]
 capture_interval_seconds = config_capture_interval["capture_interval_seconds"]
 
 # Diretório para salvar as imagens
-save_directory = "captured_images"
+save_directory = "data_image"
 if not os.path.exists(save_directory):
     os.makedirs(save_directory)
     logging.info("Captured images directory created.")
@@ -44,6 +44,7 @@ def capture_picture():
     try:
         # Conectar à câmera IP usando o protocolo RTSP
         stream = cv2.VideoCapture(f'rtsp://{username}:{password}@{ip_camera}')
+
         ret, frame = stream.read()
 
         if not ret:
@@ -54,8 +55,12 @@ def capture_picture():
         filename = f"{datetime.now().strftime('%d-%m-%Y_%H:%M:%S')}.jpg"
         file_path = os.path.join(save_directory, filename)
 
-        # Salvando a imagem com qualidade JPEG padrão
-        cv2.imwrite(file_path, frame)
+        # The image is saved as a JPEG with a specified quality level of 60.
+
+        height, width, layers = frame.shape
+        frame = cv2.resize(frame, (width // 2, height // 2))
+        jpeg_quality = 60
+        cv2.imwrite(file_path, frame, [int(cv2.IMWRITE_JPEG_QUALITY), jpeg_quality])
 
         stream.release()
         cv2.destroyAllWindows()

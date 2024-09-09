@@ -16,8 +16,8 @@ if not os.path.exists("logs"):
 
 # Configuração do logging
 logging.basicConfig(
-    filename="./logs/writer_csv.log",  # Nome do arquivo de log
-    level=logging.DEBUG,     # Nível de logging para registrar erros
+    filename="./logs/writer.log",  # Nome do arquivo de log
+    level=logging.INFO,     # Nível de logging para registrar erros
     format="%(asctime)s - %(levelname)s - %(message)s",  # Formato do log
     filemode='a'  # Modo append para evitar sobrescrita
 )
@@ -43,16 +43,17 @@ def main():
     ultrassonic_sensor.set_serial()
     
     # Criar a pasta "data" se não existir
-    if not os.path.exists("data"):
-        os.makedirs("data")
-        logging.info("Data directory created.")
+    save_directory = "data_ultrassonic"
+    if not os.path.exists(save_directory):
+        os.makedirs(save_directory)
+        logging.info(f"{save_directory} created.")
     
     while True:
         try:
             # Nome do arquivo CSV baseado na data e hora atual
             timestamp = datetime.datetime.now()
             date_str = timestamp.strftime('%d-%m-%Y_%H:%M:%S')
-            filename = os.path.join("data", f"readings_{date_str}.csv")
+            filename = os.path.join(save_directory, f"readings_{date_str}.csv")
             
             with open(filename, mode='a', newline='') as file:
                 writer = csv.writer(file)

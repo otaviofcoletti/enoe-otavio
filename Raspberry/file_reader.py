@@ -5,7 +5,6 @@ import glob
 import datetime
 import logging
 import sys
-
 import MQTTHandlerPublisher as mqtt
 
 # Configuração de logging
@@ -36,6 +35,7 @@ config_csv_interval = config["CSV_INTERVALS"]
 csv_file_creation_minutes = config_csv_interval["file_creation_minutes"]
 csv_file_creation_seconds = csv_file_creation_minutes * 60
 
+# Função genérica para verificar se arquivo está pronto para ser processado
 def is_ready_for_processing(filename, interval_seconds):
     try:
         timestamp_str = filename.split("readings_")[1].replace(".csv", "")
@@ -47,7 +47,17 @@ def is_ready_for_processing(filename, interval_seconds):
         logging.error(f"Error extracting timestamp from filename {filename}: {e}")
         return False
 
-def publish_file(filename, mqttc):
+# Verificar se a imagem está pronta para ser processada
+def is_image_ready_for_processing(filename):
+    # Por simplicidade, não verifica intervalo, apenas se o arquivo existe e não está vazio
+    try:
+        return os.path.getsize(filename) > 0
+    except OSError as e:
+        logging.error(f"Error checking image {filename}: {e}")
+        return False
+
+# Função genérica para enviar arquivo (CSV ou imagem)
+def publish_data(filename, mqttc, topic):
     if os.path.getsize(filename) == 0:
         logging.info(f"File {filename} is empty, skipping...")
         try:
@@ -57,24 +67,36 @@ def publish_file(filename, mqttc):
             logging.error(f"Error deleting empty file {filename}: {e}")
         return
 
+    fail_on_publish = False
     try:
-        with open(filename, mode='r') as file:
-            lines = file.readlines()
-            if len(lines) <= 1:
-                logging.info(f"File {filename} has no data (just header), skipping and deleting...")
-                os.remove(filename)
-                return
-            
-            for line in lines[1:]:  # Skip header
+        if filename.endswith(".csv"):
+            with open(filename, mode='r') as file:
+                lines = file.readlines()
+                if len(lines) <= 1:
+                    logging.info(f"File {filename} has no data (just header), skipping and deleting...")
+                    os.remove(filename)
+                    return
+                
+                for line in lines[1:]:  # Skip header
+                    try:
+                        json_data = json.dumps(line.strip().split(','))
+                        mqttc.client.publish(topic, json_data, qos=1)
+                    except Exception as e:
+                        fail_on_publish = True
+                        logging.error(f"Error publishing message ultrassonic: {e}")
+        
+        elif filename.endswith(".jpg") or filename.endswith(".png"):
+            with open(filename, 'rb') as image_file:
+                image_data = image_file.read()
                 try:
-                    json_data = json.dumps(line.strip().split(','))
-                    mqttc.client.publish("paho/test/topic", json_data, qos=1)
+                    mqttc.client.publish(topic, image_data, qos=1)
                 except Exception as e:
-                    logging.error(f"Error publishing message: {e}")
-                    
+                    fail_on_publish = True
+                    logging.error(f"Error publishing message image: {e}")
         # Apagar o arquivo após envio
         try:
-            os.remove(filename)
+            if(not fail_on_publish):
+                os.remove(filename)
         except OSError as e:
             logging.error(f"Error deleting file {filename}: {e}")
     except OSError as e:
@@ -92,20 +114,26 @@ def main():
     while True:
         # Encontrar arquivos CSV para processar
         try:
-            for filename in glob.glob("data/readings_*.csv"):
+            for filename in glob.glob("data_ultrassonic/readings_*.csv"):
                 if is_ready_for_processing(filename, csv_file_creation_seconds):
                     logging.info(f"Publishing {filename}")
-                    publish_file(filename, mqttc)
+                    publish_data(filename, mqttc, "ultrassonic")
                 else:
                     logging.info(f"File {filename} is not ready for processing yet.")
         except Exception as e:
             logging.error(f"Error processing files: {e}")
 
-        # Verificar se envia imagem:
-        
-        
-        #
-        
+        # Encontrar imagens para processar
+        try:
+            for filename in glob.glob("data_image/*.jpg"):
+                if is_image_ready_for_processing(filename):
+                    logging.info(f"Publishing image {filename}")
+                    publish_data(filename, mqttc, "image")
+                else:
+                    logging.info(f"Image {filename} is not ready for processing yet.")
+        except Exception as e:
+            logging.error(f"Error processing images: {e}")
+
         time.sleep(60)  # Esperar antes de verificar novos arquivos
 
 if __name__ == "__main__":
