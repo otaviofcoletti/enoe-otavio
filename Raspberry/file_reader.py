@@ -117,7 +117,9 @@ def main():
             for filename in glob.glob("data_ultrassonic/readings_*.csv"):
                 if is_ready_for_processing(filename, csv_file_creation_seconds):
                     logging.info(f"Publishing {filename}")
+                    print("AQUI")
                     publish_data(filename, mqttc, "ultrassonic")
+                    print("AQUI PASSOU")
                 else:
                     logging.info(f"File {filename} is not ready for processing yet.")
         except Exception as e:
@@ -127,8 +129,10 @@ def main():
         try:
             for filename in glob.glob("data_image/*.jpg"):
                 if is_image_ready_for_processing(filename):
+                    print("AQUI2")
                     logging.info(f"Publishing image {filename}")
                     publish_data(filename, mqttc, "image")
+                    print("PASSOU2")
                 else:
                     logging.info(f"Image {filename} is not ready for processing yet.")
         except Exception as e:
