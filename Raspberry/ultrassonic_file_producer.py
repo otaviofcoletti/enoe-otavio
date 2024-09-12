@@ -14,20 +14,18 @@ if not os.path.exists("logs"):
     os.makedirs("logs")
     print("logs directory created.")
 
-# Configuração do logging
-logging.basicConfig(
-    filename="./logs/writer.log",  # Nome do arquivo de log
-    level=logging.INFO,     # Nível de logging para registrar erros
-    format="%(asctime)s - %(levelname)s - %(message)s",  # Formato do log
-    filemode='a'  # Modo append para evitar sobrescrita
-)
+logger = logging.getLogger('ultrassonic_file_producer')
+logger.setLevel(logging.INFO)
 
+handler = logging.FileHandler('./logs/ultrassonic_file_producer.log')
+handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+logger.addHandler(handler)
 # Carregar as configurações do arquivo config.json
 try:
     with open("config.json") as f:
         config = json.load(f)
 except (FileNotFoundError, json.JSONDecodeError) as e:
-    logging.error(f"Error loading config file: {e}")
+    logger.error(f"Error loading config file: {e}")
     exit(1)
 
 config_csv_interval = config["CSV_INTERVALS"]
@@ -46,7 +44,7 @@ def main():
     save_directory = "data_ultrassonic"
     if not os.path.exists(save_directory):
         os.makedirs(save_directory)
-        logging.info(f"{save_directory} created.")
+        logger.info(f"{save_directory} created.")
     
     while True:
         try:
@@ -58,7 +56,7 @@ def main():
             with open(filename, mode='a', newline='') as file:
                 writer = csv.writer(file)
                 writer.writerow(["timestamp", "hostname", "distance", "epoch"])  # Header
-                logging.info(f"Started writing to file {filename}.")
+                logger.info(f"Started writing to file {filename}.")
                 
                 end_time = time.time() + csv_file_creation_seconds
                 while time.time() < end_time:
@@ -79,18 +77,18 @@ def main():
                         # Forçar a gravação no disco após cada linha
                         file.flush()
                         os.fsync(file.fileno())
-                        logging.info(f"Written data: {message}")
+                        logger.info(f"Written data: {message}")
                     else:
-                        logging.warning("Skipping write due to error reading distance.")
+                        logger.warning("Skipping write due to error reading distance.")
         except OSError as e:
-            logging.error(f"File error: {e}")
+            logger.error(f"File error: {e}")
         except Exception as e:
-            logging.error(f"Unexpected error: {e}")
+            logger.error(f"Unexpected error: {e}")
 
 if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        logging.info("Program interrupted by user.")
+        logger.info("Program interrupted by user.")
     except Exception as e:
-        logging.error(f"An unexpected error occurred: {e}")
+        logger.error(f"An unexpected error occurred: {e}")

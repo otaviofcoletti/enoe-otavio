@@ -9,12 +9,12 @@ import logging
 
 
 # Configuração do logger para o DatabaseHandler
-main_logger = logging.getLogger('main')
-main_logger.setLevel(logging.INFO)
+logger = logging.getLogger('main')
+logger.setLevel(logging.INFO)
 
-main_handler = logging.FileHandler('./logs/main.log')
-main_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-main_logger.addHandler(main_handler)
+handler = logging.FileHandler('./logs/main.log')
+handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+logger.addHandler(handler)
 
 def load_config():
     with open("config.json") as f:
@@ -63,9 +63,9 @@ def main():
                 message_data = mqtt_handler.queue.get()
                 topic = message_data['topic']
                 message = message_data['message']
-                main_logger.debug(f"Processing message from topic {topic}")
+                logger.debug(f"Processing message from topic {topic}")
             except Exception as e:
-                main_logger.error(f"Error processing message: {e}")
+                logger.error(f"Error processing message: {e}")
 
             if topic == 'ultrassonic':
                 # Assuming the message is a JSON with fields 'epoch' and 'distance'
@@ -75,7 +75,7 @@ def main():
 
                     db_handler.insert_data('ultrassonic',epoch, distance)
                 except Exception as e:
-                    main_logger.error(f"Error inserting message: {e}")
+                    logger.error(f"Error inserting message: {e}")
 
             elif topic == 'images':
                 # Assuming the message is a JSON with fields 'filename' and 'image_data'
@@ -102,12 +102,12 @@ def main():
                             file.flush()
                             os.fsync(file.fileno())  # Garante que o sistema operacional grave os dados no disco
                     except Exception as e:
-                        main_logger.error(f"Error saving image: {e}")
+                        logger.error(f"Error saving image: {e}")
 
                     db_handler.insert_data('images',filename, day_path)
 
                 except Exception as e:
-                    main_logger.error(f"Error inserting message: {e}")
+                    logger.error(f"Error inserting message: {e}")
         
         time.sleep(1)
 
