@@ -6,12 +6,12 @@ import logging
 
 
 # Configuração do logger para o DatabaseHandler
-logger = logging.getLogger('DatabaseHandler')
-logger.setLevel(logging.INFO)
+db_logger = logging.getLogger('DatabaseHandler')
+db_logger.setLevel(logging.INFO)
 
-handler = logging.FileHandler('./logs/DatabaseHandler.log')
-handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-logger.addHandler(handler)
+db_handler = logging.FileHandler('./logs/DatabaseHandler.log')
+db_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+db_logger.addHandler(db_handler)
 
 class DatabaseHandler:
     def __init__(self, db_config):
@@ -25,13 +25,13 @@ class DatabaseHandler:
             try:
                 self.conn = psycopg2.connect(**self.db_config)
                 self.cursor = self.conn.cursor()
-                logger.info("Connected to the database successfully.")
+                db_logger.info("Connected to the database successfully.")
                 return True
             except psycopg2.OperationalError as e:
-                logger.error(f"Failed to connect to the database (attempt {attempt + 1}/{max_retries}): {e}")
+                db_logger.error(f"Failed to connect to the database (attempt {attempt + 1}/{max_retries}): {e}")
                 attempt += 1
                 time.sleep(retry_delay)
-        logger.critical("Failed to connect to the database after multiple attempts.")
+        db_logger.critical("Failed to connect to the database after multiple attempts.")
         return False
 
     def insert_data(self, table, key, data=None):
@@ -42,22 +42,22 @@ class DatabaseHandler:
                     (key, data)
                 )
                 self.conn.commit()
-                logger.info(f"Data inserted successfully: epoch={key}, distance_cm={data}")
+                db_logger.info(f"Data inserted successfully: epoch={key}, distance_cm={data}")
             elif table == 'images':
                 self.cursor.execute(
                     f"INSERT INTO {table} (epoch, image_path) VALUES (%s, %s)",
                     (key, data)
                 )
                 self.conn.commit()
-                logger.info(f"Image inserted successfully: epoch={key}, image_path={data}")
+                db_logger.info(f"Image inserted successfully: epoch={key}, image_path={data}")
         except Exception as e:
-            logger.error(f"Error inserting data into database: {e}")
+            db_logger.error(f"Error inserting data into database: {e}")
             self.conn.rollback()
 
     def close(self):
         if self.cursor:
             self.cursor.close()
-            logger.info("Database cursor closed.")
+            db_logger.info("Database cursor closed.")
         if self.conn:
             self.conn.close()
-            logger.info("Database connection closed.")
+            db_logger.info("Database connection closed.")
