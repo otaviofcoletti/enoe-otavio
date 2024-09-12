@@ -1,5 +1,5 @@
-mosquitto_pub -h 192.168.1.10 -p 1883 -t "test/topic" -m "Hello from another machine!"
-mosquitto_sub -h 192.168.1.10 -p 1883 -t "test/topic"
+mosquitto_pub -h 100.111.36.103 -p 1883 -t "test/topic" -m "Hello from another machine!"
+mosquitto_sub -h 100.111.36.103 -p 1883 -t "test/topic"
 
 sudo systemctl start mosquitto
 sudo systemctl stop mosquitto
