@@ -7,6 +7,7 @@ import logging
 import sys
 import psutil
 import MQTTHandlerPublisher as mqtt
+import base64
 
 # Configuração de logging
 logging.basicConfig(
@@ -102,8 +103,16 @@ def publish_data(filename, mqttc, topic):
         elif filename.endswith(".jpg") or filename.endswith(".png"):
             with open(filename, 'rb') as image_file:
                 image_data = image_file.read()
+                # Converta os dados da imagem para base64 para enviá-los via JSON
+                encoded_image = base64.b64encode(image_data).decode('utf-8')
+                message = {
+                    "filename": os.path.basename(filename),
+                    "encoded_image": encoded_image
+                }
+                json_message = json.dumps(message)
+                
                 try:
-                    result = mqttc.client.publish(topic, image_data, qos=1)
+                    result = mqttc.client.publish(topic, json_message, qos=1)
                     result.wait_for_publish()
                     logging.info(f"Publishing {filename}")
                 except Exception as e:
@@ -118,6 +127,7 @@ def publish_data(filename, mqttc, topic):
             logging.error(f"Error deleting file {filename}: {e}")
     except OSError as e:
         logging.error(f"Error opening file {filename}: {e}")
+
 
 def main():
     mqttc = mqtt.MQTTHandlerPublisher(broker_address=broker_endpoint, port=port, username=username, password=password)
