@@ -12,7 +12,7 @@ if not os.path.exists("logs"):
 
 # Configuração do logging
 logging.basicConfig(
-    filename="./logs/photo.log",  # Nome do arquivo de log
+    filename="./logs/image_file_producer.log",  # Nome do arquivo de log
     level=logging.INFO,  # Nível de logging para registrar erros
     format="%(asctime)s - %(levelname)s - %(message)s",  # Formato do log
     filemode='a'  # Modo append para evitar sobrescrita
@@ -35,7 +35,7 @@ config_capture_interval = config["CAPTURE_INTERVALS"]
 capture_interval_seconds = config_capture_interval["capture_interval_seconds"]
 
 # Diretório para salvar as imagens
-save_directory = "data_image"
+save_directory = "data_images"
 if not os.path.exists(save_directory):
     os.makedirs(save_directory)
     logging.info("Captured images directory created.")

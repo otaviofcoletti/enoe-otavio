@@ -2,6 +2,14 @@ import paho.mqtt.client as mqtt
 import json
 import sys
 import time
+import logging
+# Configuração do logging no modo append
+logging.basicConfig(
+    filename='./logs/MQTTHandlerPublisher.log',  # Nome do arquivo de log
+    level=logging.INFO,  # Nível de logging
+    format='%(asctime)s - %(levelname)s - %(message)s',  # Formato do log
+    filemode='a'  # Modo append (anexar ao arquivo existente)
+)
 
 class MQTTHandlerPublisher:
     def __init__(self, broker_address, port, username=None, password=None, MAX_RETRIES=5, RETRY_WAIT_TIME=10):

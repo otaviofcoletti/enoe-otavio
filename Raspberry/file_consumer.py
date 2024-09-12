@@ -11,7 +11,7 @@ import base64
 
 # Configuração de logging
 logging.basicConfig(
-    filename='./logs/reader.log',  # Nome do arquivo de log
+    filename='./logs/consumer.log',  # Nome do arquivo de log
     filemode='a',  # Modo append
     level=logging.INFO,  # Nível de logging
     format='%(asctime)s - %(levelname)s - %(message)s'  # Formato das mensagens de log
@@ -156,7 +156,7 @@ def main():
         try:
             for filename in glob.glob("data_image/*.jpg"):
                 if is_image_ready_for_processing(filename):
-                    publish_data(filename, mqttc, "image")
+                    publish_data(filename, mqttc, "images")
                 else:
                     logging.info(f"Image {filename} is not ready for processing yet.")
         except Exception as e:

@@ -3,7 +3,7 @@ import serial
 
 # Configuração do logging no modo append
 logging.basicConfig(
-    filename='./logs/ultrassonic_class.log',  # Nome do arquivo de log
+    filename='./logs/ultrassonic.log',  # Nome do arquivo de log
     level=logging.INFO,  # Nível de logging
     format='%(asctime)s - %(levelname)s - %(message)s',  # Formato do log
     filemode='a'  # Modo append (anexar ao arquivo existente)
