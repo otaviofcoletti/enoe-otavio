@@ -172,7 +172,7 @@ def main():
         # Atualizar contadores
         start_sent, start_recv = end_sent, end_recv
 
-        time.sleep(60)  # Esperar antes de verificar novos arquivos
+        time.sleep(10)  # Esperar antes de verificar novos arquivos
 
 if __name__ == "__main__":
     try:

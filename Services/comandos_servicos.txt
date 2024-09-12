@@ -1,11 +1,18 @@
 sudo systemctl daemon-reload
 
-sudo systemctl enable ultrassonic_file_reader.service
+sudo systemctl enable ultrassonic_file_consumer.service
 sudo systemctl enable ultrassonic_file_writer.service
+sudo systemctl enable file_consumer.service
+sudo systemctl enable photo_file_writer.service
+
 
 
 sudo systemctl start ultrassonic_file_writer.service
-sudo systemctl start ultrassonic_file_reader.service
+sudo systemctl start ultrassonic_file_consumer.service
+sudo systemctl start file_consumer.service
+
 
 sudo cp ultrassonic_file_writer.service /etc/systemd/system/
-sudo cp ultrassonic_file_reader.service /etc/systemd/system/
+sudo cp ultrassonic_file_consumer.service /etc/systemd/system/
+sudo cp file_consumer.service /etc/systemd/system/
+
