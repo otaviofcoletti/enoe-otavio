@@ -9,7 +9,7 @@ import logging
 db_logger = logging.getLogger('DatabaseHandler')
 db_logger.setLevel(logging.INFO)
 
-db_handler = logging.FileHandler('./logs/database.log')
+db_handler = logging.FileHandler('./logs/DatabaseHandler.log')
 db_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
 db_logger.addHandler(db_handler)
 
