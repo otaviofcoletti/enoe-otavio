@@ -154,7 +154,7 @@ def main():
 
         # Encontrar imagens para processar
         try:
-            for filename in glob.glob("data_image/*.jpg"):
+            for filename in glob.glob("data_images/*.jpg"):
                 if is_image_ready_for_processing(filename):
                     publish_data(filename, mqttc, "images")
                 else:

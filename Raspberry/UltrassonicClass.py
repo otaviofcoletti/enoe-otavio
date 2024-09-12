@@ -28,7 +28,7 @@ class UltrassonicClass:
         try:
             self.ser.reset_input_buffer()
             line = self.ser.read(6).decode().strip().replace("R", "")
-            print(line)
+            #print(line)
             return int(line)
         except Exception as e:
             logging.error(f"Error reading from serial port: {e}")
