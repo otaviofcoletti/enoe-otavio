@@ -9,13 +9,13 @@ import psutil
 import MQTTHandlerPublisher as mqtt
 import base64
 
-# Configuração de logging
-logging.basicConfig(
-    filename='./logs/consumer.log',  # Nome do arquivo de log
-    filemode='a',  # Modo append
-    level=logging.INFO,  # Nível de logging
-    format='%(asctime)s - %(levelname)s - %(message)s'  # Formato das mensagens de log
-)
+# Configuração do logger para o DatabaseHandler
+logger = logging.getLogger('file_consumer')
+logger.setLevel(logging.INFO)
+
+handler = logging.FileHandler('./logs/file_consumer.log')
+handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+logger.addHandler(handler)
 
 # Função para obter o uso de dados de I/O
 def get_data_usage():
@@ -33,7 +33,7 @@ try:
     with open("config.json") as f:
         config = json.load(f)
 except (FileNotFoundError, json.JSONDecodeError) as e:
-    logging.error(f"Error loading config file: {e}")
+    logger.error(f"Error loading config file: {e}")
     sys.exit(1)
 
 mqtt_config = config["MQTT"]
@@ -57,7 +57,7 @@ def is_ready_for_processing(filename, interval_seconds):
         elapsed_time = (current_time - file_time).total_seconds()
         return elapsed_time >= interval_seconds
     except (IndexError, ValueError) as e:
-        logging.error(f"Error extracting timestamp from filename {filename}: {e}")
+        logger.error(f"Error extracting timestamp from filename {filename}: {e}")
         return False
 
 # Verificar se a imagem está pronta para ser processada
@@ -66,18 +66,18 @@ def is_image_ready_for_processing(filename):
     try:
         return os.path.getsize(filename) > 0
     except OSError as e:
-        logging.error(f"Error checking image {filename}: {e}")
+        logger.error(f"Error checking image {filename}: {e}")
         return False
 
 # Função genérica para enviar arquivo (CSV ou imagem)
 def publish_data(filename, mqttc, topic):
     if os.path.getsize(filename) == 0:
-        logging.info(f"File {filename} is empty, skipping...")
+        logger.info(f"File {filename} is empty, skipping...")
         try:
             os.remove(filename)
-            logging.info(f"Empty file {filename} deleted.")
+            logger.info(f"Empty file {filename} deleted.")
         except OSError as e:
-            logging.error(f"Error deleting empty file {filename}: {e}")
+            logger.error(f"Error deleting empty file {filename}: {e}")
         return
 
     fail_on_publish = False
@@ -86,7 +86,7 @@ def publish_data(filename, mqttc, topic):
             with open(filename, mode='r') as file:
                 lines = file.readlines()
                 if len(lines) <= 1:
-                    logging.info(f"File {filename} has no data (just header), skipping and deleting...")
+                    logger.info(f"File {filename} has no data (just header), skipping and deleting...")
                     os.remove(filename)
                     return
                 
@@ -95,10 +95,10 @@ def publish_data(filename, mqttc, topic):
                         json_data = json.dumps(line.strip().split(','))
                         result = mqttc.client.publish(topic, json_data, qos=1)
                         result.wait_for_publish()
-                        logging.info(f"Publishing {filename} {line}")
+                        logger.info(f"Publishing {filename} {line}")
                     except Exception as e:
                         fail_on_publish = True
-                        logging.error(f"Error publishing message ultrasonic: {e}")
+                        logger.error(f"Error publishing message ultrasonic: {e}")
         
         elif filename.endswith(".jpg") or filename.endswith(".png"):
             with open(filename, 'rb') as image_file:
@@ -114,19 +114,19 @@ def publish_data(filename, mqttc, topic):
                 try:
                     result = mqttc.client.publish(topic, json_message, qos=1)
                     result.wait_for_publish()
-                    logging.info(f"Publishing {filename}")
+                    logger.info(f"Publishing {filename}")
                 except Exception as e:
                     fail_on_publish = True
-                    logging.error(f"Error publishing message image: {e}")
+                    logger.error(f"Error publishing message image: {e}")
         
         # Apagar o arquivo após envio
         try:
             if not fail_on_publish:
                 os.remove(filename)
         except OSError as e:
-            logging.error(f"Error deleting file {filename}: {e}")
+            logger.error(f"Error deleting file {filename}: {e}")
     except OSError as e:
-        logging.error(f"Error opening file {filename}: {e}")
+        logger.error(f"Error opening file {filename}: {e}")
 
 
 def main():
@@ -135,7 +135,7 @@ def main():
     mqttc.connect()
     # Esperar pela conexão
     while not mqttc.client.connected_flag:
-        logging.info("Waiting for connection...")
+        logger.info("Waiting for connection...")
         time.sleep(1)
 
     # Obter contadores iniciais de I/O
@@ -148,9 +148,9 @@ def main():
                 if is_ready_for_processing(filename, csv_file_creation_seconds):
                     publish_data(filename, mqttc, "ultrassonic")
                 else:
-                    logging.info(f"File {filename} is not ready for processing yet.")
+                    logger.info(f"File {filename} is not ready for processing yet.")
         except Exception as e:
-            logging.error(f"Error processing files: {e}")
+            logger.error(f"Error processing files: {e}")
 
         # Encontrar imagens para processar
         try:
@@ -158,16 +158,16 @@ def main():
                 if is_image_ready_for_processing(filename):
                     publish_data(filename, mqttc, "images")
                 else:
-                    logging.info(f"Image {filename} is not ready for processing yet.")
+                    logger.info(f"Image {filename} is not ready for processing yet.")
         except Exception as e:
-            logging.error(f"Error processing images: {e}")
+            logger.error(f"Error processing images: {e}")
 
         # Calcular e registrar o consumo de dados
         end_sent, end_recv = get_data_usage()
         sent, recv = calculate_data_usage(start_sent, start_recv, end_sent, end_recv)
-        logging.info(f"Data sent: {sent / 1024:.2f} KB")
-        logging.info(f"Data received: {recv / 1024:.2f} KB")
-        logging.info(f"Total data usage: {(sent + recv) / 1024:.2f} KB")
+        logger.info(f"Data sent: {sent / 1024:.2f} KB")
+        logger.info(f"Data received: {recv / 1024:.2f} KB")
+        logger.info(f"Total data usage: {(sent + recv) / 1024:.2f} KB")
 
         # Atualizar contadores
         start_sent, start_recv = end_sent, end_recv
@@ -178,7 +178,7 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        logging.info("Program interrupted by user.")
+        logger.info("Program interrupted by user.")
     except Exception as e:
-        logging.error(f"An unexpected error occurred: {e}")
+        logger.error(f"An unexpected error occurred: {e}")
         sys.exit(1)

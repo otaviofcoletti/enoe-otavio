@@ -5,25 +5,24 @@ import json
 import logging
 from datetime import datetime
 
-# Criar a pasta "logs" se não existir
 if not os.path.exists("logs"):
     os.makedirs("logs")
     print("logs directory created.")
 
-# Configuração do logging
-logging.basicConfig(
-    filename="./logs/image_file_producer.log",  # Nome do arquivo de log
-    level=logging.INFO,  # Nível de logging para registrar erros
-    format="%(asctime)s - %(levelname)s - %(message)s",  # Formato do log
-    filemode='a'  # Modo append para evitar sobrescrita
-)
+
+logger = logging.getLogger('image_file_producer')
+logger.setLevel(logging.INFO)
+
+handler = logging.FileHandler('./logs/image_file_producer.log')
+handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+logger.addHandler(handler)
 
 # Carregar as configurações do arquivo config.json
 try:
     with open("config.json") as f:
         config = json.load(f)
 except (FileNotFoundError, json.JSONDecodeError) as e:
-    logging.error(f"Error loading config file: {e}")
+    logger.error(f"Error loading config file: {e}")
     exit(1)
 
 config_camera = config["CAMERA_SETTINGS"]
@@ -38,7 +37,7 @@ capture_interval_seconds = config_capture_interval["capture_interval_seconds"]
 save_directory = "data_images"
 if not os.path.exists(save_directory):
     os.makedirs(save_directory)
-    logging.info("Captured images directory created.")
+    logger.info("Captured images directory created.")
 
 def capture_picture():
     try:
@@ -48,7 +47,7 @@ def capture_picture():
         ret, frame = stream.read()
 
         if not ret:
-            logging.error("Failed to capture image from the camera.")
+            logger.error("Failed to capture image from the camera.")
             return
 
         # Criação do nome do arquivo com o timestamp
@@ -65,9 +64,9 @@ def capture_picture():
         stream.release()
         cv2.destroyAllWindows()
 
-        logging.info(f"Image saved at {file_path}")
+        logger.info(f"Image saved at {file_path}")
     except Exception as e:
-        logging.error(f"Error capturing image: {e}")
+        logger.error(f"Error capturing image: {e}")
 
 def main():
     while True:
@@ -78,6 +77,6 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        logging.info("Program interrupted by user.")
+        logger.info("Program interrupted by user.")
     except Exception as e:
-        logging.error(f"An unexpected error occurred: {e}")
+        logger.error(f"An unexpected error occurred: {e}")
