@@ -5,6 +5,7 @@ import time
 from queue import Queue
 import logging
 import os
+import base64
 
 class MQTTHandlerSubscriber:
     def __init__(self, broker_address, port, username=None, password=None, MAX_RETRIES=5, RETRY_WAIT_TIME=10, log_file='logs/subscriber.log', append_log=True):
@@ -69,17 +70,23 @@ class MQTTHandlerSubscriber:
         self.logger.info("Disconnected from MQTT broker")
 
     def on_message(self, client, userdata, message):
-        self.logger.info(f"Received message on topic {message.topic}: {message.payload.decode('utf-8')}")
+        
 
-        # Criar um dicionário com o tópico e a mensagem
-        message_data = {
+
+            message_data = {
             'topic': message.topic,
             'message': message.payload.decode('utf-8')
-        }
+            }
+            self.logger.info(f"Received {message_data['topic']} message: {message_data['message']} ")
 
-        # Adicionar o dicionário à fila
-        self.queue.put(message_data)
-        self.logger.debug(f"Message added to queue: {message_data}")
+            # Adicionar o dicionário à fila
+            self.queue.put(message_data)
+            self.logger.debug(f"Message added to queue: {message_data}")
+
+
+        
+
+        
 
     def subscribe(self, topic):
         try:
