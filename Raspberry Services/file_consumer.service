@@ -3,7 +3,7 @@ Description=File Reader Service
 After=network.target
 
 [Service]
-WorkingDirectory=/home/otavio/Desktop/enoe-otavio/Raspberry
+WorkingDirectory=/home/intermidia/enoe-otavio/Raspberry
 ExecStart=/usr/bin/python3 /home/intermidia/enoe-otavio/Raspberry/file_consumer.py
 Restart=always
 RestartSec=10
