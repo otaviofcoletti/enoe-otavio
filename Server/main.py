@@ -10,7 +10,7 @@ def load_config():
     with open("config.json") as f:
         return json.load(f)
 
-def create_directory_structure(base_path, timestamp):
+def create_directory_structure(base_path, timestamp): # Pega o dia, mês e ano do nome da imagem e cria a estrutura de diretórios
     date_time = datetime.fromtimestamp(timestamp)
     year = date_time.year
     month = date_time.month
@@ -29,7 +29,7 @@ def main():
 
     mqtt_config = config["MQTT"]
     broker_endpoint = mqtt_config["broker_endpoint"]
-    topics = ["ultrassonic", "image"]
+    topics = ["ultrassonic", "images"]
 
     db_config = config["DATABASE"]
 
@@ -64,7 +64,7 @@ def main():
                 except Exception as e:
                     print(f"Error processing message: {e}")
 
-            elif topic == 'image':
+            elif topic == 'images':
                 # Assuming the message is a JSON with fields 'filename' and 'image_data'
                 try:
                     json_data = json.loads(message)
