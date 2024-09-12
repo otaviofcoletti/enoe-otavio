@@ -5,6 +5,16 @@ import base64
 from datetime import datetime
 from MQTTHandlerSubscriber import MQTTHandlerSubscriber
 from DatabaseHandler import DatabaseHandler
+import logging
+
+
+# Configuração do logger para o DatabaseHandler
+main_logger = logging.getLogger('main')
+main_logger.setLevel(logging.INFO)
+
+main_handler = logging.FileHandler('./logs/main.log')
+main_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+main_logger.addHandler(main_handler)
 
 def load_config():
     with open("config.json") as f:
@@ -49,10 +59,13 @@ def main():
 
     while True:
         if not mqtt_handler.queue.empty():
-            message_data = mqtt_handler.queue.get()
-            topic = message_data['topic']
-            message = message_data['message']
-            print(f"Processing message from topic {topic}")
+            try:
+                message_data = mqtt_handler.queue.get()
+                topic = message_data['topic']
+                message = message_data['message']
+                main_logger.debug(f"Processing message from topic {topic}")
+            except Exception as e:
+                main_logger.error(f"Error processing message: {e}")
 
             if topic == 'ultrassonic':
                 # Assuming the message is a JSON with fields 'epoch' and 'distance'
@@ -62,7 +75,7 @@ def main():
 
                     db_handler.insert_data('ultrassonic',epoch, distance)
                 except Exception as e:
-                    print(f"Error processing message: {e}")
+                    main_logger.error(f"Error inserting message: {e}")
 
             elif topic == 'images':
                 # Assuming the message is a JSON with fields 'filename' and 'image_data'
@@ -80,18 +93,21 @@ def main():
                     # Create directory structure
                     day_path = create_directory_structure(base_image_path, timestamp)
 
-                    # Save the image to a file
-                    file_path = os.path.join(day_path, filename)
-                    print(f"Saving image to {file_path}")
-                    with open(file_path, 'wb') as file:
-                        file.write(image_data)
-                        file.flush()
-                        os.fsync(file.fileno())  # Garante que o sistema operacional grave os dados no disco
+                    try:
+                        # Save the image to a file
+                        file_path = os.path.join(day_path, filename)
+                        print(f"Saving image to {file_path}")
+                        with open(file_path, 'wb') as file:
+                            file.write(image_data)
+                            file.flush()
+                            os.fsync(file.fileno())  # Garante que o sistema operacional grave os dados no disco
+                    except Exception as e:
+                        main_logger.error(f"Error saving image: {e}")
 
                     db_handler.insert_data('images',filename, day_path)
 
                 except Exception as e:
-                    print(f"Error processing message: {e}")
+                    main_logger.error(f"Error inserting message: {e}")
         
         time.sleep(1)
 

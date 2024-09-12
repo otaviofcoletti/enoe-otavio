@@ -11,7 +11,7 @@ import base64
 mqtt_logger = logging.getLogger('MQTTHandlerSubscriber')
 mqtt_logger.setLevel(logging.INFO)
 
-mqtt_handler = logging.FileHandler('./logs/subscriber.log')
+mqtt_handler = logging.FileHandler('./logs/MQTTHandlerSubscriber.log')
 mqtt_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
 mqtt_logger.addHandler(mqtt_handler)
 
