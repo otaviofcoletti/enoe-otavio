@@ -5,6 +5,7 @@ import glob
 import datetime
 import logging
 import sys
+import psutil
 import MQTTHandlerPublisher as mqtt
 
 # Configuração de logging
@@ -14,6 +15,17 @@ logging.basicConfig(
     level=logging.INFO,  # Nível de logging
     format='%(asctime)s - %(levelname)s - %(message)s'  # Formato das mensagens de log
 )
+
+# Função para obter o uso de dados de I/O
+def get_data_usage():
+    counters = psutil.net_io_counters()
+    return counters.bytes_sent, counters.bytes_recv
+
+# Função para calcular o consumo de dados
+def calculate_data_usage(start_sent, start_recv, end_sent, end_recv):
+    sent = end_sent - start_sent
+    recv = end_recv - start_recv
+    return sent, recv
 
 # Carregar as configurações do arquivo config.json
 try:
@@ -80,22 +92,27 @@ def publish_data(filename, mqttc, topic):
                 for line in lines[1:]:  # Skip header
                     try:
                         json_data = json.dumps(line.strip().split(','))
-                        mqttc.client.publish(topic, json_data, qos=1)
+                        result = mqttc.client.publish(topic, json_data, qos=1)
+                        result.wait_for_publish()
+                        logging.info(f"Publishing {filename} {line}")
                     except Exception as e:
                         fail_on_publish = True
-                        logging.error(f"Error publishing message ultrassonic: {e}")
+                        logging.error(f"Error publishing message ultrasonic: {e}")
         
         elif filename.endswith(".jpg") or filename.endswith(".png"):
             with open(filename, 'rb') as image_file:
                 image_data = image_file.read()
                 try:
-                    mqttc.client.publish(topic, image_data, qos=1)
+                    result = mqttc.client.publish(topic, image_data, qos=1)
+                    result.wait_for_publish()
+                    logging.info(f"Publishing {filename}")
                 except Exception as e:
                     fail_on_publish = True
                     logging.error(f"Error publishing message image: {e}")
+        
         # Apagar o arquivo após envio
         try:
-            if(not fail_on_publish):
+            if not fail_on_publish:
                 os.remove(filename)
         except OSError as e:
             logging.error(f"Error deleting file {filename}: {e}")
@@ -111,15 +128,15 @@ def main():
         logging.info("Waiting for connection...")
         time.sleep(1)
 
+    # Obter contadores iniciais de I/O
+    start_sent, start_recv = get_data_usage()
+
     while True:
         # Encontrar arquivos CSV para processar
         try:
             for filename in glob.glob("data_ultrassonic/readings_*.csv"):
                 if is_ready_for_processing(filename, csv_file_creation_seconds):
-                    logging.info(f"Publishing {filename}")
-                    print("AQUI")
                     publish_data(filename, mqttc, "ultrassonic")
-                    print("AQUI PASSOU")
                 else:
                     logging.info(f"File {filename} is not ready for processing yet.")
         except Exception as e:
@@ -129,14 +146,21 @@ def main():
         try:
             for filename in glob.glob("data_image/*.jpg"):
                 if is_image_ready_for_processing(filename):
-                    print("AQUI2")
-                    logging.info(f"Publishing image {filename}")
                     publish_data(filename, mqttc, "image")
-                    print("PASSOU2")
                 else:
                     logging.info(f"Image {filename} is not ready for processing yet.")
         except Exception as e:
             logging.error(f"Error processing images: {e}")
+
+        # Calcular e registrar o consumo de dados
+        end_sent, end_recv = get_data_usage()
+        sent, recv = calculate_data_usage(start_sent, start_recv, end_sent, end_recv)
+        logging.info(f"Data sent: {sent / 1024:.2f} KB")
+        logging.info(f"Data received: {recv / 1024:.2f} KB")
+        logging.info(f"Total data usage: {(sent + recv) / 1024:.2f} KB")
+
+        # Atualizar contadores
+        start_sent, start_recv = end_sent, end_recv
 
         time.sleep(60)  # Esperar antes de verificar novos arquivos
 
