@@ -1,10 +1,10 @@
 import json
-from MQTTHandlerSubscriber import MQTTHandlerSubscriber
-from DatabaseHandler import DatabaseHandler
+import os
 import time
 import base64
-import os
 from datetime import datetime
+from MQTTHandlerSubscriber import MQTTHandlerSubscriber
+from DatabaseHandler import DatabaseHandler
 
 def load_config():
     with open("config.json") as f:
@@ -29,7 +29,7 @@ def main():
 
     mqtt_config = config["MQTT"]
     broker_endpoint = mqtt_config["broker_endpoint"]
-    topic = "paho/test/topic"
+    topics = ["ultrassonic", "image"]
 
     db_config = config["DATABASE"]
 
@@ -40,7 +40,8 @@ def main():
     mqtt_handler = MQTTHandlerSubscriber(broker_endpoint, port=1883, username=username, password=password)
 
     mqtt_handler.connect()
-    mqtt_handler.subscribe(topic)  # Subscrever ao tópico
+    for topic in topics:
+        mqtt_handler.subscribe(topic)  # Subscribe to topics
     
     db_handler.connect()
     
@@ -51,43 +52,48 @@ def main():
             message_data = mqtt_handler.queue.get()
             topic = message_data['topic']
             message = message_data['message']
-            print(f"Processing message from topic {topic}: {message}")
+            print(f"Processing message from topic {topic}")
 
             if topic == 'ultrassonic':
-                # Supondo que a mensagem seja um JSON com os campos 'epoch' e 'distance'
+                # Assuming the message is a JSON with fields 'epoch' and 'distance'
                 try:
                     json_data = json.loads(message)
                     timestamp, hostname, distance, epoch = json_data
 
-                    db_handler.insert_data(epoch, distance)
+                    db_handler.insert_data('ultrassonic',epoch, distance)
                 except Exception as e:
                     print(f"Error processing message: {e}")
 
             elif topic == 'image':
-                # Supondo que a mensagem seja um JSON com os campos 'filename' e 'image_data'
+                # Assuming the message is a JSON with fields 'filename' and 'image_data'
                 try:
                     json_data = json.loads(message)
                     filename = json_data['filename']
-                    image_data = json_data['image']
+                    image_data = json_data['encoded_image']
 
                     image_data = base64.b64decode(image_data)
 
-                    # Extrair timestamp do nome do arquivo
+                    # Extract timestamp from filename
                     timestamp_str = filename.split('_')[0]
                     timestamp = datetime.strptime(timestamp_str, '%d-%m-%Y').timestamp()
 
-                    # Criar estrutura de diretórios
+                    # Create directory structure
                     day_path = create_directory_structure(base_image_path, timestamp)
 
-                    # Salvar a imagem em um arquivo
+                    # Save the image to a file
                     file_path = os.path.join(day_path, filename)
+                    print(f"Saving image to {file_path}")
                     with open(file_path, 'wb') as file:
                         file.write(image_data)
+                        file.flush()
+                        os.fsync(file.fileno())  # Garante que o sistema operacional grave os dados no disco
+
+                    db_handler.insert_data('images',filename, day_path)
+
                 except Exception as e:
                     print(f"Error processing message: {e}")
-    
+        
         time.sleep(1)
-
 
 if __name__ == "__main__":
     main()

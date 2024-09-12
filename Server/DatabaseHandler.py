@@ -32,14 +32,22 @@ class DatabaseHandler:
         self.logger.critical("Failed to connect to the database after multiple attempts.")
         return False
 
-    def insert_data(self, epoch, distance):
+    def insert_data(self, table, key, data=None):
         try:
-            self.cursor.execute(
-                "INSERT INTO ultrassonic (epoch, distance) VALUES (%s, %s)",
-                (epoch, distance)
-            )
-            self.conn.commit()
-            self.logger.info(f"Data inserted successfully: epoch={epoch}, distance={distance}")
+            if table == 'ultrassonic':
+                self.cursor.execute(
+                    f"INSERT INTO {table} (epoch, distance_cm) VALUES (%s, %s)",
+                    (key, data)
+                )
+                self.conn.commit()
+                self.logger.info(f"Data inserted successfully: epoch={key}, distance_cm={data}")
+            elif table == 'images':
+                self.cursor.execute(
+                    f"INSERT INTO {table} (epoch, image_path) VALUES (%s, %s)",
+                    (key, data)
+                )
+                self.conn.commit()
+                self.logger.info(f"Data inserted successfully: epoch={key}, image_path={data}")
         except Exception as e:
             self.logger.error(f"Error inserting data into database: {e}")
             self.conn.rollback()

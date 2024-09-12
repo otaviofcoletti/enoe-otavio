@@ -77,14 +77,11 @@ class MQTTHandlerSubscriber:
             'topic': message.topic,
             'message': message.payload.decode('utf-8')
             }
-            self.logger.info(f"Received {message_data['topic']} message: {message_data['message']} ")
+            self.logger.info(f"Received {message_data['topic']}")
 
             # Adicionar o dicionário à fila
             self.queue.put(message_data)
-            self.logger.debug(f"Message added to queue: {message_data}")
-
-
-        
+            #self.logger.debug(f"Message added to queue: {message_data}")
 
         
 
