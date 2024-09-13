@@ -1,0 +1,15 @@
+[Unit]
+Description=Mosquitto MQTT Broker Service
+After=network.target
+
+[Service]
+WorkingDirectory=/home/intermidia/enoe-otavio/MQTT_Broker 
+ExecStart=/usr/sbin/mosquitto -c /home/intermidia/enoe-otavio/MQTT_Broker/config-server.conf -v 
+Restart=always
+RestartSec=10
+User=intermidia
+KillMode=process
+TimeoutStartSec=infinity
+
+[Install]
+WantedBy=multi-user.target

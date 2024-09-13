@@ -24,3 +24,5 @@ sudo systemctl stop image_file_producer.service
 sudo systemctl status file_consumer.service
 sudo systemctl status ultrassonic_file_producer.service
 sudo systemctl status image_file_producer.service
+
+sudo journalctl -u mosquitto -f

@@ -1,0 +1,21 @@
+
+Copie o arquivo
+sudo cp mosquitto_custom.service /etc/systemd/system/
+
+Ative ele para sempre iniciar ao ligar o servidor
+sudo systemctl enable mosquitto_custom.service
+
+Reinicie os arquivos do systemctl
+sudo systemctl daemon-reload
+
+Inicie o Serviço
+sudo systemctl start mosquitto_custom.service
+
+Pare o service
+sudo systemctl stop mosquitto_custom.service
+
+Veja o status do serviço
+sudo systemctl status mosquitto_custom.service
+
+Veja o status do serviço
+sudo systemctl restart mosquitto_custom.service
