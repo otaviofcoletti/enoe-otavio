@@ -17,6 +17,6 @@
       "ip_camera": "10.1.1.11"
   },
   "CAPTURE_INTERVALS": {
-      "capture_interval_seconds": 100
+      "capture_interval_seconds": 10
   }
 }
