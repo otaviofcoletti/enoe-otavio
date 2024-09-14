@@ -95,7 +95,6 @@ def publish_data(filename, mqttc, topic):
                         json_data = json.dumps(line.strip().split(','))
                         result = mqttc.client.publish(topic, json_data, qos=1)
                         result.wait_for_publish()
-                        logger.info(f"Publishing {filename} {line}")
                     except Exception as e:
                         fail_on_publish = True
                         logger.error(f"Error publishing message ultrasonic: {e}")
@@ -139,16 +138,23 @@ def main():
         time.sleep(1)
 
     # Obter contadores iniciais de I/O
-    start_sent, start_recv = get_data_usage()
+    # start_sent, start_recv = get_data_usage()
 
     while True:
         # Encontrar arquivos CSV para processar
         try:
             for filename in glob.glob("data_ultrassonic/readings_*.csv"):
                 if is_ready_for_processing(filename, csv_file_creation_seconds):
+                    start_sent, start_recv = get_data_usage()
                     publish_data(filename, mqttc, "ultrassonic")
+                    end_sent, end_recv = get_data_usage()
+                    sent, recv = calculate_data_usage(start_sent, start_recv, end_sent, end_recv)
+                    logger.info(f"Data sent: {sent / 1024:.2f} KB")
+                    logger.info(f"Data received: {recv / 1024:.2f} KB")
+                    logger.info(f"Total data usage: {(sent + recv) / 1024:.2f} KB")
                 else:
                     logger.info(f"File {filename} is not ready for processing yet.")
+                    continue
         except Exception as e:
             logger.error(f"Error processing files: {e}")
 
@@ -156,21 +162,28 @@ def main():
         try:
             for filename in glob.glob("data_images/*.jpg"):
                 if is_image_ready_for_processing(filename):
+                    start_sent, start_recv = get_data_usage()
                     publish_data(filename, mqttc, "images")
+                    end_sent, end_recv = get_data_usage()
+                    sent, recv = calculate_data_usage(start_sent, start_recv, end_sent, end_recv)
+                    logger.info(f"Data sent: {sent / 1024:.2f} KB")
+                    logger.info(f"Data received: {recv / 1024:.2f} KB")
+                    logger.info(f"Total data usage: {(sent + recv) / 1024:.2f} KB")
                 else:
                     logger.info(f"Image {filename} is not ready for processing yet.")
+                    continue
         except Exception as e:
             logger.error(f"Error processing images: {e}")
 
         # Calcular e registrar o consumo de dados
-        end_sent, end_recv = get_data_usage()
-        sent, recv = calculate_data_usage(start_sent, start_recv, end_sent, end_recv)
-        logger.info(f"Data sent: {sent / 1024:.2f} KB")
-        logger.info(f"Data received: {recv / 1024:.2f} KB")
-        logger.info(f"Total data usage: {(sent + recv) / 1024:.2f} KB")
+        # end_sent, end_recv = get_data_usage()
+        # sent, recv = calculate_data_usage(start_sent, start_recv, end_sent, end_recv)
+        # logger.info(f"Data sent: {sent / 1024:.2f} KB")
+        # logger.info(f"Data received: {recv / 1024:.2f} KB")
+        # logger.info(f"Total data usage: {(sent + recv) / 1024:.2f} KB")
 
-        # Atualizar contadores
-        start_sent, start_recv = end_sent, end_recv
+        # # Atualizar contadores
+        # start_sent, start_recv = end_sent, end_recv
 
         time.sleep(1)  # Esperar antes de verificar novos arquivos
 
