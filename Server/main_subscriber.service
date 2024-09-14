@@ -1,0 +1,18 @@
+[Unit]
+Description=Main Subscriber Service
+After=network.target
+
+[Service]
+Type=simple
+User=intermidia
+Group=intermidia
+WorkingDirectory=/home/intermidia/enoe-otavio/Server
+Environment="PATH=/home/intermidia/enoe-otavio/enoe/bin"
+ExecStart=/home/intermidia/enoe-otavio/enoe/bin/python3 /home/intermidia/enoe-otavio/Server/main.py
+Restart=on-failure
+RestartSec=5s
+StandardOutput=journal
+StandardError=inherit
+
+[Install]
+WantedBy=multi-user.target

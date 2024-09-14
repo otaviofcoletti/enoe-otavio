@@ -1,0 +1,29 @@
+# Iniciar o serviço
+sudo systemctl start main_subscriber.service
+
+# Parar o serviço
+sudo systemctl stop main_subscriber.service
+
+# Reiniciar o serviço
+sudo systemctl restart main_subscriber.service
+
+# Recarregar a configuração do serviço sem interrompê-lo
+sudo systemctl reload main_subscriber.service
+
+# Ativar o serviço para iniciar no boot
+sudo systemctl enable main_subscriber.service
+
+# Desativar o serviço para não iniciar no boot
+sudo systemctl disable main_subscriber.service
+
+# Verificar o status do serviço
+systemctl status main_subscriber.service
+
+# Ver os logs do serviço
+journalctl -u main_subscriber.service
+
+# Recarregar as configurações do systemd (após modificar arquivos de serviço)
+sudo systemctl daemon-reload
+
+sudo cp main_subscriber.service /etc/systemd/system/
+

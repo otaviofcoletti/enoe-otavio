@@ -8,17 +8,18 @@ import os
 import base64
 
 # Configuração do logger para o MQTTHandlerSubscriber
-logger = logging.getLogger('MQTTHandlerSubscriber')
-logger.setLevel(logging.INFO)
+sub_logger = logging.getLogger('MQTTHandlerSubscriber')
+sub_logger.setLevel(logging.INFO)
 
-handler = logging.FileHandler('./logs/MQTTHandlerSubscriber.log')
-handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-logger.addHandler(handler)
+sub_handler = logging.FileHandler('./logs/MQTTHandlerSubscriber.log')
+sub_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+sub_logger.addHandler(sub_handler)
 
 
 class MQTTHandlerSubscriber:
     def __init__(self, broker_address, port, username=None, password=None, MAX_RETRIES=5, RETRY_WAIT_TIME=10):
-        self.client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+        # MQTT v5 client setup with clean_start set to False (persistent session)
+        self.client = mqtt.Client(protocol=mqtt.MQTTv5)
         self.client.on_connect = self.on_connect
         self.client.on_message = self.on_message
         self.client.connected_flag = False
@@ -35,44 +36,44 @@ class MQTTHandlerSubscriber:
 
     def on_connect(self, client, userdata, flags, rc, properties=None):
         if rc == 0:
-            logger.info("Connected to broker")
+            sub_logger.info("Connected to broker")
             client.connected_flag = True
         else:
-            logger.error(f"Failed to connect, return code {rc}")
+            sub_logger.error(f"Failed to connect, return code {rc}")
             client.connected_flag = False
 
     def connect(self):
         attempt = 0
         while attempt < self.MAX_RETRIES:
             try:
-                self.client.connect(self.broker_address, port=self.port)
+                self.client.connect(self.broker_address, port=self.port,clean_start=mqtt.MQTT_CLEAN_START_FIRST_ONLY)
                 self.client.loop_start()
-                logger.info("Successfully connected to MQTT broker")
+                sub_logger.info("Successfully connected to MQTT broker")
                 return
             except Exception as e:
-                logger.error(f"Failed to connect to MQTT broker (attempt {attempt + 1}/{self.MAX_RETRIES}): {e}")
+                sub_logger.error(f"Failed to connect to MQTT broker (attempt {attempt + 1}/{self.MAX_RETRIES}): {e}")
                 attempt += 1
                 time.sleep(self.RETRY_WAIT_TIME)
 
-        logger.critical("Maximum connection attempts reached. Exiting....")
+        sub_logger.critical("Maximum connection attempts reached. Exiting....")
         sys.exit(1)
 
     def disconnect(self):
         self.client.disconnect()
         self.client.loop_stop()
-        logger.info("Disconnected from MQTT broker")
+        sub_logger.info("Disconnected from MQTT broker")
 
     def on_message(self, client, userdata, message):
         message_data = {
             'topic': message.topic,
             'message': message.payload.decode('utf-8')
         }
-        logger.info(f"Received {message_data['topic']}")
+        sub_logger.info(f"Received {message_data['topic']}")
         self.queue.put(message_data)
 
     def subscribe(self, topic):
         try:
             self.client.subscribe(topic)
-            logger.info(f"Subscribed to topic: {topic}")
+            sub_logger.info(f"Subscribed to topic: {topic}")
         except Exception as e:
-            logger.error(f"Failed to subscribe to topic {topic}: {e}")
+            sub_logger.error(f"Failed to subscribe to topic {topic}: {e}")
