@@ -71,7 +71,7 @@ def main():
                 # Assuming the message is a JSON with fields 'epoch' and 'distance'
                 try:
                     json_data = json.loads(message)
-                    timestamp, hostname, distance, epoch = json_data
+                    timestamp, distance, epoch = json_data
 
                     db_handler.insert_data('ultrassonic',epoch, distance)
                 except Exception as e:
