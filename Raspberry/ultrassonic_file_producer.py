@@ -55,7 +55,7 @@ def main():
             
             with open(filename, mode='a', newline='') as file:
                 writer = csv.writer(file)
-                writer.writerow(["timestamp", "hostname", "distance", "epoch"])  # Header
+                writer.writerow(["timestamp", "distance", "epoch"])  # Header
                 logger.info(f"Started writing to file {filename}.")
                 
                 end_time = time.time() + csv_file_creation_seconds
@@ -68,7 +68,6 @@ def main():
                     if distance is not None:
                         message = [
                             datetime.datetime.fromtimestamp(time.time()).strftime('%d-%m-%Y_%H:%M:%S'),
-                            socket.gethostname(),
                             distance,
                             int(time.time())
                         ]

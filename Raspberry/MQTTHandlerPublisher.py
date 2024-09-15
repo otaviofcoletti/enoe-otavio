@@ -13,7 +13,7 @@ logger.addHandler(handler)
 
 class MQTTHandlerPublisher:
     def __init__(self, broker_address, port, username=None, password=None, MAX_RETRIES=5, RETRY_WAIT_TIME=10):
-        self.client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+        self.client = mqtt.Client(protocol=mqtt.MQTTv5)
         self.client.on_connect = self.on_connect
         self.client.on_publish = self.on_publish
         self.client.connected_flag = False
@@ -35,14 +35,14 @@ class MQTTHandlerPublisher:
             logger.error(f"Failed to connect, return code {rc}")
             client.connected_flag = False
 
-    def on_publish(self, client, userdata, mid, reason_code, properties=None):
+    def on_publish(self, client, userdata, mid, reason_code=None, properties=None):
         logger.info(f"Message with mid {mid} published successfully.")
 
     def connect(self):
-        attempt = 0
+        attempt = 0 
         while attempt < self.MAX_RETRIES:
             try:
-                self.client.connect(self.broker_address, port=self.port)
+                self.client.connect(self.broker_address, port=self.port, clean_start=mqtt.MQTT_CLEAN_START_FIRST_ONLY)
                 self.client.loop_start()  # Start the network loop
                 return  # Exit the method if successful
             except Exception as e:
