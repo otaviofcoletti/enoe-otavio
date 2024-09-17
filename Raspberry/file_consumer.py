@@ -153,7 +153,7 @@ def main():
                     logger.info(f"Data received: {recv / 1024:.2f} KB")
                     logger.info(f"Total data usage: {(sent + recv) / 1024:.2f} KB")
                 else:
-                    logger.info(f"File {filename} is not ready for processing yet.")
+                    #logger.info(f"File {filename} is not ready for processing yet.")
                     continue
         except Exception as e:
             logger.error(f"Error processing files: {e}")
