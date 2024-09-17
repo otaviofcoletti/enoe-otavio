@@ -61,13 +61,21 @@ def is_ready_for_processing(filename, interval_seconds):
         return False
 
 # Verificar se a imagem está pronta para ser processada
-def is_image_ready_for_processing(filename):
-    # Por simplicidade, não verifica intervalo, apenas se o arquivo existe e não está vazio
+def is_image_ready_for_processing(filename, wait_time=2):
     try:
-        return os.path.getsize(filename) > 0
+        initial_size = os.path.getsize(filename)
+        time.sleep(wait_time)  # Espera um tempo para ver se o arquivo ainda está sendo escrito
+        final_size = os.path.getsize(filename)
+        
+        if initial_size > 0 and initial_size == final_size:
+            return True
+        else:
+            logger.info(f"Image {filename} is still being written, skipping for now.")
+            return False
     except OSError as e:
         logger.error(f"Error checking image {filename}: {e}")
         return False
+
 
 # Função genérica para enviar arquivo (CSV ou imagem)
 def publish_data(filename, mqttc, topic):
