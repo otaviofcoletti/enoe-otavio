@@ -65,7 +65,7 @@ def main():
                 message = message_data['message']
                 main_logger.debug(f"Processing message from topic {topic}")
             except Exception as e:
-                main_logger.error(f"Error processing message: {e}")
+                main_logger.error(f"Error processing message from queue: {e}")
 
             if topic == 'ultrassonic':
                 # Assuming the message is a JSON with fields 'epoch' and 'distance'
@@ -107,7 +107,7 @@ def main():
                     db_handler.insert_data('images',filename, day_path)
 
                 except Exception as e:
-                    main_logger.error(f"Error inserting message: {e}")
+                    main_logger.error(f"Error inserting image: {e}")
         
         time.sleep(1)
 
