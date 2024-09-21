@@ -23,9 +23,37 @@ Este projeto é um sistema de monitoramento que utiliza MQTT para comunicação 
 ```bash
 git clone git@github.com:otaviofcoletti/enoe-otavio.git
 cd enoe-otavio
+```
+
+### 2. Instale as dependências
+```bash
 
 python3 -m venv server_venv
 source server_venv/bin/activate
 
+# Pode utilizar apenas o comando abaixo, mas recomendo utilizar o ambiente virtual
+
 pip install -r requirements.txt
+```
+
+### 3. Edite o config.json para o endereço IP, portas, credenciais e etc
+
+```bash
+{
+  "MQTT": {
+    "broker_endpoint": "localhost",
+    "port": 1883
+  },
+  "CREDENTIALS": {
+    "username": "server",
+    "password": "server.publisher"
+  },
+  "DATABASE": {
+    "dbname": "ultrassonic_sensor",
+    "user": "user",
+    "password": "password",
+    "host": "172.18.0.2",
+    "port": "5432"
+  }
+}
 ```
