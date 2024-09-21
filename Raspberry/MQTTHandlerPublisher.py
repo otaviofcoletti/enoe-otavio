@@ -13,6 +13,17 @@ logger.addHandler(handler)
 
 class MQTTHandlerPublisher:
     def __init__(self, broker_address, port, username=None, password=None, MAX_RETRIES=5, RETRY_WAIT_TIME=10):
+        """
+        Initialize the MQTTHandlerPublisher instance.
+
+        Args:
+            broker_address (str): The address of the MQTT broker.
+            port (int): The port to connect to the MQTT broker.
+            username (str, optional): The username for broker authentication. Defaults to None.
+            password (str, optional): The password for broker authentication. Defaults to None.
+            MAX_RETRIES (int, optional): The maximum number of connection retries. Defaults to 5.
+            RETRY_WAIT_TIME (int, optional): The wait time between retries in seconds. Defaults to 10.
+        """
         self.client = mqtt.Client(protocol=mqtt.MQTTv5)
         self.client.on_connect = self.on_connect
         self.client.on_publish = self.on_publish

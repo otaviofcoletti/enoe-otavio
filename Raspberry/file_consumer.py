@@ -137,6 +137,27 @@ def publish_data(filename, mqttc, topic):
 
 
 def main():
+    """
+    Função principal para gerenciar a conexão MQTT e processar arquivos.
+
+    Esta função realiza as seguintes tarefas:
+    1. Conecta-se ao broker MQTT.
+    2. Aguarda a conexão ser estabelecida.
+    3. Verifica continuamente arquivos CSV e imagens para processar.
+    4. Publica dados de arquivos CSV e imagens no broker MQTT.
+    5. Registra estatísticas de uso de dados.
+
+    A função trata exceções que podem ocorrer durante o processamento de arquivos e registra mensagens de erro apropriadas.
+
+    Nota:
+        - A função assume a existência de várias funções auxiliares, como `get_data_usage`, 
+          `is_ready_for_processing`, `publish_data`, `calculate_data_usage` e `is_image_ready_for_processing`.
+        - A função usa um logger para registrar informações e erros.
+        - A função inclui um intervalo de espera antes de verificar novos arquivos.
+
+    Levanta:
+        Exception: Se ocorrer um erro durante o processamento de arquivos ou imagens.
+    """
     mqttc = mqtt.MQTTHandlerPublisher(broker_address=broker_endpoint, port=port, username=username, password=password)
 
     mqttc.connect()
@@ -178,20 +199,11 @@ def main():
                     logger.info(f"Data received: {recv / 1024:.2f} KB")
                     logger.info(f"Total data usage: {(sent + recv) / 1024:.2f} KB")
                 else:
-                    logger.info(f"Image {filename} is not ready for processing yet.")
+                    #logger.info(f"Image {filename} is not ready for processing yet.")
                     continue
         except Exception as e:
             logger.error(f"Error processing images: {e}")
 
-        # Calcular e registrar o consumo de dados
-        # end_sent, end_recv = get_data_usage()
-        # sent, recv = calculate_data_usage(start_sent, start_recv, end_sent, end_recv)
-        # logger.info(f"Data sent: {sent / 1024:.2f} KB")
-        # logger.info(f"Data received: {recv / 1024:.2f} KB")
-        # logger.info(f"Total data usage: {(sent + recv) / 1024:.2f} KB")
-
-        # # Atualizar contadores
-        # start_sent, start_recv = end_sent, end_recv
 
         time.sleep(1)  # Esperar antes de verificar novos arquivos
 
