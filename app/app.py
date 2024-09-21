@@ -1,52 +1,78 @@
-from flask import Flask, render_template, request
-import psycopg2
-from datetime import datetime, timedelta
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory
+import os
+from datetime import datetime
 
 app = Flask(__name__)
 
-db_config = {
-    'dbname': 'ultrassonic_sensor',
-    'user': 'user',
-    'password': 'password',
-    'host': '172.18.0.2',
-    'port': '5432'
-}
+# Defina o caminho para a pasta que contém as imagens
+IMAGE_FOLDER = '/home/intermidia/enoe-otavio/Server/images'
 
-def get_data(day, interval):
-    conn = psycopg2.connect(**db_config)
-    cur = conn.cursor()
-    # Convert 'epoch' to bigint before applying to_timestamp
-    cur.execute("SELECT * FROM ultrassonic WHERE to_char(to_timestamp(epoch::bigint), 'YYYY-MM-DD') = %s ORDER BY epoch;", (day,))
-    data = cur.fetchall()
-    cur.close()
-    conn.close()
+def get_all_images():
+    images = []
+    for root, dirs, files in os.walk(IMAGE_FOLDER):
+        for filename in files:
+            if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif')):
+                filepath = os.path.join(root, filename)
+                mod_time = os.path.getmtime(filepath)
+                date = datetime.fromtimestamp(mod_time).strftime('%Y-%m-%d')
+                relative_path = os.path.relpath(filepath, IMAGE_FOLDER)
+                images.append({
+                    'filename': filename,
+                    'mod_time': mod_time,
+                    'date': date,
+                    'relative_path': relative_path.replace('\\', '/')
+                })
+    images.sort(key=lambda x: x['mod_time'], reverse=True)
+    return images
 
-    converted_data = []
-    for row in data:
-        date_time = datetime.fromtimestamp(int(row[0]))
-        formatted_date_time = date_time.strftime('%Y-%m-%d %H:%M:%S')
-        converted_data.append((formatted_date_time, row[1]))
-    
-    # Filtrar dados com base no intervalo
-    filtered_data = []
-    last_time = None
-    for date_time, value in converted_data:
-        if last_time is None or (datetime.strptime(date_time, '%Y-%m-%d %H:%M:%S') - last_time).total_seconds() >= interval * 60:
-            filtered_data.append((date_time, value))
-            last_time = datetime.strptime(date_time, '%Y-%m-%d %H:%M:%S')
-    
-    return filtered_data
-
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
-    day = request.form.get('day', datetime.now().strftime('%Y-%m-%d'))
-    interval = int(request.form.get('interval', 1))
-    data = get_data(day, interval)
-    
-    labels = [row[0] for row in data]
-    values = [row[1] for row in data]
-    
-    return render_template('index.html', data=data, day=day, labels=labels, values=values)
+    images = get_all_images()
+    if not images:
+        return "Nenhuma imagem encontrada."
+    index = int(request.args.get('index', 0))
+    if index < 0:
+        index = 0
+    elif index >= len(images):
+        index = len(images) - 1
+    image = images[index]
+    return render_template('index.html', image=image, index=index, total=len(images))
+
+@app.route('/select_day', methods=['GET', 'POST'])
+def select_day():
+    if request.method == 'POST':
+        selected_date = request.form.get('date')
+        return redirect(url_for('photos_on_day', date=selected_date))
+    dates = sorted({img['date'] for img in get_all_images()}, reverse=True)
+    return render_template('select_day.html', dates=dates)
+
+@app.route('/photos_on_day', methods=['GET', 'POST'])
+def photos_on_day():
+    date = request.args.get('date')
+    images = [img for img in get_all_images() if img['date'] == date]
+    if not images:
+        return "Nenhuma imagem encontrada para esta data."
+
+    # Obter o índice da imagem atual
+    index = request.args.get('index', 0)
+    try:
+        index = int(index)
+    except ValueError:
+        index = 0
+
+    if index < 0:
+        index = 0
+    elif index >= len(images):
+        index = len(images) - 1
+
+    image = images[index]
+
+    return render_template('photos_on_day.html', images=images, image=image, index=index, total=len(images), date=date)
+
+# Rota para servir imagens do diretório de imagens
+@app.route('/images/<path:filename>')
+def serve_image(filename):
+    return send_from_directory(IMAGE_FOLDER, filename)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

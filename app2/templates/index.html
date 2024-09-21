@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Viewer</title>
+</head>
+<body>
+    <h1>Image Viewer</h1>
+    <div>
+        <!-- Formulário para selecionar o dia -->
+        <form method="POST" action="/select-day">
+            <label for="date">Select a day:</label>
+            <input type="text" id="date" name="date" value="{{ date }}">
+            <button type="submit">Load Images</button>
+        </form>
+    </div>
+
+    <div>
+        <!-- Exibir a imagem atual -->
+        <h2>Current Image: {{ current_image }}</h2>
+        <img src="/static/images/2024/9/{{ date }}/{{ current_image }}" alt="Current Image" style="max-width: 100%;">
+
+        <!-- Navegação entre as imagens -->
+        <div>
+            {% for image in images %}
+                {% if image == current_image %}
+                    <!-- Links para as imagens anterior e próxima -->
+                    {% if not loop.first %}
+                        <a href="/static/images/2024/9/{{ date }}/{{ images[loop.index0 - 1] }}">Previous</a>
+                    {% endif %}
+                    {% if not loop.last %}
+                        <a href="/static/images/2024/9/{{ date }}/{{ images[loop.index0 + 1] }}">Next</a>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
