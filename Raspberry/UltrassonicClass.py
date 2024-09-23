@@ -1,4 +1,26 @@
 import logging
+"""
+UltrassonicClass is a class to interface with an ultrasonic sensor via a serial port.
+
+Attributes:
+    serialportname (str): The name of the serial port to use.
+    baudrate (int): The baud rate for the serial communication.
+    ser (serial.Serial): The serial connection object.
+
+Methods:
+    set_serial():
+        Opens the serial port with the specified settings.
+        Returns:
+            serial.Serial: The opened serial connection.
+        Raises:
+            serial.SerialException: If there is an error opening the serial port.
+
+    get_line():
+        Reads a line of data from the serial port, processes it, and returns it as an integer.
+        Returns:
+            int: The processed data from the serial port.
+            None: If there is an error reading from the serial port.
+"""
 import serial
 
 # Configuração do logging no modo append
