@@ -9,6 +9,13 @@ import psutil
 import MQTTHandlerPublisher as mqtt
 import base64
 
+import subprocess
+import requests
+
+import RPi.GPIO as GPIO
+
+
+
 # Configuração do logger para o DatabaseHandler
 logger = logging.getLogger('file_consumer')
 logger.setLevel(logging.INFO)
@@ -76,6 +83,17 @@ def is_image_ready_for_processing(filename, wait_time=2):
         logger.error(f"Error checking image {filename}: {e}")
         return False
 
+def relay_on():
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(17, GPIO.OUT)
+    GPIO.output(17, GPIO.LOW)
+    logger.info(f"GPIO Low...")
+    time.sleep(3)
+    GPIO.output(17, GPIO.HIGH)
+    logger.info(f"GPIO High...")
+
+    GPIO.cleanup()
+
 
 # Função genérica para enviar arquivo (CSV ou imagem)
 def publish_data(filename, mqttc, topic):
@@ -102,8 +120,9 @@ def publish_data(filename, mqttc, topic):
                     try:
                         json_data = json.dumps(line.strip().split(','))
                         result = mqttc.client.publish(topic, json_data, qos=1)
-                        result.wait_for_publish()
+                        result.wait_for_publish(timeout=100)
                     except Exception as e:
+                        relay_on()
                         fail_on_publish = True
                         logger.error(f"Error publishing message ultrasonic: {e}")
         
@@ -120,9 +139,10 @@ def publish_data(filename, mqttc, topic):
                 
                 try:
                     result = mqttc.client.publish(topic, json_message, qos=1)
-                    result.wait_for_publish()
+                    result.wait_for_publish(timeout=100)
                     logger.info(f"Publishing {filename}")
                 except Exception as e:
+                    relay_on()
                     fail_on_publish = True
                     logger.error(f"Error publishing message image: {e}")
         
@@ -134,6 +154,10 @@ def publish_data(filename, mqttc, topic):
             logger.error(f"Error deleting file {filename}: {e}")
     except OSError as e:
         logger.error(f"Error opening file {filename}: {e}")
+        
+
+
+
 
 
 def main():
