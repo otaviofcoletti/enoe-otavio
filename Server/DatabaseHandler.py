@@ -1,17 +1,10 @@
 import psycopg2
 import time
-import logging
 import paho.mqtt.client as mqtt
-import logging
+from LoggingClass import Logger  # Certifique-se de que o caminho para a classe Logger está correto
 
-
-# Configuração do logger para o DatabaseHandler
-db_logger = logging.getLogger('DatabaseHandler')
-db_logger.setLevel(logging.INFO)
-
-db_handler = logging.FileHandler('./logs/DatabaseHandler.log')
-db_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-db_logger.addHandler(db_handler)
+# Configuração do logger para o DatabaseHandler usando a classe Logger
+db_logger = Logger('DatabaseHandler', rotation='W0').get_logger()  # Rotação semanal
 
 class DatabaseHandler:
     def __init__(self, db_config):

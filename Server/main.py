@@ -5,16 +5,7 @@ import base64
 from datetime import datetime
 from MQTTHandlerSubscriber import MQTTHandlerSubscriber
 from DatabaseHandler import DatabaseHandler
-import logging
-
-
-# Configuração do logger para o DatabaseHandler
-main_logger = logging.getLogger('main')
-main_logger.setLevel(logging.INFO)
-
-main_handler = logging.FileHandler('./logs/main.log')
-main_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-main_logger.addHandler(main_handler)
+from LoggingClass import Logger  # Import the Logger class
 
 def load_config():
     with open("config.json") as f:
@@ -56,6 +47,9 @@ def main():
     db_handler.connect()
     
     base_image_path = "images"
+
+    # Configuração do logger para o DatabaseHandler usando a nova classe Logger
+    main_logger = Logger('main', rotation='W0').get_logger()  # Weekly rotation
 
     while True:
         if not mqtt_handler.queue.empty():

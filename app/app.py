@@ -74,5 +74,8 @@ def photos_on_day():
 def serve_image(filename):
     return send_from_directory(IMAGE_FOLDER, filename)
 
+# Add enumerate to Jinja2 environment
+app.jinja_env.globals.update(enumerate=enumerate)
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

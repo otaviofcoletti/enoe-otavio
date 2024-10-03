@@ -1,0 +1,12 @@
+2024-10-02 20:21:19,799 - INFO - Connected to the database successfully.
+2024-10-02 20:22:25,071 - INFO - Image inserted successfully: epoch=02-10-2024_17:22:22.jpg, image_path=images/2024/10/2
+2024-10-02 20:22:59,194 - INFO - Data inserted successfully: epoch=1727900478, distance_cm=5514
+2024-10-02 20:23:00,241 - INFO - Data inserted successfully: epoch=1727900498, distance_cm=4483
+2024-10-02 20:23:01,272 - INFO - Data inserted successfully: epoch=1727900518, distance_cm=4506
+2024-10-02 20:23:02,285 - INFO - Data inserted successfully: epoch=1727900538, distance_cm=4495
+2024-10-02 20:23:03,324 - INFO - Data inserted successfully: epoch=1727900559, distance_cm=5494
+2024-10-02 20:24:59,386 - INFO - Data inserted successfully: epoch=1727900599, distance_cm=4485
+2024-10-02 20:25:00,400 - INFO - Data inserted successfully: epoch=1727900619, distance_cm=4477
+2024-10-02 20:25:01,414 - INFO - Data inserted successfully: epoch=1727900639, distance_cm=3498
+2024-10-02 20:25:02,469 - INFO - Data inserted successfully: epoch=1727900659, distance_cm=5491
+2024-10-02 20:25:03,500 - INFO - Data inserted successfully: epoch=1727900679, distance_cm=4478

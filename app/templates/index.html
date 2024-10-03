@@ -7,7 +7,11 @@
 </head>
 <body>
     <div class="container">
-        <h1>Imagem Atual</h1>
+        {% set filename = image['filename'] %}
+        {% set date_time = filename.split('_') %}
+        {% set date = date_time[0] %}
+        {% set time = date_time[1].split('.')[0] %}
+        <h1>Foto tirada em {{ date }} às {{ time }}</h1>
         <img src="{{ url_for('serve_image', filename=image['relative_path']) }}" alt="Imagem">
         <div class="navigation">
             {% if index > 0 %}

@@ -3,18 +3,12 @@ import json
 import sys
 import time
 from queue import Queue
-import logging
 import os
 import base64
+from LoggingClass import Logger  # Import the Logger class
 
 # Configuração do logger para o MQTTHandlerSubscriber
-sub_logger = logging.getLogger('MQTTHandlerSubscriber')
-sub_logger.setLevel(logging.INFO)
-
-sub_handler = logging.FileHandler('./logs/MQTTHandlerSubscriber.log')
-sub_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-sub_logger.addHandler(sub_handler)
-
+sub_logger = Logger('MQTTHandlerSubscriber', rotation='W0').get_logger()
 
 class MQTTHandlerSubscriber:
     def __init__(self, broker_address, port, username=None, password=None, MAX_RETRIES=5, RETRY_WAIT_TIME=10):

@@ -1,0 +1,15 @@
+2024-10-02 20:21:19,560 - INFO - Connected to broker
+2024-10-02 20:21:19,560 - INFO - Successfully connected to MQTT broker
+2024-10-02 20:21:19,560 - INFO - Subscribed to topic: ultrassonic
+2024-10-02 20:21:19,560 - INFO - Subscribed to topic: images
+2024-10-02 20:22:24,605 - INFO - Received images
+2024-10-02 20:22:58,729 - INFO - Received ultrassonic
+2024-10-02 20:22:58,803 - INFO - Received ultrassonic
+2024-10-02 20:22:58,849 - INFO - Received ultrassonic
+2024-10-02 20:22:58,907 - INFO - Received ultrassonic
+2024-10-02 20:22:58,968 - INFO - Received ultrassonic
+2024-10-02 20:24:59,248 - INFO - Received ultrassonic
+2024-10-02 20:24:59,327 - INFO - Received ultrassonic
+2024-10-02 20:24:59,407 - INFO - Received ultrassonic
+2024-10-02 20:24:59,469 - INFO - Received ultrassonic
+2024-10-02 20:24:59,547 - INFO - Received ultrassonic
