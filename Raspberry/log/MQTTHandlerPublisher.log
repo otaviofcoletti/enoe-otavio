@@ -1,0 +1,10 @@
+2024-10-04 14:27:26,788 - ERROR - Failed to connect to MQTT broker (attempt 1/5): [Errno 101] Network is unreachable
+2024-10-04 14:27:36,799 - ERROR - Failed to connect to MQTT broker (attempt 2/5): [Errno 101] Network is unreachable
+2024-10-04 14:27:46,810 - ERROR - Failed to connect to MQTT broker (attempt 3/5): [Errno 101] Network is unreachable
+2024-10-04 14:27:56,821 - ERROR - Failed to connect to MQTT broker (attempt 4/5): [Errno 101] Network is unreachable
+2024-10-04 14:28:06,873 - INFO - Connected to broker
+2024-10-04 14:29:25,971 - INFO - Message with mid 1 published successfully.
+2024-10-04 14:29:25,977 - INFO - Message with mid 2 published successfully.
+2024-10-04 14:29:25,985 - INFO - Message with mid 3 published successfully.
+2024-10-04 14:29:25,992 - INFO - Message with mid 4 published successfully.
+2024-10-04 14:29:25,997 - INFO - Message with mid 5 published successfully.

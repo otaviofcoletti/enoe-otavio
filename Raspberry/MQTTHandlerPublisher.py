@@ -3,13 +3,12 @@ import json
 import sys
 import time
 import logging
+from LoggingClass import Logger  # Certifique-se de que o caminho para a classe Logger está correto
 
-logger = logging.getLogger('MQTTHandlerPublisher')
-logger.setLevel(logging.INFO)
 
-handler = logging.FileHandler('./logs/MQTTHandlerPublisher.log')
-handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-logger.addHandler(handler)
+
+logger = Logger('MQTTHandlerPublisher', rotation='W0').get_logger()  # Rotação semanal
+
 
 class MQTTHandlerPublisher:
     def __init__(self, broker_address, port, username=None, password=None, MAX_RETRIES=5, RETRY_WAIT_TIME=10):

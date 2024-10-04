@@ -1,4 +1,6 @@
-import logging
+from LoggingClass import Logger  # Certifique-se de que o caminho para a classe Logger está correto
+import serial
+
 """
 UltrassonicClass is a class to interface with an ultrasonic sensor via a serial port.
 
@@ -21,15 +23,8 @@ Methods:
             int: The processed data from the serial port.
             None: If there is an error reading from the serial port.
 """
-import serial
 
-# Configuração do logging no modo append
-logger = logging.getLogger('UltrassonicClass')
-logger.setLevel(logging.INFO)
-
-handler = logging.FileHandler('./logs/UltrassonicClass.log')
-handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-logger.addHandler(handler)
+logger = Logger('UltrassonicClass', rotation='W0').get_logger()  # Rotação semanal
 
 class UltrassonicClass:
     def __init__(self, serialportname='/dev/ttyS0', baudrate=9600):

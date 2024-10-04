@@ -7,20 +7,11 @@ import json
 import os
 import logging
 import UltrassonicClass
+from LoggingClass import Logger  # Certifique-se de que o caminho para a classe Logger está correto
 
 
-# Criar a pasta "data" se não existir
-if not os.path.exists("logs"):
-    os.makedirs("logs")
-    print("logs directory created.")
+logger = Logger('ultrassonic_file_producer', rotation='W0').get_logger()  # Rotação semanal
 
-logger = logging.getLogger('ultrassonic_file_producer')
-logger.setLevel(logging.INFO)
-
-handler = logging.FileHandler('./logs/ultrassonic_file_producer.log')
-handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-logger.addHandler(handler)
-# Carregar as configurações do arquivo config.json
 try:
     with open("config.json") as f:
         config = json.load(f)

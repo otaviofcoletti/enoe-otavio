@@ -9,13 +9,12 @@ if not os.path.exists("logs"):
     os.makedirs("logs")
     print("logs directory created.")
 
+from LoggingClass import Logger  # Certifique-se de que o caminho para a classe Logger está correto
 
-logger = logging.getLogger('image_file_producer')
-logger.setLevel(logging.INFO)
 
-handler = logging.FileHandler('./logs/image_file_producer.log')
-handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-logger.addHandler(handler)
+
+logger = Logger('image_file_producer', rotation='W0').get_logger()  # Rotação semanal
+
 
 # Carregar as configurações do arquivo config.json
 try:

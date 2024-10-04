@@ -13,16 +13,12 @@ import subprocess
 import requests
 
 import RPi.GPIO as GPIO
+from LoggingClass import Logger  # Certifique-se de que o caminho para a classe Logger está correto
 
 
 
-# Configuração do logger para o DatabaseHandler
-logger = logging.getLogger('file_consumer')
-logger.setLevel(logging.INFO)
+logger = Logger('file_consumer', rotation='W0').get_logger()  # Rotação semanal
 
-handler = logging.FileHandler('./logs/file_consumer.log')
-handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-logger.addHandler(handler)
 
 # Função para obter o uso de dados de I/O
 def get_data_usage():
