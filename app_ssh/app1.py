@@ -16,7 +16,8 @@ def executar_script_ssh(script_name):
         ssh.connect(hostname, username=username, password=password)
 
         # Executando o script Python na Raspberry
-        stdin, stdout, stderr = ssh.exec_command(f'python3 /home/intermidia/enoe-otavio/Raspberry/{script_name}.py')
+        
+        stdin, stdout, stderr = ssh.exec_command(f'cd /home/intermidia/enoe-otavio/Raspberry/ && python3 {script_name}.py')
         
         # Capturando a saída do script
         output = stdout.read().decode('utf-8')
@@ -43,4 +44,4 @@ def executa_script(script_name):
     return jsonify(result)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001)
+    app.run(host='0.0.0.0', port=5002)

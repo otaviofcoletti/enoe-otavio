@@ -33,31 +33,61 @@
             margin-top: 20px;
             font-size: 16px;
         }
+
+        .loading {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
     </style>
 </head>
 <body>
     <h1>Controle de Scripts</h1>
 
     <!-- Botões para executar scripts -->
-    <button class="button" onclick="executaScript('take_photo')">Executar Script 1</button>
-    <button class="button" onclick="executaScript('none')">Executar Script 2</button>
+    <button class="button" onclick="executaScript('take_photo')">Executar Script de Captura de Imagem</button>
+
+    <!-- Div de Feedback -->
+    <div class="loading" id="loading">
+        <p>Aguardando... o script está sendo executado</p>
+        <img src="https://i.gifer.com/YCZH.gif" width="100" height="100">
+    </div>
 
     <div class="result" id="result"></div>
 
     <script>
         function executaScript(scriptName) {
+            // Mostrar a barra de carregamento
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('result').innerHTML = "";
+
+            // Chamar o endpoint para executar o script via Fetch API
             fetch(`/executa/${scriptName}`)
             .then(response => response.json())
             .then(data => {
+                // Esconder a barra de carregamento
+                document.getElementById('loading').style.display = 'none';
+                
                 const resultDiv = document.getElementById('result');
                 if (data.status === "success") {
                     resultDiv.innerHTML = "Sucesso: " + data.message;
+                    resultDiv.className = 'success';
                 } else {
                     resultDiv.innerHTML = "Erro: " + data.message;
+                    resultDiv.className = 'error';
                 }
             })
             .catch(error => {
+                document.getElementById('loading').style.display = 'none';
                 document.getElementById('result').innerHTML = "Erro: " + error;
+                document.getElementById('result').className = 'error';
             });
         }
     </script>
