@@ -73,7 +73,7 @@ def is_image_ready_for_processing(filename, wait_time=2):
         if initial_size > 0 and initial_size == final_size:
             return True
         else:
-            logger.info(f"Image {filename} is still being written, skipping for now.")
+            logger.debug(f"Image {filename} is still being written, skipping for now.")
             return False
     except OSError as e:
         logger.error(f"Error checking image {filename}: {e}")
@@ -94,10 +94,10 @@ def relay_on():
 # Função genérica para enviar arquivo (CSV ou imagem)
 def publish_data(filename, mqttc, topic):
     if os.path.getsize(filename) == 0:
-        logger.info(f"File {filename} is empty, skipping...")
+        logger.debug(f"File {filename} is empty, skipping...")
         try:
             os.remove(filename)
-            logger.info(f"Empty file {filename} deleted.")
+            logger.debug(f"Empty file {filename} deleted.")
         except OSError as e:
             logger.error(f"Error deleting empty file {filename}: {e}")
         return
@@ -108,7 +108,7 @@ def publish_data(filename, mqttc, topic):
             with open(filename, mode='r') as file:
                 lines = file.readlines()
                 if len(lines) <= 1:
-                    logger.info(f"File {filename} has no data (just header), skipping and deleting...")
+                    logger.debug(f"File {filename} has no data (just header), skipping and deleting...")
                     os.remove(filename)
                     return
                 
@@ -117,6 +117,8 @@ def publish_data(filename, mqttc, topic):
                         json_data = json.dumps(line.strip().split(','))
                         result = mqttc.client.publish(topic, json_data, qos=1)
                         result.wait_for_publish(timeout=100)
+                        logger.info(f"Publishing {filename}")
+
                     except Exception as e:
                         relay_on()
                         fail_on_publish = True
