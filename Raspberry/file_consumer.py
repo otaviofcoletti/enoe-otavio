@@ -3,7 +3,6 @@ import os
 import time
 import glob
 import datetime
-import logging
 import sys
 import psutil
 import MQTTHandlerPublisher as mqtt
