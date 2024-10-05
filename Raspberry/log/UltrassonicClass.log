@@ -1,5 +1,2 @@
-2024-10-04 14:27:25,172 - INFO - Serial port opened successfully.
-2024-10-04 14:48:34,735 - ERROR - Error reading from serial port: invalid literal for int() with base 10: '99\r99'
-2024-10-04 21:05:08,349 - ERROR - Error reading from serial port: invalid literal for int() with base 10: '99\r99'
-2024-10-04 21:13:53,118 - ERROR - Error reading from serial port: invalid literal for int() with base 10: '999\r9'
-2024-10-04 22:52:07,871 - INFO - Serial port opened successfully.
+2024-10-05 12:03:30,669 - INFO - Serial port opened successfully.
+2024-10-05 12:10:07,502 - INFO - Serial port opened successfully.
