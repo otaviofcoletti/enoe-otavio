@@ -44,7 +44,8 @@ def main():
         time.sleep(5)
         distance = ultrassonic_sensor.get_line()
         if distance is not None:
-            mqttc.publish("app/ultrassonic", distance, qos=0)
+            print(f"Distance: {distance}")
+            mqttc.client.publish("app/ultrassonic", distance, qos=0)
 
 if __name__ == "__main__":
     try:
