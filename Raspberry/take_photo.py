@@ -61,5 +61,6 @@ if __name__ == "__main__":
     try:
         capture_picture()
         logger.info("Image captured successfully, program will now exit.")
+        print("Foto tirada")
     except Exception as e:
         logger.error(f"An unexpected error occurred: {e}")
