@@ -197,11 +197,11 @@ def main():
                 if is_ready_for_processing(filename, csv_file_creation_seconds):
                     start_sent, start_recv = get_data_usage()
                     publish_data(filename, mqttc, "ultrassonic")
-                    end_sent, end_recv = get_data_usage()
-                    sent, recv = calculate_data_usage(start_sent, start_recv, end_sent, end_recv)
-                    logger.info(f"Data sent: {sent / 1024:.2f} KB")
-                    logger.info(f"Data received: {recv / 1024:.2f} KB")
-                    logger.info(f"Total data usage: {(sent + recv) / 1024:.2f} KB")
+                    # end_sent, end_recv = get_data_usage()
+                    # sent, recv = calculate_data_usage(start_sent, start_recv, end_sent, end_recv)
+                    # logger.info(f"Data sent: {sent / 1024:.2f} KB")
+                    # logger.info(f"Data received: {recv / 1024:.2f} KB")
+                    # logger.info(f"Total data usage: {(sent + recv) / 1024:.2f} KB")
                 else:
                     #logger.info(f"File {filename} is not ready for processing yet.")
                     continue
@@ -214,11 +214,11 @@ def main():
                 if is_image_ready_for_processing(filename):
                     start_sent, start_recv = get_data_usage()
                     publish_data(filename, mqttc, "images")
-                    end_sent, end_recv = get_data_usage()
-                    sent, recv = calculate_data_usage(start_sent, start_recv, end_sent, end_recv)
-                    logger.info(f"Data sent: {sent / 1024:.2f} KB")
-                    logger.info(f"Data received: {recv / 1024:.2f} KB")
-                    logger.info(f"Total data usage: {(sent + recv) / 1024:.2f} KB")
+                    # end_sent, end_recv = get_data_usage()
+                    # sent, recv = calculate_data_usage(start_sent, start_recv, end_sent, end_recv)
+                    # logger.info(f"Data sent: {sent / 1024:.2f} KB")
+                    # logger.info(f"Data received: {recv / 1024:.2f} KB")
+                    # logger.info(f"Total data usage: {(sent + recv) / 1024:.2f} KB")
                 else:
                     #logger.info(f"Image {filename} is not ready for processing yet.")
                     continue
