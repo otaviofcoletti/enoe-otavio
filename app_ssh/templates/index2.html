@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Scripts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 10px auto;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .loading {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+
+        #timer {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+
+        .ultrassonic-data {
+            margin-top: 20px;
+            font-size: 18px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Controle de Scripts</h1>
+
+    <!-- Botões para executar scripts -->
+    <button class="button" onclick="executaScript('take_photo')">Executar Script de Captura de Imagem</button>
+    <button class="button" onclick="executaScript('ultrassonic')">Executar Leitura do Sensor Ultrassônico</button>
+
+    <!-- Timer -->
+    <div id="timer"></div>
+
+    <!-- Última leitura do sensor ultrassônico -->
+    <div class="ultrassonic-data" id="ultrassonic-data">Última leitura do sensor: Nenhum dado</div>
+
+    <!-- Div de Feedback -->
+    <div class="loading" id="loading">
+        <p>Aguardando... o script está sendo executado</p>
+        <img src="https://i.gifer.com/YCZH.gif" width="100" height="100">
+    </div>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function executaScript(scriptName) {
+            // Mostrar a barra de carregamento
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('result').innerHTML = "";
+
+            // Chamar o endpoint para executar o script via Fetch API
+            fetch(`/executa/${scriptName}`)
+            .then(response => response.json())
+            .then(data => {
+                // Esconder a barra de carregamento
+                document.getElementById('loading').style.display = 'none';
+                
+                const resultDiv = document.getElementById('result');
+                if (data.status === "success") {
+                    resultDiv.innerHTML = "Sucesso: " + data.message;
+                    resultDiv.className = 'success';
+
+                    // Se o script for o sensor ultrassônico, iniciar o timer de 2 minutos
+                    if (scriptName === "ultrassonic") {
+                        startTimer(120);  // 2 minutos = 120 segundos
+                    }
+                } else {
+                    resultDiv.innerHTML = "Erro: " + data.message;
+                    resultDiv.className = 'error';
+                }
+            })
+            .catch(error => {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('result').innerHTML = "Erro: " + error;
+                document.getElementById('result').className = 'error';
+            });
+        }
+
+        // Função para iniciar o timer de contagem regressiva
+        function startTimer(duration) {
+            var timer = duration, minutes, seconds;
+            var interval = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                document.getElementById('timer').textContent = "Tempo restante: " + minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(interval);
+                    document.getElementById('timer').textContent = "Timer finalizado.";
+                }
+            }, 1000);
+        }
+
+        // Função para configurar o streaming de dados do sensor ultrassônico
+        if (!!window.EventSource) {
+            var source = new EventSource('/stream');
+            source.onmessage = function(event) {
+                document.getElementById('ultrassonic-data').innerHTML = "Última leitura do sensor: " + event.data;
+            };
+        } else {
+            document.getElementById('ultrassonic-data').innerHTML = "Seu navegador não suporta Server-Sent Events.";
+        }
+    </script>
+</body>
+</html>

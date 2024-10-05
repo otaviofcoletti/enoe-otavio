@@ -46,7 +46,7 @@ def index():
     labels = [row[0] for row in data]
     values = [row[1] for row in data]
     
-    return render_template('index.html', data=data, day=day, labels=labels, values=values)
+    return render_template('index2.html', data=data, day=day, labels=labels, values=values)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
