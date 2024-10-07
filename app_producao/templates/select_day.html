@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Dia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Selecionar Dia</h1>
+        <form method="post">
+            <label for="date">Escolha uma data:</label>
+            <select name="date" id="date">
+                {% for date in dates %}
+                    <option value="{{ date }}">{{ date }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Ver Fotos</button>
+        </form>
+        <footer>
+            <a href="{{ url_for('index') }}" class="back-link">Voltar à Página Inicial</a>
+        </footer>
+    </div>
+</body>
+</html>

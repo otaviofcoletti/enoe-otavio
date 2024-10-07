@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Controle de Scripts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 10px auto;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .loading {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Controle de Scripts</h1>
+
+    <!-- Botões para executar scripts -->
+    <button class="button" onclick="executaScript('take_photo')">Executar Script de Captura de Imagem</button>
+
+    <!-- Div de Feedback  https://i.gifer.com/1upR.gif -->
+    <div class="loading" id="loading">
+        <p>Aguardando... o script está sendo executado</p>
+        <img src="https://i.gifer.com/ZC9Y.gif" width="100" height="100">
+    </div>
+    
+
+    <div class="result" id="result"></div>
+
+    <div class="container">
+        {% set filename = image['filename'] %}
+        {% set date_time = filename.split('_') %}
+        {% set date = date_time[0] %}
+        {% set time = date_time[1].split('.')[0] %}
+        <h1>Foto tirada em {{ date }} às {{ time }}</h1>
+        <img src="{{ url_for('serve_image', filename=image['relative_path']) }}" alt="Imagem">
+        <div class="navigation">
+            {% if index > 0 %}
+                <a href="{{ url_for('index', index=index-1) }}">&#9664; Próxima</a>
+            {% endif %}
+            {% if index < total - 1 %}
+                <a href="{{ url_for('index', index=index+1) }}">Anterior &#9654;</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function checkForNewImage() {
+            while (true) {
+                const response = await fetch('/check_new_image');
+                const data = await response.json();
+
+                if (data.new_image_available) {
+                    // Redireciona para a rota '/' assim que uma nova imagem for detectada
+                    window.location.href = '/';
+                    break;
+                }
+
+                // Aguarda 5 segundos antes de checar novamente
+                console.log('Aguardando nova imagem...');
+                await sleep(1000);
+            }
+        }
+
+        function executaScript(scriptName) {
+            // Mostrar a barra de carregamento
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('result').innerHTML = "";
+
+            // Chamar o endpoint para executar o script via Fetch API
+            fetch(`/executa/${scriptName}`)
+            .then(response => response.json())
+            .then(data => {
+                // Esconder a barra de carregamento
+                document.getElementById('loading').style.display = 'none';
+                
+                const resultDiv = document.getElementById('result');
+                if (data.status === "success") {
+                    resultDiv.innerHTML = "Sucesso: " + data.message;
+                    resultDiv.className = 'success';
+                    checkForNewImage();
+
+                } else {
+                    resultDiv.innerHTML = "Erro: " + data.message;
+                    resultDiv.className = 'error';
+                }
+            })
+            .catch(error => {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('result').innerHTML = "Erro: " + error;
+                document.getElementById('result').className = 'error';
+            });
+        }
+    </script>
+</body>
+</html>

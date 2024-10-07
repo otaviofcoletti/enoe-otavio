@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Fotos em {{ date }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Fotos em {{ date }}</h1>
+        <img src="{{ url_for('serve_image', filename=image['relative_path']) }}" alt="Imagem">
+        <div class="navigation">
+            {% if index > 0 %}
+                <a href="{{ url_for('photos_on_day', date=date, index=index-1) }}">&#9664; Anterior</a>
+            {% endif %}
+            {% if index < total - 1 %}
+                <a href="{{ url_for('photos_on_day', date=date, index=index+1) }}">Próxima &#9654;</a>
+            {% endif %}
+        </div>
+        <form method="get" action="{{ url_for('photos_on_day') }}">
+            <input type="hidden" name="date" value="{{ date }}">
+            <label for="image_select">Escolha uma foto:</label>
+            <select name="index" id="image_select" onchange="this.form.submit()">
+                {% for i, img in enumerate(images) %}
+                    <option value="{{ i }}" {% if i == index %}selected{% endif %}>{{ img['filename'] }}</option>
+                {% endfor %}
+            </select>
+        </form>
+        <footer>
+            <a href="{{ url_for('select_day') }}" class="back-link">Voltar à Seleção de Data</a>
+        </footer>
+    </div>
+</body>
+</html>
