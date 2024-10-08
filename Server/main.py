@@ -30,7 +30,7 @@ def main():
 
     mqtt_config = config["MQTT"]
     broker_endpoint = mqtt_config["broker_endpoint"]
-    topics = ["ultrassonic", "images"]
+    topics = ["ultrassonic", "images", "raspberry_info"]
 
     db_config = config["DATABASE"]
 
@@ -98,11 +98,22 @@ def main():
                     except Exception as e:
                         main_logger.error(f"Error saving image: {e}")
 
+                except Exception as e:
+                    main_logger.error(f"Error inserting message: {e}")
+
+
+
                     db_handler.insert_data('images',filename, day_path)
 
+            elif topic == 'raspberry_info':
+                try:
+                    json_data = json.loads(message)
+                    epoch, cpu_temperature, cpu_usage, ram_usage, storage_usage = json_data
+
+                    db_handler.insert_data('raspberry_info',epoch, cpu_temperature, cpu_usage, ram_usage, storage_usage)
+                
                 except Exception as e:
-                    main_logger.error(f"Error inserting image: {e}")
-        
+                    main_logger.error(f"Error inserting raspberry info: {e}")
         time.sleep(1)
 
 if __name__ == "__main__":

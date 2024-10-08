@@ -1,5 +1,6 @@
 import psutil
 import json
+import time
 
 class RaspberrySystemInfo:
     def __init__(self):
@@ -40,6 +41,7 @@ class RaspberrySystemInfo:
 
         # Combine them into a dictionary
         system_info = {
+            "epoch": time.time(),
             "cpu_temperature": cpu_temp,
             "cpu_usage": cpu_usage,
             "ram_usage": ram_usage,
