@@ -234,17 +234,17 @@ def main():
         except Exception as e:
             logger.error(f"Error processing images: {e}")
 
-       # try:
-        current_time = datetime.datetime.now()
-        elapsed_time = (current_time - last_raspberry_info_time).total_seconds()
-        if elapsed_time >= raspberry_info_interval_seconds:
-            mqtt_payload = raspberry_info.format_info_for_mqtt()
-            result = mqttc.client.publish("raspberry_info", mqtt_payload, qos=1)
-            result.wait_for_publish(timeout=100)
-            logger.info(f"Publishing {mqtt_payload}")
-            last_raspberry_info_time = datetime.datetime.now()
-        # except Exception as e:
-        #     logger.error(f"Error sending raspberry info: {e}")
+        try:
+            current_time = datetime.datetime.now()
+            elapsed_time = (current_time - last_raspberry_info_time).total_seconds()
+            if elapsed_time >= raspberry_info_interval_seconds:
+                mqtt_payload = raspberry_info.format_info_for_mqtt()
+                result = mqttc.client.publish("raspberry_info", mqtt_payload, qos=1)
+                result.wait_for_publish(timeout=100)
+                logger.info(f"Publishing {mqtt_payload}")
+                last_raspberry_info_time = datetime.datetime.now()
+        except Exception as e:
+            logger.error(f"Error sending raspberry info: {e}")
 
         time.sleep(1)  # Esperar antes de verificar novos arquivos
 
