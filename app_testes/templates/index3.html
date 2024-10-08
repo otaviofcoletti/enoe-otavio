@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming de Dados Ultrassônicos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Inclua o Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Inclua o adaptador de datas (date-fns) -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@2.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Streaming de Dados Ultrassônicos</h1>
+        <canvas id="lineChart" width="400" height="200"></canvas>
+    </div>
+
+    <script>
+        var ctx = document.getElementById('lineChart').getContext('2d');
+        var lineChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Medição',
+                    data: [],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        type: 'time',
+                        time: {
+                            unit: 'minute', // Ajuste conforme necessário (e.g., 'second', 'hour')
+                            displayFormats: {
+                                minute: 'HH:mm:ss' // Formato de exibição
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Hora'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Medição'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true
+                    },
+                    tooltip: {
+                        enabled: true
+                    }
+                }
+            }
+        });
+
+        // Função para buscar os dados a cada 2 segundos
+        function fetchData() {
+            fetch('/data')
+                .then(response => response.json())
+                .then(data => {
+                    console.log("Dados recebidos:", data); // Log para depuração
+                    if (data.labels.length > 0) {
+                        lineChart.data.labels = data.labels.map(label => new Date(label)); // Converte strings para objetos Date
+                        lineChart.data.datasets[0].data = data.values;
+                        lineChart.update();
+                    } else {
+                        console.log("Nenhum dado recebido");
+                    }
+                })
+                .catch(error => console.error("Erro ao buscar dados:", error));
+        }
+
+        // Atualiza os dados a cada 2 segundos
+        setInterval(fetchData, 2000);
+    </script>
+</body>
+</html>

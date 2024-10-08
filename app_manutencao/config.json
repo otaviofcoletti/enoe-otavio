@@ -1,0 +1,26 @@
+{
+  "MQTT": {
+      "broker_endpoint": "100.111.36.103",
+      "port": 1883
+  },
+  "CREDENTIALS": {
+      "username": "raspberry",
+      "password": "raspberry.publisher"
+  },
+  "CSV_INTERVALS": {
+      "file_creation_minutes": 2,
+      "data_interval_seconds": 20
+  },
+  "CAMERA_SETTINGS": {
+      "username": "admin",
+      "password": "admin",
+      "ip_camera": "10.1.1.11"
+  },
+  "CAPTURE_INTERVALS": {
+      "capture_interval_seconds": 200
+  },
+    "CSV_SHORT_INTERVALS": {
+      "file_creation_minutes": 0.5,
+      "data_interval_seconds": 5
+    }
+}

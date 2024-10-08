@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Galeria de Imagens</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        {% set filename = image['filename'] %}
+        {% set date_time = filename.split('_') %}
+        {% set date = date_time[0] %}
+        {% set time = date_time[1].split('.')[0] %}
+        <h1>Foto tirada em {{ date }} às {{ time }}</h1>
+        <img src="{{ url_for('serve_image', filename=image['relative_path']) }}" alt="Imagem">
+        <div class="navigation">
+            {% if index > 0 %}
+                <a href="{{ url_for('index', index=index-1) }}">&#9664; Anterior</a>
+            {% endif %}
+            {% if index < total - 1 %}
+                <a href="{{ url_for('index', index=index+1) }}">Próxima &#9654;</a>
+            {% endif %}
+        </div>
+        <form action="{{ url_for('select_day') }}">
+            <button type="submit">Selecionar Dia</button>
+        </form>
+    </div>
+</body>
+</html>
