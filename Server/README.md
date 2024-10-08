@@ -260,3 +260,40 @@ journalctl -u main_subscriber.service
 ```bash
 sudo systemctl daemon-reload
 ```
+
+## Como restaurar backup
+https://www.youtube.com/watch?v=57FW16QvFJ8&ab_channel=CodeTotal
+
+
+# Comandos
+
+Ir na pasta Database/backups
+
+Decompactar o arquivo usando gunzip
+
+gunzip backup_20241008.sql.gz
+
+Copie o arquivo para o container
+
+docker cp backup_20241008.sql postgres:/backup.sql
+
+Entrar no container 
+
+docker exec -it postgres bash
+
+Criar o novo banco:
+
+createdb -U user ultrassonic_restored
+
+Restaurar a partir do arquivo copiado
+
+psql -U postgres -d ultrassonic_restored < backup.sql
+
+Verificar se está tudo certo 
+
+Entre agora no banco de dados, lembre-se que antes você estava apenas no container
+
+psql -U user -d ultrassonic_restored
+
+\dt para visualizar as tabelas
+
