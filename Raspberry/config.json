@@ -23,4 +23,8 @@
       "file_creation_minutes": 0.5,
       "data_interval_seconds": 5
     }
+    ,
+    "RASPBERRY": {
+      "info_interval_minutes": 1
+    }
 }

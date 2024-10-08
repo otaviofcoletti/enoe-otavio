@@ -7,6 +7,7 @@ import sys
 import psutil
 import MQTTHandlerPublisher as mqtt
 import base64
+from RaspberrySystemInfo import RaspberrySystemInfo
 
 import subprocess
 import requests
@@ -49,6 +50,10 @@ password = credentials_config["password"]
 config_csv_interval = config["CSV_INTERVALS"]
 csv_file_creation_minutes = config_csv_interval["file_creation_minutes"]
 csv_file_creation_seconds = csv_file_creation_minutes * 60
+
+raspberry_config = config['RASPBERRY']
+raspberry_info_interval_minutes = raspberry_config['info_interval_minutes']
+raspberry_info_interval_seconds = raspberry_info_interval_minutes * 60
 
 # Função genérica para verificar se arquivo está pronto para ser processado
 def is_ready_for_processing(filename, interval_seconds):
@@ -179,6 +184,9 @@ def main():
     Levanta:
         Exception: Se ocorrer um erro durante o processamento de arquivos ou imagens.
     """
+
+    raspberry_info = RaspberrySystemInfo()
+
     mqttc = mqtt.MQTTHandlerPublisher(broker_address=broker_endpoint, port=port, username=username, password=password)
 
     mqttc.connect()
@@ -189,6 +197,7 @@ def main():
 
     # Obter contadores iniciais de I/O
     # start_sent, start_recv = get_data_usage()
+    last_raspberry_info_time = datetime.datetime.now()
 
     while True:
         # Encontrar arquivos CSV para processar
@@ -225,6 +234,17 @@ def main():
         except Exception as e:
             logger.error(f"Error processing images: {e}")
 
+       # try:
+        current_time = datetime.datetime.now()
+        elapsed_time = (current_time - last_raspberry_info_time).total_seconds()
+        if elapsed_time >= raspberry_info_interval_seconds:
+            mqtt_payload = raspberry_info.format_info_for_mqtt()
+            result = mqttc.client.publish("raspberry_info", mqtt_payload, qos=1)
+            result.wait_for_publish(timeout=100)
+            logger.info(f"Publishing {mqtt_payload}")
+            last_raspberry_info_time = datetime.datetime.now()
+        # except Exception as e:
+        #     logger.error(f"Error sending raspberry info: {e}")
 
         time.sleep(1)  # Esperar antes de verificar novos arquivos
 
