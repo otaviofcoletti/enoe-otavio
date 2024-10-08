@@ -108,9 +108,18 @@ def main():
             elif topic == 'raspberry_info':
                 try:
                     json_data = json.loads(message)
-                    epoch, cpu_temperature, cpu_usage, ram_usage, storage_usage = json_data
-
-                    db_handler.insert_data('raspberry_info',epoch, cpu_temperature, cpu_usage, ram_usage, storage_usage)
+                    epoch = json_data['epoch']
+                    cpu_temperature = float(json_data['cpu_temperature'])
+                    cpu_usage = float(json_data['cpu_usage'])
+                    ram_usage = float(json_data['ram_usage'])
+                    storage_usage = float(json_data['storage_usage'])
+                    raspberry_data = {
+                        'cpu_temperature': cpu_temperature,
+                        'cpu_usage': cpu_usage,
+                        'ram_usage': ram_usage,
+                        'storage_usage': storage_usage
+                    }
+                    db_handler.insert_data('raspberry_info',epoch, raspberry_data)
                 
                 except Exception as e:
                     main_logger.error(f"Error inserting raspberry info: {e}")

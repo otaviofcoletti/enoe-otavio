@@ -43,6 +43,20 @@ class DatabaseHandler:
                 )
                 self.conn.commit()
                 db_logger.info(f"Image inserted successfully: epoch={key}, image_path={data}")
+            elif table == 'raspberry_info':
+                # Certifique-se de que `data` é um dicionário com os valores corretos
+                cpu_temperature = data.get('cpu_temperature')
+                cpu_usage = data.get('cpu_usage')
+                ram_usage = data.get('ram_usage')
+                storage_usage = data.get('storage_usage')
+
+                # Execute o comando SQL para inserir os dados da Raspberry Pi
+                self.cursor.execute(
+                    f"INSERT INTO {table} (epoch, cpu_temperature, cpu_usage, ram_usage, storage_usage) VALUES (%s, %s, %s, %s, %s)",
+                    (key, cpu_temperature, cpu_usage, ram_usage, storage_usage)
+                )
+                self.conn.commit()
+                db_logger.info(f"Raspberry info inserted successfully: epoch={key}, cpu_temperature={cpu_temperature}, cpu_usage={cpu_usage}, ram_usage={ram_usage}, storage_usage={storage_usage}")
         except Exception as e:
             db_logger.error(f"Error inserting data into database: {e}")
             self.conn.rollback()

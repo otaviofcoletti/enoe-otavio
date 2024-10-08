@@ -22,3 +22,7 @@
 2024-10-08 20:17:51,618 - ERROR - Error inserting message: connection already closed
 2024-10-08 20:20:08,975 - ERROR - Error inserting image: not enough values to unpack (expected 5, got 4)
 2024-10-08 20:21:09,993 - ERROR - Error inserting image: not enough values to unpack (expected 5, got 4)
+2024-10-08 20:24:07,454 - ERROR - Error inserting raspberry info: DatabaseHandler.insert_data() takes from 3 to 4 positional arguments but 7 were given
+2024-10-08 20:25:08,472 - ERROR - Error inserting raspberry info: DatabaseHandler.insert_data() takes from 3 to 4 positional arguments but 7 were given
+2024-10-08 20:30:14,528 - ERROR - Error inserting raspberry info: DatabaseHandler.insert_data() takes from 3 to 4 positional arguments but 7 were given
+2024-10-08 20:31:15,546 - ERROR - Error inserting raspberry info: DatabaseHandler.insert_data() takes from 3 to 4 positional arguments but 7 were given
