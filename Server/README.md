@@ -297,3 +297,7 @@ psql -U user -d ultrassonic_restored
 
 \dt para visualizar as tabelas
 
+Lembrar de colocar o comando para o banco de dados voltar quando o pc reiniciar
+
+Colocar como serviço os apps e o backup
+
