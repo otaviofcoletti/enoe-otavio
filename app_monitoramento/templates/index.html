@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Delay Visualization</title>
+</head>
+<body>
+    <h1>Log Delay Visualization</h1>
+
+    <form method="POST">
+        <label for="data_type">Data Type:</label>
+        <select name="data_type" id="data_type">
+            <option value="sensor" selected>Sensor</option>
+            <option value="image">Image</option>
+        </select>
+
+        <label for="y_axis">Y Axis:</label>
+        <select name="y_axis" id="y_axis">
+            <option value="log_epoch_difference" selected>Log Epoch Difference</option>
+        </select>
+
+        <label for="start_date">Start Date:</label>
+        <input type="date" name="start_date" value="{{ start_date }}">
+
+        <label for="end_date">End Date:</label>
+        <input type="date" name="end_date" value="{{ end_date }}">
+
+        <button type="submit">Update Graph</button>
+    </form>
+
+    <div>
+        {{ graph_html|safe }}
+    </div>
+</body>
+</html>
