@@ -86,7 +86,7 @@ def main():
 
                     # Create directory structure
                     day_path = create_directory_structure(base_image_path, timestamp)
-
+                    
                     try:
                         # Save the image to a file
                         file_path = os.path.join(day_path, filename)
@@ -98,12 +98,13 @@ def main():
                     except Exception as e:
                         main_logger.error(f"Error saving image: {e}")
 
+                    db_handler.insert_data('images',filename, day_path)
                 except Exception as e:
                     main_logger.error(f"Error inserting message: {e}")
 
 
 
-                    db_handler.insert_data('images',filename, day_path)
+                   
 
             elif topic == 'raspberry_info':
                 try:

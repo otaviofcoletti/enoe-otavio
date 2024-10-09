@@ -26,7 +26,8 @@ def create_backup():
     backup_file = os.path.join(BACKUP_DIR, f"backup_{current_date}.sql.gz")
 
     # Comando para executar o pg_dump no container e salvar o backup localmente
-    dump_cmd = f"docker exec -t {CONTAINER_NAME} pg_dump -U {DB_USER} {DB_NAME} | gzip > {backup_file}"
+    dump_cmd = f"/usr/bin/docker exec -t {CONTAINER_NAME} pg_dump -U {DB_USER} {DB_NAME} |  /bin/gzip > {backup_file}"
+
 
     try:
         # Executa o comando de dump
