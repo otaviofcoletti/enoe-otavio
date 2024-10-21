@@ -11,19 +11,23 @@ def load_config():
     with open("config.json") as f:
         return json.load(f)
 
-def create_directory_structure(base_path, timestamp): # Pega o dia, mês e ano do nome da imagem e cria a estrutura de diretórios
+def create_directory_structure(base_path, timestamp):
+    # Pega o dia, mês e ano do timestamp e cria a estrutura de diretórios com dois dígitos para mês e dia
     date_time = datetime.fromtimestamp(timestamp)
     year = date_time.year
-    month = date_time.month
-    day = date_time.day
+    month = f"{date_time.month:02d}"  # Garante dois dígitos para o mês
+    day = f"{date_time.day:02d}"      # Garante dois dígitos para o dia
 
-    month_path = os.path.join(base_path, str(year), str(month))
-    day_path = os.path.join(month_path, str(day))
+    # Criação do caminho com base no ano/mês/dia
+    month_path = os.path.join(base_path, str(year), month)
+    day_path = os.path.join(month_path, day)
 
+    # Criação dos diretórios se não existirem
     if not os.path.exists(day_path):
         os.makedirs(day_path)
 
     return day_path
+
 
 def main():
     config = load_config()
