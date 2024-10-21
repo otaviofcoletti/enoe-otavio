@@ -50,7 +50,7 @@ def capture_picture():
             return
 
         # Criação do nome do arquivo com o timestamp
-        filename = f"{datetime.now().strftime('%d-%m-%Y_%H:%M:%S')}.jpg"
+        filename = f"{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.jpg"
         file_path = os.path.join(save_directory, filename)
 
         # The image is saved as a JPEG with a specified quality level of 60.

@@ -301,3 +301,24 @@ Lembrar de colocar o comando para o banco de dados voltar quando o pc reiniciar
 
 Colocar como serviço os apps e o backup
 
+
+
+Para configurar o docker iniciar após um reboot
+
+https://stackoverflow.com/questions/49999068/docker-container-doesnt-start-after-reboot-with-enabling-systemd-script
+
+Rode docker inspect -f "{{ .HostConfig.RestartPolicy.Name }}" <container name>
+
+se aparecer "no"
+
+Rode docker update --restart=always <container>
+
+Rode novamente 
+docker inspect -f "{{ .HostConfig.RestartPolicy.Name }}" <container name>
+
+e deverá aparecer "always" no terminal
+
+
+Ativar exporter para monitorar mqtt
+
+https://github.com/hikhvar/mqtt2prometheus

@@ -28,22 +28,36 @@ class DatabaseHandler:
         return False
 
     def insert_data(self, table, key, data=None):
-        try:
-            if table == 'ultrassonic':
-                self.cursor.execute(
-                    f"INSERT INTO {table} (epoch, distance_cm) VALUES (%s, %s)",
-                    (key, data)
-                )
-                self.conn.commit()
-                db_logger.info(f"Data inserted successfully: epoch={key}, distance_cm={data}")
-            elif table == 'images':
+
+        if table == 'ultrassonic':
+            try:
+                if table == 'ultrassonic':
+                    self.cursor.execute(
+                        f"INSERT INTO {table} (epoch, distance_cm) VALUES (%s, %s)",
+                        (key, data)
+                    )
+                    self.conn.commit()
+                    db_logger.info(f"Data inserted successfully: epoch={key}, distance_cm={data}")
+
+            except Exception as e:
+                db_logger.error(f"Error inserting ultrasonic data into database: {e}")
+                self.conn.rollback()
+        
+        elif table == 'images':
+            try:
                 self.cursor.execute(
                     f"INSERT INTO {table} (epoch, image_path) VALUES (%s, %s)",
                     (key, data)
                 )
                 self.conn.commit()
                 db_logger.info(f"Image inserted successfully: epoch={key}, image_path={data}")
-            elif table == 'raspberry_info':
+
+            except Exception as e:
+                db_logger.error(f"Error inserting image data into database: {e}")
+                self.conn.rollback()
+
+        elif table == 'raspberry_info':
+            try:
                 # Certifique-se de que `data` é um dicionário com os valores corretos
                 cpu_temperature = data.get('cpu_temperature')
                 cpu_usage = data.get('cpu_usage')
@@ -57,9 +71,10 @@ class DatabaseHandler:
                 )
                 self.conn.commit()
                 db_logger.info(f"Raspberry info inserted successfully: epoch={key}, cpu_temperature={cpu_temperature}, cpu_usage={cpu_usage}, ram_usage={ram_usage}, storage_usage={storage_usage}")
-        except Exception as e:
-            db_logger.error(f"Error inserting data into database: {e}")
-            self.conn.rollback()
+
+            except Exception as e:
+                db_logger.error(f"Error inserting raspberry info data into database: {e}")
+                self.conn.rollback()
 
     def close(self):
         if self.cursor:

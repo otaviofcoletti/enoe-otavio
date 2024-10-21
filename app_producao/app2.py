@@ -24,16 +24,16 @@ def get_data(day, interval):
     converted_data = []
     for row in data:
         date_time = datetime.fromtimestamp(int(row[0]))
-        formatted_date_time = date_time.strftime('%Y-%m-%d %H:%M:%S')
+        formatted_date_time = date_time.strftime('%Y-%m-%d %H-%M-%S')
         converted_data.append((formatted_date_time, row[1]))
     
     # Filtrar dados com base no intervalo
     filtered_data = []
     last_time = None
     for date_time, value in converted_data:
-        if last_time is None or (datetime.strptime(date_time, '%Y-%m-%d %H:%M:%S') - last_time).total_seconds() >= interval * 60:
+        if last_time is None or (datetime.strptime(date_time, '%Y-%m-%d %H-%M-%S') - last_time).total_seconds() >= interval * 60:
             filtered_data.append((date_time, value))
-            last_time = datetime.strptime(date_time, '%Y-%m-%d %H:%M:%S')
+            last_time = datetime.strptime(date_time, '%Y-%m-%d %H-%M-%S')
     
     return filtered_data
 

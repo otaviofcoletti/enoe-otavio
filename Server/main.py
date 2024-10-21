@@ -82,7 +82,7 @@ def main():
 
                     # Extract timestamp from filename
                     timestamp_str = filename.split('_')[0]
-                    timestamp = datetime.strptime(timestamp_str, '%d-%m-%Y').timestamp()
+                    timestamp = datetime.strptime(timestamp_str, '%Y-%m-%d').timestamp()
 
                     # Create directory structure
                     day_path = create_directory_structure(base_image_path, timestamp)
