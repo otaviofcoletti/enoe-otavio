@@ -41,17 +41,28 @@ def get_all_images():
     for root, dirs, files in os.walk(IMAGE_FOLDER):
         for filename in files:
             if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif')):
+                # Caminho completo do arquivo
                 filepath = os.path.join(root, filename)
-                mod_time = os.path.getmtime(filepath)
-                date = datetime.fromtimestamp(mod_time).strftime('%Y-%m-%d')
-                relative_path = os.path.relpath(filepath, IMAGE_FOLDER)
+
+                # Extraindo o caminho relativo e separando ano/mês/dia
+                relative_path = os.path.relpath(filepath, IMAGE_FOLDER).replace('\\', '/')
+                path_parts = relative_path.split('/')
+
+                # Extraindo a data do caminho (ano, mês, dia)
+                year, month, day = path_parts[-4], path_parts[-3], path_parts[-2]
+
+                # A data já está no nome do arquivo e já deve estar no formato com dois dígitos
+                date = f"{year}-{month}-{day}"
+
+                # Adicionando as informações à lista
                 images.append({
                     'filename': filename,
-                    'mod_time': mod_time,
                     'date': date,
-                    'relative_path': relative_path.replace('\\', '/')
+                    'relative_path': relative_path
                 })
-    images.sort(key=lambda x: x['mod_time'], reverse=True)
+
+    # Ordenar as imagens pela data mais recente, com base na data no nome do arquivo
+    images.sort(key=lambda x: x['relative_path'], reverse=True)
     return images
 
 # Rota que será acionada ao pressionar um botão, executando o script via SSH

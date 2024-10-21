@@ -7,10 +7,6 @@ app = Flask(__name__)
 # Defina o caminho para a pasta que contém as imagens
 IMAGE_FOLDER = '/home/intermidia/enoe-otavio/Server/images'
 
-import os
-
-import os
-
 def get_all_images():
     images = []
     for root, dirs, files in os.walk(IMAGE_FOLDER):
