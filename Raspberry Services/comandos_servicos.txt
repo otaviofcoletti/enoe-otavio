@@ -9,6 +9,9 @@ sudo systemctl start file_consumer.service
 sudo systemctl start ultrassonic_file_producer.service
 sudo systemctl start image_file_producer.service
 
+sudo systemctl restart file_consumer.service
+sudo systemctl restart ultrassonic_file_producer.service
+sudo systemctl restart image_file_producer.service
 
 sudo cp file_consumer.service /etc/systemd/system/
 sudo cp ultrassonic_file_producer.service /etc/systemd/system/
