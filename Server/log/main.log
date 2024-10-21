@@ -1727,3 +1727,6 @@
 2024-10-21 18:10:32,563 - ERROR - Error inserting message: 'NoneType' object has no attribute 'rollback'
 2024-10-21 18:13:55,811 - ERROR - Error inserting message: 'NoneType' object has no attribute 'rollback'
 2024-10-21 18:17:16,918 - ERROR - Error inserting message: 'NoneType' object has no attribute 'rollback'
+2024-10-21 19:51:12,334 - ERROR - Error inserting message: time data '2024-10-21' does not match format '%d-%m-%Y'
+2024-10-21 19:53:12,366 - ERROR - Error inserting message: time data '2024-10-21' does not match format '%d-%m-%Y'
+2024-10-21 19:54:31,389 - ERROR - Error inserting message: time data '2024-10-21' does not match format '%d-%m-%Y'
