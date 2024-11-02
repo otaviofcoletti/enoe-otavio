@@ -1,1 +1,4 @@
 enoe
+__pycache__/
+.cache.sqlite
+*.py[cod]
