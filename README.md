@@ -57,3 +57,23 @@ python3 app.py
 
 
 
+Rede Wifi 
+
+4G-UFI-552
+Senha: Intermidia6205
+
+#!/bin/bash
+
+# Nome da rede (SSID) e senha da rede Wi-Fi
+SSID="nome_da_rede_wifi"
+PASSWORD="senha_da_rede"
+
+# Conectar à rede Wi-Fi
+nmcli dev wifi connect "$SSID" password "$PASSWORD"
+
+# Verificar se a conexão foi bem-sucedida
+if [ $? -eq 0 ]; then
+    echo "Conectado à rede Wi-Fi $SSID com sucesso!"
+else
+    echo "Falha ao conectar à rede Wi-Fi $SSID."
+fi
