@@ -76,6 +76,35 @@ class DatabaseHandler:
                 db_logger.error(f"Error inserting raspberry info data into database: {e}")
                 self.conn.rollback()
 
+        elif table == 'weather':
+            try:
+                current_temperature_2m = data.Variables(0).Value()
+                current_relative_humidity_2m = data.Variables(1).Value()
+                current_apparent_temperature = data.Variables(2).Value()
+                current_is_day = data.Variables(3).Value()
+                current_precipitation = data.Variables(4).Value()
+                current_rain = data.Variables(5).Value()
+                current_showers = data.Variables(6).Value()
+                current_weather_code = data.Variables(7).Value()
+                current_cloud_cover = data.Variables(8).Value()
+                current_pressure_msl = data.Variables(9).Value()
+                current_surface_pressure = data.Variables(10).Value()
+                current_wind_speed_10m = data.Variables(11).Value()
+                current_wind_direction_10m = data.Variables(12).Value()
+                current_wind_gusts_10m = data.Variables(13).Value()
+
+                self.cursor.execute (
+                    f"INSERT INTO {table} (epoch, current_temperature_2m, current_relative_humidity_2m, current_apparent_temperature, current_is_day, current_precipitation, current_rain, current_showers, current_weather_code, current_cloud_cover, current_pressure_msl, current_surface_pressure, current_wind_speed_10m, current_wind_direction_10m, current_wind_gusts_10m) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+                    (key, current_temperature_2m, current_relative_humidity_2m, current_apparent_temperature, current_is_day, current_precipitation, current_rain, current_showers, current_weather_code, current_cloud_cover, current_pressure_msl, current_surface_pressure, current_wind_speed_10m, current_wind_direction_10m, current_wind_gusts_10m)
+                )
+                self.conn.commit()
+                db_logger.info(f"Weather data inserted successfully: epoch={key}, current_temperature_2m={current_temperature_2m}, current_relative_humidity_2m={current_relative_humidity_2m}, current_apparent_temperature={current_apparent_temperature}, current_is_day={current_is_day}, current_precipitation={current_precipitation}, current_rain={current_rain}, current_showers={current_showers}, current_weather_code={current_weather_code}, current_cloud_cover={current_cloud_cover}, current_pressure_msl={current_pressure_msl}, current_surface_pressure={current_surface_pressure}, current_wind_speed_10m={current_wind_speed_10m}, current_wind_direction_10m={current_wind_direction_10m}, current_wind_gusts_10m={current_wind_gusts_10m}")
+
+            except Exception as e:
+                db_logger.error(f"Error inserting weather data into database: {e}")
+                self.conn.rollback()
+
+
     def close(self):
         if self.cursor:
             self.cursor.close()
