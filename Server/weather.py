@@ -51,8 +51,10 @@ def main():
         # Current values. The order of variables needs to be the same as requested.
         current = response.Current()
 
+        print(current)
+
         db_handler.insert_data('weather', current.Time(), current) 
 
-        time.sleep(600) # Sleep for 10 minutes
+        time.sleep(3600) # Sleep for 10 minutes
 
 main()
