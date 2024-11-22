@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/publications.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <title>Publicações</title>
+
+</head>
+<body>
+    <header>
+        <h1>Publicações do Projeto</h1>
+        <nav>
+            <a href="/">Início</a>
+            <a href="/last_photo">Última Foto</a>
+            <a href="/select_day">Seleção de Data</a>
+            <a href="/publications">Publicações</a>
+        </nav>
+    </header>
+    <main class="content">
+        <h1>Lista de Publicações</h1>
+        <ul class="publication-list">
+            <li>
+                <h3>Título do Trabalho 1</h3>
+                <p>Autores: Nome 1, Nome 2</p>
+                <p>Publicado em: Data</p>
+                <p>Resumo: Breve descrição do trabalho publicado.</p>
+            </li>
+            <li>
+                <h3>Título do Trabalho 2</h3>
+                <p>Autores: Nome 1, Nome 2</p>
+                <p>Publicado em: Data</p>
+                <p>Resumo: Breve descrição do trabalho publicado.</p>
+            </li>
+            <li>
+                <h3>Título do Trabalho 3</h3>
+                <p>Autores: Nome 1, Nome 2</p>
+                <p>Publicado em: Data</p>
+                <p>Resumo: Breve descrição do trabalho publicado.</p>
+            </li>
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 Projeto E-noé. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Projeto E-noé</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/carousel.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+<body>
+    <header>
+        <h1>Projeto E-noé</h1>
+        <nav>
+            <a href="/">Início</a>
+            <a href="/last_photo">Última Foto</a>
+            <a href="/select_day">Seleção de Data</a>
+            <a href="/publications">Publicações</a>
+        </nav>
+    </header>
+    <main>
+        <div class="main-content">
+            <div class="slideshow-container">
+                <!-- Slides -->
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="{{ url_for('static', filename='images/HIGH.jpeg') }}" style="width:100%">
+                    <div class="text">Caption Text</div>
+                </div>
+            
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="{{ url_for('static', filename='images/high.jpg') }}" style="width:100%">
+                    <div class="text">Caption Two</div>
+                </div>
+            
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="{{ url_for('static', filename='images/low2.jpg') }}" style="width:100%">
+                    <div class="text">Caption Three</div>
+                </div>
+            
+                <!-- Botões -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            
+            <!-- Indicadores -->
+            <!-- <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div> -->
+            <div class="intro-text">
+                <h2>Bem-vindo ao Projeto E-noé</h2>
+                <p>
+                    Este projeto tem como objetivo monitorar rios urbanos utilizando tecnologias avançadas de sensoriamento remoto e 
+                    inteligência artificial. Nosso foco é coletar dados multimodais, incluindo imagens e informações sobre o nível da água, 
+                    para prever enchentes e contribuir para a mitigação de problemas ambientais em áreas urbanas.
+                </p>
+                <p>
+                    Desenvolvido com apoio da FAPESP, este trabalho é parte de um esforço contínuo para integrar ciência e tecnologia em soluções 
+                    práticas para problemas reais enfrentados pela sociedade.
+                </p>
+            </div>
+        </div>
+        <div class="publications">
+            <h2>Trabalhos Publicados</h2>
+            <ul class="publications-link-list">
+                <li><a href="https://ieeexplore.ieee.org/abstract/document/10738344">TDeep Learning and object detection for water level measurement using patterned visual markers</a></li>
+                <li><a href="https://link.springer.com/article/10.1007/s10489-024-05466-2">A deep learning workflow enhanced with optical flow fields for flood risk estimation</a></li>
+                <li><a href="https://www.sciencedirect.com/science/article/pii/S0952197623014197">Water level identification with laser sensors, inertial units, and machine learning</a></li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Projeto E-noé. Todos os direitos reservados.</p>
+    </footer>
+    <!-- Script do Carrossel -->
+    <script src="{{ url_for('static', filename='js/carousel.js') }}"></script>
+</body>
+</html>

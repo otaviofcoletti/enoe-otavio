@@ -1,0 +1,30 @@
+/* index.css */
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.intro-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.publications {
+    background-color: #f4f4f4;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.publications h2 {
+    text-align: center;
+}
+
+.publications-link-list {
+
+    padding-bottom: 2rem;
+
+}
+
