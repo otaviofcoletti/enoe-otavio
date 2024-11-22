@@ -1,0 +1,16 @@
+[Unit]
+Description=Enoe App
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/enoe/enoe-otavio/app_producao
+Environment="PATH=/home/enoe/enoe-otavio/enoe
+ExecStart=/usr/bin/python3 /home/enoe/enoe-otavio/app_producao/app.py
+Restart=on-failure
+RestartSec=5s
+StandardOutput=journal
+StandardError=inherit
+
+[Install]
+WantedBy=multi-user.target

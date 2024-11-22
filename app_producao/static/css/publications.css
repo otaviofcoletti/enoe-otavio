@@ -1,0 +1,26 @@
+.content {
+    padding: 2rem;
+}
+.content h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.publication-list {
+    margin: 0 auto;
+    max-width: 800px;
+    list-style-type: none;
+    padding: 0;
+}
+.publication-list li {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.publication-list li h3 {
+    margin: 0;
+}
+.publication-list li p {
+    margin: 0.5rem 0 0;
+}
