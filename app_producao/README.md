@@ -9,3 +9,6 @@ Aplicativo para visualizar as fotos e os dados do sensor ultrassonico
 App2 para ver os dados do sensor ultrassonico
 
 App2 na 5003 e app na 5001
+
+
+Houveram mudanças aqui, cuidado na hora de dar pull e push

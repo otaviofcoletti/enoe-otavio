@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Selecionar Dia</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+    <header>
+        <h1>Projeto E-noé</h1>
+        <nav>
+            <a href="/">Início</a>
+            <a href="/last_photo">Última Foto</a>
+            <a href="/select_day">Seleção de Data</a>
+            <a href="/publications">Publicações</a>
+        </nav>
+    </header>
     <div class="container">
         <h1>Selecionar Dia</h1>
         <form method="post">
@@ -17,9 +27,10 @@
             </select>
             <button type="submit">Ver Fotos</button>
         </form>
-        <footer>
-            <a href="{{ url_for('index') }}" class="back-link">Voltar à Página Inicial</a>
-        </footer>
+       
     </div>
+    <footer>
+        <p>&copy; 2024 Projeto E-noé. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>

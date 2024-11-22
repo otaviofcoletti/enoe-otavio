@@ -5,7 +5,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 # Defina o caminho para a pasta que contém as imagens
-IMAGE_FOLDER = '/home/intermidia/enoe-otavio/Server/images'
+IMAGE_FOLDER = '/home/enoe/enoe-backup'
 
 def get_all_images():
     images = []
@@ -36,10 +36,19 @@ def get_all_images():
     images.sort(key=lambda x: x['relative_path'], reverse=True)
     return images
 
+@app.route('/publications')
+def publications():
+    return render_template('publications.html')
 
 
 @app.route('/')
 def index():
+    return render_template('index.html')
+
+
+
+@app.route('/last_photo')
+def last_photo():
     images = get_all_images()
     if not images:
         return "Nenhuma imagem encontrada."
@@ -49,7 +58,7 @@ def index():
     elif index >= len(images):
         index = len(images) - 1
     image = images[index]
-    return render_template('index.html', image=image, index=index, total=len(images))
+    return render_template('last_photo.html', image=image, index=index, total=len(images))
 
 @app.route('/select_day', methods=['GET', 'POST'])
 def select_day():
@@ -91,4 +100,4 @@ def serve_image(filename):
 app.jinja_env.globals.update(enumerate=enumerate)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001, debug=True)
+    app.run(host='0.0.0.0', port=5001)
