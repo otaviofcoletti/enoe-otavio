@@ -1,0 +1,18 @@
+[Unit]
+Description=Sincronization Service
+After=network.target
+
+[Service]
+Type=simple
+User=intermidia
+Group=intermidia
+WorkingDirectory=/home/intermidia/enoe-otavio/Server/sincronization_service
+Environment="PATH=/home/intermidia/enoe-otavio/enoe/bin"
+ExecStart=/home/intermidia/enoe-otavio/enoe/bin/python3 /home/intermidia/enoe-otavio/Server/sincronization_service/sincronization.py
+Restart=on-failure
+RestartSec=5s
+StandardOutput=journal
+StandardError=inherit
+
+[Install]
+WantedBy=multi-user.target
