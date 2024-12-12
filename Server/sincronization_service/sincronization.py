@@ -14,8 +14,8 @@ class SyncHandler(FileSystemEventHandler):
         try:
             subprocess.run(
                 [
-                    "rsync",
-                    "-e", "ssh -p 2022",  # Use custom SSH port
+                    "/usr/bin/rsync",
+                    "-e", "/usr/bin/ssh -p 2022",  # Use custom SSH port
                     "-a",
                     self.local_dir,
                     f"{self.remote_host}:{self.remote_dir}"
@@ -43,7 +43,7 @@ if __name__ == "__main__":
 
     # Create event handler and observer
     event_handler = SyncHandler(local_dir, remote_dir, remote_host)
-    observer = Observer()
+    observer = Observer() 
     observer.schedule(event_handler, local_dir, recursive=True)
 
     # Start monitoring

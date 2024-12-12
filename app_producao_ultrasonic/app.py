@@ -15,31 +15,33 @@ db_config = {
 def get_data(day, interval):
     conn = psycopg2.connect(**db_config)
     cur = conn.cursor()
-    # Convert 'epoch' to bigint before applying to_timestamp
-    cur.execute("SELECT * FROM ultrassonic WHERE to_char(to_timestamp(epoch::bigint), 'YYYY-MM-DD') = %s ORDER BY epoch;", (day,))
+    # Ajustando o timestamp para GMT-3 no SQL
+    cur.execute("""
+        SELECT to_char(to_timestamp(epoch::bigint) AT TIME ZONE 'America/Sao_Paulo', 'YYYY-MM-DD HH24:MI:SS') AS timestamp_local,
+               distance_cm
+        FROM ultrassonic
+        WHERE to_char(to_timestamp(epoch::bigint) AT TIME ZONE 'America/Sao_Paulo', 'YYYY-MM-DD') = %s
+        ORDER BY epoch;
+    """, (day,))
     data = cur.fetchall()
     cur.close()
     conn.close()
 
-    converted_data = []
-    for row in data:
-        date_time = datetime.fromtimestamp(int(row[0]))
-        formatted_date_time = date_time.strftime('%Y-%m-%d %H-%M-%S')
-        converted_data.append((formatted_date_time, row[1]))
-    
-    # Filtrar dados com base no intervalo
+    # Filtrar dados com base no intervalo em minutos
     filtered_data = []
     last_time = None
-    for date_time, value in converted_data:
-        if last_time is None or (datetime.strptime(date_time, '%Y-%m-%d %H-%M-%S') - last_time).total_seconds() >= interval * 60:
-            filtered_data.append((date_time, value))
-            last_time = datetime.strptime(date_time, '%Y-%m-%d %H-%M-%S')
-    
+    for timestamp_local, value in data:
+        current_time = datetime.strptime(timestamp_local, '%Y-%m-%d %H:%M:%S')
+        if last_time is None or (current_time - last_time).total_seconds() >= interval * 60:
+            filtered_data.append((timestamp_local, value))
+            last_time = current_time
+
     return filtered_data
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    day = request.form.get('day', datetime.now().strftime('%Y-%m-%d'))
+    # Obtém o dia atual no horário de São Paulo
+    day = request.form.get('day', (datetime.now() - timedelta(hours=3)).strftime('%Y-%m-%d'))
     interval = int(request.form.get('interval', 1))
     data = get_data(day, interval)
     

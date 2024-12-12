@@ -6,9 +6,9 @@ After=network.target
 Type=simple
 User=intermidia
 Group=intermidia
-WorkingDirectory=/home/intermidia/enoe-otavio/app_producao
+WorkingDirectory=/home/intermidia/enoe-otavio/app_producao_ultrasonic
 Environment="PATH=/home/intermidia/enoe-otavio/enoe/bin"
-ExecStart=/home/intermidia/enoe-otavio/enoe/bin/python3 /home/intermidia/enoe-otavio/app_producao/app2.py
+ExecStart=/home/intermidia/enoe-otavio/enoe/bin/python3 /home/intermidia/enoe-otavio/app_producao_ultrasonic/app.py
 Restart=on-failure
 RestartSec=5s
 StandardOutput=journal
