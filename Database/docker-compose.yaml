@@ -6,12 +6,9 @@ services:
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: ultrassonic_sensor
+      POSTGRES_DB: enoe_database
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data  # Monta o volume no local onde o PostgreSQL armazena dados
+      - ./Database/postgres_configurations:/var/lib/postgresql/data  # Monta o volume no local onde o PostgreSQL armazena dados
 
-volumes:
-  postgres_data:
-    driver: local  # Utiliza o driver de volume local para persistência

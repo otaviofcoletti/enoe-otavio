@@ -1,6 +1,6 @@
-CREATE TABLE IF NOT EXISTS ultrassonic (
+CREATE TABLE IF NOT EXISTS ultrasonic (
     epoch VARCHAR(30) PRIMARY KEY,
-    distance_cm VARCHAR(30) NOT NULL
+    distance_mm VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS images (

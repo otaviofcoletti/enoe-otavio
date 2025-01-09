@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 app = Flask(__name__)
 
 db_config = {
-    'dbname': 'ultrassonic_sensor',
+    'dbname': 'enoe_database',
     'user': 'user',
     'password': 'password',
     'host': '172.18.0.2',
@@ -18,8 +18,8 @@ def get_data(day, interval):
     # Ajustando o timestamp para GMT-3 no SQL
     cur.execute("""
         SELECT to_char(to_timestamp(epoch::bigint) AT TIME ZONE 'America/Sao_Paulo', 'YYYY-MM-DD HH24:MI:SS') AS timestamp_local,
-               distance_cm
-        FROM ultrassonic
+               distance_mm
+        FROM ultrasonic
         WHERE to_char(to_timestamp(epoch::bigint) AT TIME ZONE 'America/Sao_Paulo', 'YYYY-MM-DD') = %s
         ORDER BY epoch;
     """, (day,))

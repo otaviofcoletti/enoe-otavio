@@ -29,15 +29,15 @@ class DatabaseHandler:
 
     def insert_data(self, table, key, data=None):
 
-        if table == 'ultrassonic':
+        if table == 'ultrasonic':
             try:
-                if table == 'ultrassonic':
+                if table == 'ultrasonic':
                     self.cursor.execute(
-                        f"INSERT INTO {table} (epoch, distance_cm) VALUES (%s, %s)",
+                        f"INSERT INTO {table} (epoch, distance_mm) VALUES (%s, %s)",
                         (key, data)
                     )
                     self.conn.commit()
-                    db_logger.info(f"Data inserted successfully: epoch={key}, distance_cm={data}")
+                    db_logger.info(f"Data inserted successfully: epoch={key}, distance_mm={data}")
 
             except Exception as e:
                 db_logger.error(f"Error inserting ultrasonic data into database: {e}")

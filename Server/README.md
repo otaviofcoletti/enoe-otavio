@@ -283,17 +283,17 @@ docker exec -it postgres bash
 
 Criar o novo banco:
 
-createdb -U user ultrassonic_restored
+createdb -U user database_restored
 
 Restaurar a partir do arquivo copiado
 
-psql -U postgres -d ultrassonic_restored < backup.sql
+psql -U user -d database_restored < backup.sql
 
 Verificar se está tudo certo 
 
 Entre agora no banco de dados, lembre-se que antes você estava apenas no container
 
-psql -U user -d ultrassonic_restored
+psql -U user -d database_restored
 
 \dt para visualizar as tabelas
 

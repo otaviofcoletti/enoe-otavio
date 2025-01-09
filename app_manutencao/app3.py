@@ -5,7 +5,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 db_config = {
-    'dbname': 'ultrassonic_sensor',
+    'dbname': 'enoe_database',
     'user': 'user',
     'password': 'password',
     'host': '172.18.0.2',
@@ -16,7 +16,7 @@ def get_latest_data():
     try:
         conn = psycopg2.connect(**db_config)
         cur = conn.cursor()
-        cur.execute("SELECT epoch, distance_cm FROM ultrassonic ORDER BY epoch DESC LIMIT 50;")
+        cur.execute("SELECT epoch, distance_mm FROM ultrasonic ORDER BY epoch DESC LIMIT 50;")
         data = cur.fetchall()
         cur.close()
         conn.close()

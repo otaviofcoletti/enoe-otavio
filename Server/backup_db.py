@@ -11,7 +11,7 @@ import time
 
 CONTAINER_NAME = "postgres"  # Nome do container Docker do PostgreSQL
 DB_USER = "user"             # Usuário do PostgreSQL
-DB_NAME = "ultrassonic_sensor"  # Nome do banco de dados
+DB_NAME = "enoe_database"  # Nome do banco de dados
 BACKUP_DIR = "/home/intermidia/enoe-otavio/Database/backups"  # Diretório de backup no host
 RCLONE_REMOTE = "gdrive:backup-folder"  # Nome do remote rclone
 

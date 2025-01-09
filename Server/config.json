@@ -8,7 +8,7 @@
     "password": "server.publisher"
   },
   "DATABASE": {
-    "dbname": "ultrassonic_sensor",
+    "dbname": "enoe_database",
     "user": "user",
     "password": "password",
     "host": "172.18.0.2",
