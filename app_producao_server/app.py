@@ -45,8 +45,6 @@ def publications():
 def index():
     return render_template('index.html')
 
-
-
 @app.route('/last_photo')
 def last_photo():
     images = get_all_images()
