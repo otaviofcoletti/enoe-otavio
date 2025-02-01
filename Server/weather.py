@@ -6,6 +6,7 @@ from retry_requests import retry
 from DatabaseHandler import DatabaseHandler
 from LoggingClass import Logger  # Import the Logger class
 import time
+import sys
 
 def load_config():
     with open("config.json") as f:
@@ -33,7 +34,9 @@ def main():
     password = config["CREDENTIALS"]["password"]
 
     db_handler = DatabaseHandler(db_config)
-    db_handler.connect()
+    if not db_handler.connect():
+        print("Failed to connect to the database. Exiting...")
+        sys.exit(1)
 
     # Configuração do logger para o DatabaseHandler usando a nova classe Logger
     main_logger = Logger('main', rotation='W0').get_logger()  # Weekly rotation

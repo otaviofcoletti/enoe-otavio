@@ -6,6 +6,7 @@ from datetime import datetime
 from MQTTHandlerSubscriber import MQTTHandlerSubscriber
 from DatabaseHandler import DatabaseHandler
 from LoggingClass import Logger  # Import the Logger class
+import sys
 
 def load_config():
     with open("config.json") as f:
@@ -48,7 +49,10 @@ def main():
     for topic in topics:
         mqtt_handler.subscribe(topic)  # Subscribe to topics
     
-    db_handler.connect()
+    if not db_handler.connect():
+        print("Failed to connect to the database. Exiting...")
+        sys.exit(1)
+
     
     base_image_path = "images"
 
@@ -71,7 +75,7 @@ def main():
                     json_data = json.loads(message)
                     timestamp, distance, epoch = json_data
 
-                    db_handler.insert_data('ultrassonic',epoch, distance)
+                    db_handler.insert_data('ultrasonic',epoch, distance)
                 except Exception as e:
                     main_logger.error(f"Error inserting message: {e}")
 

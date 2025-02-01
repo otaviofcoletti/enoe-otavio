@@ -3,7 +3,7 @@ from logging.handlers import TimedRotatingFileHandler
 import os
 
 class Logger:
-    def __init__(self, name, log_dir='./log', rotation='W0', retention=20, level=logging.INFO):
+    def __init__(self, name, log_dir='./log', rotation='W0', retention=20, level=logging.DEBUG):
         self.logger = logging.getLogger(name)
         self.logger.setLevel(level)
 
