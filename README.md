@@ -60,7 +60,7 @@ python3 app.py
 Rede Wifi 
 
 4G-UFI-552
-Senha: Intermidia6205
+Senha: Enoe2023
 
 #!/bin/bash
 
