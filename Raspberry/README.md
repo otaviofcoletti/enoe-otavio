@@ -36,5 +36,22 @@ Se quiser testar utilize o link no VLC para visualizar o streaming da câmera :v
 Verifique se o VLC está instalado, caso contrário pode utilizar o código do projeto que deverá funcionar
 
 
+## Wifi
+
+## Serviços
+
+### Criadores de dados (imagem e sensores)
+
+## MQTT
+
+## Consumo de dados
+
+## Tailscale
+
+
+## Teste de camera e sensores
+
+
+
 
 
