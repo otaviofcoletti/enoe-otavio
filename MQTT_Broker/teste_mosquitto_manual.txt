@@ -1,0 +1,10 @@
+mosquitto_pub -h 100.111.36.103 -p 1883 -t "test/topic" -m "Hello from another machine!"
+mosquitto_sub -h 100.111.36.103 -p 1883 -t "test/topic"
+
+sudo systemctl start mosquitto
+sudo systemctl stop mosquitto
+sudo systemctl status mosquitto
+
+mosquitto_passwd -c users.txt username
+
+mosquitto -c config-server.conf -v
