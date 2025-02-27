@@ -56,7 +56,7 @@ def capture_picture():
         # The image is saved as a JPEG with a specified quality level of 60.
 
         height, width, layers = frame.shape
-        frame = cv2.resize(frame, (width // 2, height // 2))
+        frame = cv2.resize(frame, (width // 2 , height // 2))
         jpeg_quality = 50
         cv2.imwrite(file_path, frame, [int(cv2.IMWRITE_JPEG_QUALITY), jpeg_quality])
 
