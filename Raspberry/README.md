@@ -35,6 +35,23 @@ Se quiser testar utilize o link no VLC para visualizar o streaming da câmera :v
 
 Verifique se o VLC está instalado, caso contrário pode utilizar o código do projeto que deverá funcionar
 
+Para liberar a porta /dev/ttyS0:
+Desabilitar o serviço serial-getty:
+
+Você pode parar e desabilitar o serviço que está iniciando o login na porta serial. Se estiver usando systemd, execute:
+
+bash
+Copiar
+sudo systemctl stop serial-getty@ttyS0.service
+sudo systemctl disable serial-getty@ttyS0.service
+Isso impede que o serviço seja iniciado automaticamente no boot.
+
+Verificar o arquivo de boot (caso seja um Raspberry Pi):
+
+Em sistemas como o Raspberry Pi, a porta serial pode estar configurada para fornecer um console de login. Verifique o arquivo /boot/cmdline.txt e remova referências a console=ttyS0,115200 ou similares, se você não precisar desse console.
+
+
+INSTALE O OPENCV PELO SUDO APT INSTALL
 
 ## Wifi
 

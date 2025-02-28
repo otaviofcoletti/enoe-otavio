@@ -8,8 +8,8 @@
       "password": "raspberry.publisher"
   },
   "CSV_INTERVALS": {
-      "file_creation_minutes": 2,
-      "data_interval_seconds": 20
+      "file_creation_minutes": 0.5,
+      "data_interval_seconds": 4
   },
   "CAMERA_SETTINGS": {
       "username": "admin",
@@ -25,6 +25,6 @@
     }
     ,
     "RASPBERRY": {
-      "info_interval_minutes": 60
+      "info_interval_minutes": 10
     }
 }

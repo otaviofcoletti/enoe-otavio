@@ -51,6 +51,8 @@ Acess the folder app and run
 python3 app.py
 ```
 
+## Instalar open cv globalmente, ele não funciona baixando pelo pip
 
+## sudo apt install python3-opencv
 
-
+## O criador de imagem deve ter o caminho global do python,  resto mantem no ambiente.

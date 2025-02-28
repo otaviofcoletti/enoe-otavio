@@ -55,6 +55,7 @@ def main():
                     
 
                     distance = ultrassonic_sensor.get_line()
+                    print(f"distancia {distance}")
                     
                     if distance is not None:
                         message = [

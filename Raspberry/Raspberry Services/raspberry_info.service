@@ -5,7 +5,7 @@ After=network.target
 [Service]
 WorkingDirectory=/home/intermidia/enoe-otavio/Raspberry
 Environment="PATH=/home/intermidia/enoe-otavio/raspberry/bin"
-ExecStart=/home/intermidia/enoe-otavio/Raspberry/raspberry/bin/python3 /home/intermidia/enoe-otavio/Raspberry/file_consumer.py
+ExecStart=/home/intermidia/enoe-otavio/raspberry/bin/python3 /home/intermidia/enoe-otavio/Raspberry/RaspberrySystemInfo.py
 Restart=always
 RestartSec=10
 User=intermidia

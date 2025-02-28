@@ -127,7 +127,7 @@ def publish_data(filename, mqttc, topic):
                         logger.info(f"Publishing {filename}")
 
                     except Exception as e:
-                        relay_on()
+                        #relay_on()
                         fail_on_publish = True
                         logger.error(f"Error publishing message ultrasonic: {e}")
         
@@ -147,7 +147,7 @@ def publish_data(filename, mqttc, topic):
                     result.wait_for_publish(timeout=100)
                     logger.info(f"Publishing {filename}")
                 except Exception as e:
-                    relay_on()
+                    #relay_on()
                     fail_on_publish = True
                     logger.error(f"Error publishing message image: {e}")
         
