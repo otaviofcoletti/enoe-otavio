@@ -1,0 +1,92 @@
+1. Instalar Gunicorn
+
+sudo apt-get install gunicorn
+
+
+cria esse arquivo
+
+[Unit]
+Description=Gunicorn for app_producao_server
+After=network.target
+
+[Service]
+User=enoe
+Group=www-data
+WorkingDirectory=/home/enoe/enoe-otavio/app_producao_server
+Environment="PATH=/home/enoe/enoe-otavio/enoe/bin"
+ExecStart=/home/enoe/enoe-otavio/enoe/bin/gunicorn \
+    --workers 3 \
+    --bind 0.0.0.0:2021 \
+    --timeout 30 \
+    app:app
+
+[Install]
+WantedBy=multi-user.target
+
+
+ou roda o comando
+
+gunicorn \
+  --workers 3 \
+  --bind 0.0.0.0:2021 \
+  --timeout 30 \
+  app:app
+
+
+
+  2. NGINX
+
+  sudo apt update
+sudo apt install nginx
+sudo systemctl enable nginx
+sudo systemctl start nginx
+
+
+esse arquivo vc manda la no /etc/nginx/sites-available/nome_do_seu_site
+
+server {
+    listen 80;
+    server_name  seu-dominio.com;    # altere para o seu domínio ou IP
+
+    # Ajuste tamanho máximo de corpo, se precisar de uploads grandes
+    client_max_body_size 10M;
+
+    location / {
+        # Endereço onde o Gunicorn está escutando
+        proxy_pass         http://127.0.0.1:2021;
+        proxy_http_version 1.1;
+        proxy_set_header   Host              $host;
+        proxy_set_header   X-Real-IP         $remote_addr;
+        proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Proto $scheme;
+
+        # Timeouts de proxy
+        proxy_connect_timeout 30s;
+        proxy_read_timeout    60s;
+        proxy_send_timeout    60s;
+    }
+
+    # (Opcional) Rotas estáticas
+    #location /static/ {
+    #    alias /home/enoe/enoe-otavio/app_producao_server/static/;
+    #}
+
+    # Logs (ajuste caminhos se quiser)
+    access_log  /var/log/nginx/vest-agents.access.log;
+    error_log   /var/log/nginx/vest-agents.error.log;
+}
+
+
+Habilite este site criando um link simbólico:
+
+sudo ln -s /etc/nginx/sites-available/vest-agents /etc/nginx/sites-enabled/
+
+
+remova se ja tiver um com o mesmo nome_do_seu_site
+
+sudo rm /etc/nginx/sites-enabled/default
+
+
+recarregue o NGINX para aplicar as mudanças:
+sudo nginx -t        # deve mostrar "syntax is ok" e "test is successful"
+sudo systemctl reload nginx

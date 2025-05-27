@@ -8,41 +8,58 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
     <title>Publicações</title>
-
 </head>
 <body>
     <header>
-        <h1>Publicações do Projeto</h1>
+        <h1>Publicações do Projeto E-noé</h1>
         <nav>
             <a href="/">Início</a>
             <a href="/last_photo">Última Foto</a>
             <a href="/select_day">Seleção de Data</a>
-            <a href="/publications">Publicações</a>
+            <a href="/publications" class="active">Publicações</a>
         </nav>
     </header>
+
     <main class="content">
         <h1>Lista de Publicações</h1>
-        <ul class="publication-list">
-            <li>
-                <h3>Título do Trabalho 1</h3>
-                <p>Autores: Nome 1, Nome 2</p>
-                <p>Publicado em: Data</p>
-                <p>Resumo: Breve descrição do trabalho publicado.</p>
-            </li>
-            <li>
-                <h3>Título do Trabalho 2</h3>
-                <p>Autores: Nome 1, Nome 2</p>
-                <p>Publicado em: Data</p>
-                <p>Resumo: Breve descrição do trabalho publicado.</p>
-            </li>
-            <li>
-                <h3>Título do Trabalho 3</h3>
-                <p>Autores: Nome 1, Nome 2</p>
-                <p>Publicado em: Data</p>
-                <p>Resumo: Breve descrição do trabalho publicado.</p>
-            </li>
-        </ul>
+
+        <section class="publication-item">
+            <h2>1. Ensuring reliable water level measurement for flooding: A redundancy-based approach with pressure transducer and computer vision</h2>
+            <p>Este artigo propõe a fusão de dados de transdutor de pressão e visão computacional para garantir medições confiáveis do nível de água em cenários de inundação. O método utiliza redundância de sensores para manter alta disponibilidade e precisão (<2&nbsp;cm de erro) mesmo em caso de falha de um dos dispositivos.</p>
+            <figure>
+                <img src="{{ url_for('static', filename='images/pressure_cv_diagram.png') }}" alt="Diagrama redundância de sensores">
+                <figcaption>Diagrama do sistema redundante de medição de nível de água.</figcaption>
+            </figure>
+        </section>
+
+        <section class="publication-item">
+            <h2>2. A deep learning workflow enhanced with optical flow fields for flood risk estimation</h2>
+            <p>Nesta pesquisa, emprega-se fluxo óptico denso entre quadros para enriquecer redes neurais convolucionais na predição de risco de inundação. Os resultados mostram ganho de até 8% na acurácia comparado a modelos que utilizam apenas imagens estáticas.</p>
+            <figure>
+                <img src="{{ url_for('static', filename='images/optical_flow_example.png') }}" alt="Exemplo de fluxo óptico">
+                <figcaption>Exemplo de cálculo de fluxo óptico entre imagens consecutivas.</figcaption>
+            </figure>
+        </section>
+
+        <section class="publication-item">
+            <h2>3. Water level identification with laser sensors, inertial units, and machine learning</h2>
+            <p>Este estudo combina sensores LiDAR e IMU para coletar dados experimentais de nível de água. Modelos de aprendizado de máquina (ex: GBDT) são treinados com features extraídas, alcançando erro médio de 8&nbsp;mm e R² de 0,97, demonstrando alta robustez.</p>
+            <figure>
+                <img src="{{ url_for('static', filename='images/lidar_imu_setup.png') }}" alt="Setup LiDAR e IMU">
+                <figcaption>Setup experimental com laser e unidade inercial.</figcaption>
+            </figure>
+        </section>
+
+        <section class="publication-item">
+            <h2>4. A river flooding detection system based on deep learning and computer vision</h2>
+            <p>Desenvolve-se um sistema de baixo custo que utiliza segmentação semântica por deep learning para detectar inundações em tempo real. As câmeras enviam imagens via 4G e alertas automáticos são disparados quando o nível atinge zonas críticas.</p>
+            <figure>
+                <img src="{{ url_for('static', filename='images/flood_detection_system.png') }}" alt="Sistema de detecção de inundações">
+                <figcaption>Visão geral do sistema de detecção de inundações fluviais.</figcaption>
+            </figure>
+        </section>
     </main>
+
     <footer>
         <p>&copy; 2024 Projeto E-noé. Todos os direitos reservados.</p>
     </footer>

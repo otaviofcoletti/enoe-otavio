@@ -2,10 +2,26 @@ from flask import Flask, render_template, request, redirect, url_for, send_from_
 import os
 from datetime import datetime
 
+import os
+from dotenv import load_dotenv
+from flask import Flask, render_template, request
+import psycopg2
+from datetime import datetime, timedelta
+
+load_dotenv()
+
 app = Flask(__name__)
 
-# Defina o caminho para a pasta que contém as imagens
-IMAGE_FOLDER = '/home/enoe/enoe-backup'
+IMAGE_FOLDER = os.environ['IMAGE_FOLDER']
+
+db_config = {
+    'dbname':   os.environ['DB_NAME'],
+    'user':     os.environ['DB_USER'],
+    'password': os.environ['DB_PASSWORD'],
+    'host':     os.environ['DB_HOST'],
+    'port':     os.environ['DB_PORT'],
+}
+
 
 def get_all_images():
     images = []
@@ -100,20 +116,7 @@ def serve_image(filename):
 app.jinja_env.globals.update(enumerate=enumerate)
 
 
-import os
-from dotenv import load_dotenv
-from flask import Flask, render_template, request
-import psycopg2
-from datetime import datetime, timedelta
 
-
-db_config = {
-    'dbname':   os.environ['DB_NAME'],
-    'user':     os.environ['DB_USER'],
-    'password': os.environ['DB_PASSWORD'],
-    'host':     os.environ['DB_HOST'],
-    'port':     os.environ['DB_PORT'],
-}
 
 def get_data(day, interval):
     conn = psycopg2.connect(**db_config)
@@ -154,4 +157,4 @@ def ultrasonic():
     return render_template('ultrasonic.html', data=data, day=day, labels=labels, values=values)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=2021)

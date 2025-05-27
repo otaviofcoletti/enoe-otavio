@@ -1,0 +1,21 @@
+[Unit]
+Description=Gunicorn for app_producao
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/enoe/enoe-otavio/app_producao
+Environment="PATH=/home/enoe/enoe-otavio/enoe"
+ExecStart=/home/enoe/enoe-otavio/enoe/bin/gunicorn \
+    --workers 3 \
+    --bind 0.0.0.0:2021 \
+    --timeout 30 \
+    app_producao.app:app
+
+Restart=on-failure
+RestartSec=5s
+StandardOutput=journal
+StandardError=inherit
+
+[Install]
+WantedBy=multi-user.target
