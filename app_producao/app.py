@@ -100,18 +100,19 @@ def serve_image(filename):
 app.jinja_env.globals.update(enumerate=enumerate)
 
 
-
+import os
+from dotenv import load_dotenv
 from flask import Flask, render_template, request
 import psycopg2
 from datetime import datetime, timedelta
 
-#Arrumar isso aqui, o banco de dados está fechado no servidor, criar um espelho dele aqui, estudar como fazer isso.
+
 db_config = {
-    'dbname': 'enoe_database',
-    'user': 'user',
-    'password': 'password',
-    'host': '172.18.0.2',
-    'port': '5432'
+    'dbname':   os.environ['DB_NAME'],
+    'user':     os.environ['DB_USER'],
+    'password': os.environ['DB_PASSWORD'],
+    'host':     os.environ['DB_HOST'],
+    'port':     os.environ['DB_PORT'],
 }
 
 def get_data(day, interval):
@@ -153,4 +154,4 @@ def ultrasonic():
     return render_template('ultrasonic.html', data=data, day=day, labels=labels, values=values)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001)
+    app.run(host='0.0.0.0', port=80)
