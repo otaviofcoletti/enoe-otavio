@@ -43,6 +43,7 @@ sudo systemctl start nginx
 
 
 esse arquivo vc manda la no /etc/nginx/sites-available/nome_do_seu_site
+sudo cp /home/enoe/enoe-otavio/app_producao/nginx/enoe /etc/nginx/sites-available/enoe
 
 server {
     listen 80;
@@ -53,7 +54,7 @@ server {
 
     location / {
         # Endereço onde o Gunicorn está escutando
-        proxy_pass         http://127.0.0.1:2021;
+        proxy_pass         http://127.0.0.1:80;
         proxy_http_version 1.1;
         proxy_set_header   Host              $host;
         proxy_set_header   X-Real-IP         $remote_addr;
@@ -79,12 +80,12 @@ server {
 
 Habilite este site criando um link simbólico:
 
-sudo ln -s /etc/nginx/sites-available/vest-agents /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/enoe /etc/nginx/sites-enabled/
 
 
 remova se ja tiver um com o mesmo nome_do_seu_site
 
-sudo rm /etc/nginx/sites-enabled/default
+sudo rm /etc/nginx/sites-enabled/enoe
 
 
 recarregue o NGINX para aplicar as mudanças:
