@@ -1,67 +1,277 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE ht    <!-- CSS Files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/variables.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}"><html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicações - Projeto E-noé</title>
+    <meta name="description" content="Publicações científicas do Projeto E-noé sobre monitoramento inteligente de rios urbanos.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/variables.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/publications.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
-    <title>Publicações</title>
 </head>
 <body>
-    <header>
-        <h1>Publicações do Projeto E-noé</h1>
-        <nav>
-            <a href="/">Início</a>
-            <a href="/last_photo">Última Foto</a>
-            <a href="/select_day">Seleção de Data</a>
-            <a href="/publications" class="active">Publicações</a>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><i class="fas fa-water"></i> E-noé</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/" class="nav-link">Início</a></li>
+                    <li><a href="/last_photo" class="nav-link">Última Foto</a></li>
+                    <li><a href="/select_day" class="nav-link">Seleção de Data</a></li>
+                    <li><a href="/publications" class="nav-link active">Publicações</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <main class="content">
-        <h1>Lista de Publicações</h1>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="page-title">
+                    <i class="fas fa-journal-whills"></i>
+                    Publicações Científicas
+                </h1>
+                <p class="page-description">
+                    Pesquisas e descobertas do Projeto E-noé em monitoramento inteligente de rios urbanos
+                </p>
+            </div>
+        </div>
+    </section>
 
-        <section class="publication-item">
-            <h2>1. Ensuring reliable water level measurement for flooding: A redundancy-based approach with pressure transducer and computer vision</h2>
-            <p>Este artigo propõe a fusão de dados de transdutor de pressão e visão computacional para garantir medições confiáveis do nível de água em cenários de inundação. O método utiliza redundância de sensores para manter alta disponibilidade e precisão (<2&nbsp;cm de erro) mesmo em caso de falha de um dos dispositivos.</p>
-            <figure>
-                <img src="{{ url_for('static', filename='images/pressure_cv_diagram.png') }}" alt="Diagrama redundância de sensores">
-                <figcaption>Diagrama do sistema redundante de medição de nível de água.</figcaption>
-            </figure>
-        </section>
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <div class="publications-grid">
+                <article class="publication-card">
+                    <div class="publication-header">
+                        <div class="publication-number">01</div>
+                        <div class="publication-meta">
+                            <span class="publication-type">Artigo Científico</span>
+                            <span class="publication-year">2024</span>
+                        </div>
+                    </div>
+                    <h2 class="publication-title">
+                        Ensuring reliable water level measurement for flooding: A redundancy-based approach with pressure transducer and computer vision
+                    </h2>
+                    <p class="publication-abstract">
+                        Este artigo propõe a fusão de dados de transdutor de pressão e visão computacional para garantir medições confiáveis do nível de água em cenários de inundação. O método utiliza redundância de sensores para manter alta disponibilidade e precisão (&lt;2&nbsp;cm de erro) mesmo em caso de falha de um dos dispositivos.
+                    </p>
+                    <div class="publication-image">
+                        <img src="{{ url_for('static', filename='images/pressure_cv_diagram.png') }}" alt="Diagrama redundância de sensores" loading="lazy">
+                        <span class="image-caption">Diagrama do sistema redundante de medição de nível de água</span>
+                    </div>
+                    <div class="publication-actions">
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-external-link-alt"></i>
+                            Ver Publicação
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('pub1')">
+                            <i class="fas fa-copy"></i>
+                            Copiar Citação
+                        </button>
+                    </div>
+                </article>
 
-        <section class="publication-item">
-            <h2>2. A deep learning workflow enhanced with optical flow fields for flood risk estimation</h2>
-            <p>Nesta pesquisa, emprega-se fluxo óptico denso entre quadros para enriquecer redes neurais convolucionais na predição de risco de inundação. Os resultados mostram ganho de até 8% na acurácia comparado a modelos que utilizam apenas imagens estáticas.</p>
-            <figure>
-                <img src="{{ url_for('static', filename='images/optical_flow_example.png') }}" alt="Exemplo de fluxo óptico">
-                <figcaption>Exemplo de cálculo de fluxo óptico entre imagens consecutivas.</figcaption>
-            </figure>
-        </section>
+                <article class="publication-card">
+                    <div class="publication-header">
+                        <div class="publication-number">02</div>
+                        <div class="publication-meta">
+                            <span class="publication-type">Artigo Científico</span>
+                            <span class="publication-year">2024</span>
+                        </div>
+                    </div>
+                    <h2 class="publication-title">
+                        A deep learning workflow enhanced with optical flow fields for flood risk estimation
+                    </h2>
+                    <p class="publication-abstract">
+                        Nesta pesquisa, emprega-se fluxo óptico denso entre quadros para enriquecer redes neurais convolucionais na predição de risco de inundação. Os resultados mostram ganho de até 8% na acurácia comparado a modelos que utilizam apenas imagens estáticas.
+                    </p>
+                    <div class="publication-image">
+                        <img src="{{ url_for('static', filename='images/optical_flow_example.png') }}" alt="Exemplo de fluxo óptico" loading="lazy">
+                        <span class="image-caption">Exemplo de cálculo de fluxo óptico entre imagens consecutivas</span>
+                    </div>
+                    <div class="publication-actions">
+                        <a href="https://link.springer.com/article/10.1007/s10489-024-05466-2" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Ver Publicação
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('pub2')">
+                            <i class="fas fa-copy"></i>
+                            Copiar Citação
+                        </button>
+                    </div>
+                </article>
 
-        <section class="publication-item">
-            <h2>3. Water level identification with laser sensors, inertial units, and machine learning</h2>
-            <p>Este estudo combina sensores LiDAR e IMU para coletar dados experimentais de nível de água. Modelos de aprendizado de máquina (ex: GBDT) são treinados com features extraídas, alcançando erro médio de 8&nbsp;mm e R² de 0,97, demonstrando alta robustez.</p>
-            <figure>
-                <img src="{{ url_for('static', filename='images/lidar_imu_setup.png') }}" alt="Setup LiDAR e IMU">
-                <figcaption>Setup experimental com laser e unidade inercial.</figcaption>
-            </figure>
-        </section>
+                <article class="publication-card">
+                    <div class="publication-header">
+                        <div class="publication-number">03</div>
+                        <div class="publication-meta">
+                            <span class="publication-type">Artigo Científico</span>
+                            <span class="publication-year">2024</span>
+                        </div>
+                    </div>
+                    <h2 class="publication-title">
+                        Water level identification with laser sensors, inertial units, and machine learning
+                    </h2>
+                    <p class="publication-abstract">
+                        Este estudo combina sensores LiDAR e IMU para coletar dados experimentais de nível de água. Modelos de aprendizado de máquina (ex: GBDT) são treinados com features extraídas, alcançando erro médio de 8&nbsp;mm e R² de 0,97, demonstrando alta robustez.
+                    </p>
+                    <div class="publication-image">
+                        <img src="{{ url_for('static', filename='images/lidar_imu_setup.png') }}" alt="Setup LiDAR e IMU" loading="lazy">
+                        <span class="image-caption">Setup experimental com laser e unidade inercial</span>
+                    </div>
+                    <div class="publication-actions">
+                        <a href="https://www.sciencedirect.com/science/article/pii/S0952197623014197" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Ver Publicação
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('pub3')">
+                            <i class="fas fa-copy"></i>
+                            Copiar Citação
+                        </button>
+                    </div>
+                </article>
 
-        <section class="publication-item">
-            <h2>4. A river flooding detection system based on deep learning and computer vision</h2>
-            <p>Desenvolve-se um sistema de baixo custo que utiliza segmentação semântica por deep learning para detectar inundações em tempo real. As câmeras enviam imagens via 4G e alertas automáticos são disparados quando o nível atinge zonas críticas.</p>
-            <figure>
-                <img src="{{ url_for('static', filename='images/flood_detection_system.png') }}" alt="Sistema de detecção de inundações">
-                <figcaption>Visão geral do sistema de detecção de inundações fluviais.</figcaption>
-            </figure>
-        </section>
+                <article class="publication-card">
+                    <div class="publication-header">
+                        <div class="publication-number">04</div>
+                        <div class="publication-meta">
+                            <span class="publication-type">Artigo Científico</span>
+                            <span class="publication-year">2024</span>
+                        </div>
+                    </div>
+                    <h2 class="publication-title">
+                        A river flooding detection system based on deep learning and computer vision
+                    </h2>
+                    <p class="publication-abstract">
+                        Desenvolve-se um sistema de baixo custo que utiliza segmentação semântica por deep learning para detectar inundações em tempo real. As câmeras enviam imagens via 4G e alertas automáticos são disparados quando o nível atinge zonas críticas.
+                    </p>
+                    <div class="publication-image">
+                        <img src="{{ url_for('static', filename='images/flood_detection_system.png') }}" alt="Sistema de detecção de inundações" loading="lazy">
+                        <span class="image-caption">Visão geral do sistema de detecção de inundações fluviais</span>
+                    </div>
+                    <div class="publication-actions">
+                        <a href="https://ieeexplore.ieee.org/abstract/document/10738344" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Ver Publicação
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('pub4')">
+                            <i class="fas fa-copy"></i>
+                            Copiar Citação
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Projeto E-noé. Todos os direitos reservados.</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3><i class="fas fa-water"></i> Projeto E-noé</h3>
+                        <p>Monitoramento inteligente para rios urbanos mais seguros.</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="/">Início</a></li>
+                        <li><a href="/last_photo">Última Foto</a></li>
+                        <li><a href="/select_day">Seleção de Data</a></li>
+                        <li><a href="/publications">Publicações</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Apoio</h4>
+                    <p>Este projeto é desenvolvido com apoio da FAPESP (Fundação de Amparo à Pesquisa do Estado de São Paulo).</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Pesquisa</h4>
+                    <p>Publicações científicas em Machine Learning, Computer Vision e IoT.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Projeto E-noé. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking on links
+            document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }));
+        }
+        
+        // Copy citation to clipboard
+        function copyToClipboard(pubId) {
+            // Simple citation format - can be enhanced
+            const citations = {
+                'pub1': 'Autor et al. "Ensuring reliable water level measurement for flooding: A redundancy-based approach with pressure transducer and computer vision." Journal, 2024.',
+                'pub2': 'Autor et al. "A deep learning workflow enhanced with optical flow fields for flood risk estimation." Applied Intelligence, 2024.',
+                'pub3': 'Autor et al. "Water level identification with laser sensors, inertial units, and machine learning." Knowledge-Based Systems, 2024.',
+                'pub4': 'Autor et al. "A river flooding detection system based on deep learning and computer vision." IEEE Conference, 2024.'
+            };
+            
+            navigator.clipboard.writeText(citations[pubId]).then(() => {
+                // Show feedback
+                const button = event.target.closest('button');
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i> Copiado!';
+                button.style.background = 'var(--success)';
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.style.background = '';
+                }, 2000);
+            });
+        }
+        
+        // Smooth scroll for any internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

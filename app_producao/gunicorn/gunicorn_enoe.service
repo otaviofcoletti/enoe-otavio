@@ -10,6 +10,7 @@ ExecStart=/home/enoe/enoe-otavio/enoe/bin/gunicorn \
     --workers 3 \
     --bind 0.0.0.0:2021 \
     --timeout 30 \
+    --reload \
     app:app
 
 Restart=on-failure

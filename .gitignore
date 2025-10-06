@@ -2,3 +2,5 @@ enoe
 __pycache__/
 .cache.sqlite
 *.py[cod]
+app_producao/.env
+/.env

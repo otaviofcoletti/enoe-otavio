@@ -1,0 +1,203 @@
+/* Footer Component Styles */
+.footer {
+  background: linear-gradient(135deg, #111827 0%, #1f2937 100%) !important;
+  color: var(--gray-100) !important;
+  padding: var(--space-20) 0 var(--space-8);
+  margin-top: var(--space-20);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--gray-700);
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary-500), transparent);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-12);
+  margin-bottom: var(--space-12);
+}
+
+.footer-section {
+  position: relative;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: white;
+  margin: 0 0 var(--space-6);
+  font-weight: var(--font-semibold);
+  position: relative;
+}
+
+.footer-section h3 {
+  font-size: var(--text-2xl);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.footer-section h3 i {
+  color: var(--primary-400);
+  font-size: var(--text-xl);
+  filter: drop-shadow(0 0 8px var(--primary-500));
+}
+
+.footer-section h4 {
+  font-size: var(--text-lg);
+  color: var(--primary-300);
+  border-bottom: 2px solid var(--primary-500);
+  padding-bottom: var(--space-2);
+  display: inline-block;
+  margin-bottom: var(--space-4);
+}
+
+.footer-section p {
+  color: var(--gray-300);
+  line-height: 1.7;
+  margin: 0;
+  font-size: var(--text-base);
+}
+
+.footer-logo p {
+  color: var(--gray-200);
+  font-weight: var(--font-medium);
+  margin-top: var(--space-2);
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section li {
+  margin-bottom: var(--space-3);
+}
+
+.footer-section a {
+  color: var(--gray-300);
+  text-decoration: none;
+  transition: all var(--transition-base);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) 0;
+  position: relative;
+  font-weight: var(--font-medium);
+}
+
+.footer-section a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-400), var(--primary-300));
+  transition: width var(--transition-base);
+}
+
+.footer-section a:hover {
+  color: var(--primary-400);
+  transform: translateX(var(--space-1));
+}
+
+.footer-section a:hover::before {
+  width: 100%;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--gray-700);
+  color: var(--gray-400);
+  position: relative;
+}
+
+.footer-bottom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary-500), transparent);
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: var(--text-sm);
+  background: linear-gradient(45deg, var(--gray-400), var(--gray-300));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: var(--font-medium);
+}
+
+/* Responsive footer */
+@media (max-width: 768px) {
+  .footer {
+    padding: var(--space-16) 0 var(--space-6);
+    margin-top: var(--space-12);
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+  
+  .footer-section h3 {
+    font-size: var(--text-xl);
+  }
+  
+  .footer-section h4 {
+    font-size: var(--text-base);
+  }
+  
+  .footer-section {
+    text-align: center;
+  }
+  
+  .footer-section h4 {
+    display: block;
+    width: fit-content;
+    margin: 0 auto var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: var(--space-12) 0 var(--space-4);
+  }
+  
+  .footer-content {
+    gap: var(--space-6);
+  }
+  
+  .footer-section h3 {
+    font-size: var(--text-lg);
+    justify-content: center;
+  }
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background: linear-gradient(135deg, #0f172a 0%, #111827 100%) !important;
+  }
+  
+  .footer::before {
+    background: linear-gradient(90deg, transparent, var(--primary-400), transparent) !important;
+  }
+}

@@ -1,85 +1,310 @@
-<!DOCTYPE html>
+<!DOCTYPE html>    
 <html lang="pt">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/variables.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
 <head>
     <meta charset="UTF-8">
-    <title>Projeto E-noé</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto E-noé - Monitoramento Inteligente de Rios Urbanos</title>
+    <meta name="description" content="Sistema avançado de monitoramento de rios urbanos usando IA e sensoriamento remoto para prevenção de enchentes.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/variables.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/carousel.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
-
+    
+    <!-- Critical CSS - Fallback inline styles -->
+    <style>
+        /* Critical fallback styles if external CSS fails */
+        :root {
+            --primary-600: #2563eb;
+            --primary-500: #3b82f6;
+            --secondary-500: #14b8a6;
+            --gray-50: #f9fafb;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --space-4: 1rem;
+            --radius-lg: 0.5rem;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--gray-50);
+            color: var(--gray-800);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-4);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-500) 50%, var(--secondary-500) 100%);
+            color: white;
+            padding: 5rem 0 4rem;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Projeto E-noé</h1>
-        <nav>
-            <a href="/">Início</a>
-            <a href="/last_photo">Última Foto</a>
-            <a href="/select_day">Seleção de Data</a>
-            <a href="/publications">Publicações</a>
-            <!-- <a href="/ultrasonic">Sensor Ultrassônico</a> -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><i class="fas fa-water"></i> E-noé</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/" class="nav-link active">Início</a></li>
+                    <li><a href="/last_photo" class="nav-link">Última Foto</a></li>
+                    <li><a href="/select_day" class="nav-link">Seleção de Data</a></li>
+                    <li><a href="/publications" class="nav-link">Publicações</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
         </nav>
     </header>
-    <main>
-        <div class="main-content">
-            <div class="slideshow-container">
-                <!-- Slides -->
-                <div class="mySlides fade">
-                    <div class="numbertext">1 / 3</div>
-                    <img src="{{ url_for('static', filename='images/HIGH.jpeg') }}" style="width:100%">
-                    <div class="text">Caption Text</div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text animate-fade-in-left">
+                <h1 class="hero-title">Monitoramento Inteligente de <span class="highlight">Rios Urbanos</span></h1>
+                <p class="hero-description">
+                    Utilizamos tecnologias avançadas de sensoriamento remoto e inteligência artificial para 
+                    monitorar rios urbanos, prever enchentes e contribuir para a mitigação de problemas ambientais.
+                </p>
+                <div class="hero-buttons">
+                    <a href="/last_photo" class="btn btn-primary">Ver Última Foto</a>
+                    <a href="/publications" class="btn btn-secondary">Publicações</a>
                 </div>
-            
-                <div class="mySlides fade">
-                    <div class="numbertext">2 / 3</div>
-                    <img src="{{ url_for('static', filename='images/high.jpg') }}" style="width:100%">
-                    <div class="text">Caption Two</div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <i class="fas fa-camera"></i>
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Monitoramento</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-brain"></i>
+                        <span class="stat-number">IA</span>
+                        <span class="stat-label">Análise Inteligente</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-shield-alt"></i>
+                        <span class="stat-number">Real-time</span>
+                        <span class="stat-label">Alertas</span>
+                    </div>
                 </div>
-            
-                <div class="mySlides fade">
-                    <div class="numbertext">3 / 3</div>
-                    <img src="{{ url_for('static', filename='images/low2.jpg') }}" style="width:100%">
-                    <div class="text">Caption Three</div>
-                </div>
-            
-                <!-- Botões -->
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
-            
-            <!-- Indicadores -->
-            <!-- <div style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div> -->
-            <div class="intro-text">
-                <h2>Bem-vindo ao Projeto E-noé</h2>
-                <p>
-                    Este projeto tem como objetivo monitorar rios urbanos utilizando tecnologias avançadas de sensoriamento remoto e 
-                    inteligência artificial. Nosso foco é coletar dados multimodais, incluindo imagens e informações sobre o nível da água, 
-                    para prever enchentes e contribuir para a mitigação de problemas ambientais em áreas urbanas.
-                </p>
-                <p>
-                    Desenvolvido com apoio da FAPESP, este trabalho é parte de um esforço contínuo para integrar ciência e tecnologia em soluções 
-                    práticas para problemas reais enfrentados pela sociedade.
-                </p>
+            <div class="hero-visual animate-fade-in-right delay-200">
+                <div class="slideshow-container">
+                    <!-- Slides -->
+                    <div class="mySlides fade">
+                        <img src="{{ url_for('static', filename='images/HIGH.jpeg') }}" alt="Nível alto do rio">
+                        <div class="text">Monitoramento em Tempo Real</div>
+                    </div>
+                
+                    <div class="mySlides fade">
+                        <img src="{{ url_for('static', filename='images/high.jpg') }}" alt="Sistema de monitoramento">
+                        <div class="text">Tecnologia Avançada</div>
+                    </div>
+                
+                    <div class="mySlides fade">
+                        <img src="{{ url_for('static', filename='images/low2.jpg') }}" alt="Análise de dados">
+                        <div class="text">Prevenção de Enchentes</div>
+                    </div>
+                
+                    <!-- Botões -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
             </div>
         </div>
-        <div class="publications">
-            <h2>Trabalhos Publicados</h2>
-            <ul class="publications-link-list">
-                <li><a href="https://ieeexplore.ieee.org/abstract/document/10738344">TDeep Learning and object detection for water level measurement using patterned visual markers</a></li>
-                <li><a href="https://link.springer.com/article/10.1007/s10489-024-05466-2">A deep learning workflow enhanced with optical flow fields for flood risk estimation</a></li>
-                <li><a href="https://www.sciencedirect.com/science/article/pii/S0952197623014197">Water level identification with laser sensors, inertial units, and machine learning</a></li>
-            </ul>
-        </div>
+    </section>
+    <!-- Main Content -->
+    <main class="main">
+        <!-- About Section -->
+                <!-- About Section -->
+        <section class="about animate-fade-in-up delay-400">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Sobre o Projeto E-noé</h2>
+                    <p>Sistema inteligente de monitoramento de rios urbanos para prevenção de enchentes</p>
+                </div>
+                <div class="about-grid">
+                    <div class="about-card animate-fade-in-up delay-500">
+                        <div class="card-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h3>Sensoriamento Remoto</h3>
+                        <p>Coletamos dados multimodais incluindo imagens de alta qualidade para análise precisa do nível da água.</p>
+                    </div>
+                    <div class="about-card animate-fade-in-up delay-600">
+                        <div class="card-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Inteligência Artificial</h3>
+                        <p>Algoritmos avançados de deep learning para detecção automática e previsão de enchentes.</p>
+                    </div>
+                    <div class="about-card animate-fade-in-up delay-700">
+                        <div class="card-icon">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <h3>Rios Urbanos</h3>
+                        <p>Foco específico em problemas ambientais de áreas urbanas e mitigação de riscos para a população.</p>
+                    </div>
+
+        <!-- Publications Section -->
+        <section class="publications animate-fade-in-up delay-500">
+            <div class="container">
+                <div class="section-header animate-fade-in-up delay-600">
+                    <h2>Trabalhos Publicados</h2>
+                    <p>Pesquisas científicas que fundamentam nossa solução</p>
+                </div>
+                <div class="publications-grid">
+                    <div class="publication-card animate-fade-in-left delay-700">
+                        <div class="publication-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3>Deep Learning e Detecção de Objetos</h3>
+                        <p>Medição do nível da água usando marcadores visuais padronizados</p>
+                        <a href="https://ieeexplore.ieee.org/abstract/document/10738344" class="publication-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Ver Publicação
+                        </a>
+                    </div>
+                    <div class="publication-card animate-fade-in-up delay-800">
+                        <div class="publication-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <h3>Workflow de Deep Learning</h3>
+                        <p>Estimativa de risco de inundação com campos de fluxo óptico</p>
+                        <a href="https://link.springer.com/article/10.1007/s10489-024-05466-2" class="publication-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Ver Publicação
+                        </a>
+                    </div>
+                    <div class="publication-card animate-fade-in-right delay-900">
+                        <div class="publication-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Sensores e Machine Learning</h3>
+                        <p>Identificação do nível da água com sensores laser e unidades inerciais</p>
+                        <a href="https://www.sciencedirect.com/science/article/pii/S0952197623014197" class="publication-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Ver Publicação
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Section -->
+        <section class="technology animate-fade-in-up delay-600">
+            <div class="container">
+                <div class="section-header animate-fade-in-up delay-700">
+                    <h2>Tecnologias Utilizadas</h2>
+                    <p>Ferramentas modernas para soluções eficazes</p>
+                </div>
+                <div class="tech-grid">
+                    <div class="tech-item animate-fade-in-up delay-800">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="tech-item animate-fade-in-up delay-900">
+                        <i class="fas fa-brain"></i>
+                        <span>TensorFlow</span>
+                    </div>
+                    <div class="tech-item animate-fade-in-up delay-1000">
+                        <i class="fas fa-camera"></i>
+                        <span>OpenCV</span>
+                    </div>
+                    <div class="tech-item animate-fade-in-up delay-1100">
+                        <i class="fas fa-microchip"></i>
+                        <span>Raspberry Pi</span>
+                    </div>
+                    <div class="tech-item animate-fade-in-up delay-1200">
+                        <i class="fas fa-wifi"></i>
+                        <span>IoT</span>
+                    </div>
+                    <div class="tech-item animate-fade-in-up delay-1300">
+                        <i class="fas fa-database"></i>
+                        <span>PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-    <footer>
-        <p>&copy; 2024 Projeto E-noé. Todos os direitos reservados.</p>
+    <!-- Footer -->
+    <footer class="footer animate-fade-in-up delay-800">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section animate-fade-in-left delay-900">
+                    <div class="footer-logo">
+                        <h3><i class="fas fa-water"></i> Projeto E-noé</h3>
+                        <p>Monitoramento inteligente para rios urbanos mais seguros.</p>
+                    </div>
+                </div>
+                <div class="footer-section animate-fade-in-up delay-1000">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="/">Início</a></li>
+                        <li><a href="/last_photo">Última Foto</a></li>
+                        <li><a href="/select_day">Seleção de Data</a></li>
+                        <li><a href="/publications">Publicações</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section animate-fade-in-up delay-1100">
+                    <h4>Apoio</h4>
+                    <p>Este projeto é desenvolvido com apoio da FAPESP (Fundação de Amparo à Pesquisa do Estado de São Paulo).</p>
+                </div>
+                <div class="footer-section animate-fade-in-right delay-1200">
+                    <h4>Tecnologia</h4>
+                    <p>Desenvolvido com Python, Flask, Machine Learning e muito ☕</p>
+                </div>
+            </div>
+            <div class="footer-bottom animate-fade-in-up delay-1300">
+                <p>&copy; 2024 Projeto E-noé. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
-    <!-- Script do Carrossel -->
+
+    <!-- Scripts -->
     <script src="{{ url_for('static', filename='js/carousel.js') }}"></script>
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+    </script>
 </body>
 </html>
